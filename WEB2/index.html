@@ -341,6 +341,60 @@
             border-color: var(--primary-color);
         }
 
+        /* --- Social Media Section --- */
+        .social-section {
+            background-color: var(--darker-color);
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--gray-color);
+        }
+
+        .social-section h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: var(--gray-color);
+            color: var(--light-color);
+            font-size: 1.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-4px);
+        }
+
+        .social-icon.facebook:hover {
+            background-color: #1877f2;
+            color: #fff;
+        }
+
+        .social-icon.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5914 45%, #c62937 60%, #db2777 90%);
+            color: #fff;
+        }
+
+        .social-icon.tiktok:hover {
+            background-color: #000000;
+            color: #25f4ee;
+            box-shadow: 0 0 10px rgba(37, 244, 238, 0.5);
+        }
+
         /* Footer */
         footer {
             background-color: #050505;
@@ -508,6 +562,22 @@
             </form>
         </div>
     </section>
+
+    <!-- SECCIÓN REDES SOCIALES -->
+    <div class="social-section">
+        <h3>Síguenos en Redes Sociales</h3>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/19S6CM4fR1/" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/ilkks_kenpo_karate?dlrf=c3hlZnJyMjBudWdh" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@ilkks_kenpokarate?_r=1&_t=ZS-9B6vE0LaG2e" target="_blank" rel="noopener noreferrer" class="social-icon tiktok" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
 
     <!-- FOOTER -->
     <footer>
