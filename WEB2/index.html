@@ -263,6 +263,185 @@
             font-size: 0.95rem;
         }
 
+        /* Instructors Section */
+        .instructor-card-wide {
+            background-color: var(--gray-color);
+            border-radius: 8px;
+            overflow: hidden;
+            border-bottom: 4px solid var(--primary-color);
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 30px;
+            align-items: start;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .instructor-card-wide:hover {
+            transform: translateY(-5px);
+        }
+
+        .instructor-img-container {
+            width: 100%;
+            height: 100%;
+            min-height: 480px;
+            background-color: #1e1e1e;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .instructor-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .instructor-content-wide {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .instructor-content-wide h3 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-top: 0;
+        }
+
+        .instructor-role {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .instructor-bio h4 {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            border-left: 3px solid var(--primary-color);
+            padding-left: 8px;
+        }
+
+        .instructor-bio p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        /* Schedule Section */
+        .schedule-section {
+            background-color: var(--darker-color);
+            padding: 80px 20px;
+            border-top: 1px solid var(--gray-color);
+            border-bottom: 1px solid var(--gray-color);
+            max-width: 100%;
+        }
+
+        .schedule-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--gray-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        .schedule-table th {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .schedule-table td {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .schedule-table tr:hover td {
+            color: #fff;
+            background-color: #353535;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .faq-item {
+            background-color: var(--gray-color);
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid #3a3a3a;
+        }
+
+        .faq-question {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: #353535;
+        }
+
+        .faq-question i {
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            padding: 0 20px;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            padding: 0 20px 20px 20px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
         /* CKF Federation Section */
         .ckf-section {
             background-color: var(--darker-color);
@@ -405,10 +584,10 @@
             border-top: 2px solid var(--primary-color);
         }
 
-        /* --- RESPONSIVE DESIGN PARA CELULARES --- */
+        /* --- RESPONSIVE DESIGN PARA CELULARES Y TABLETS --- */
         @media (max-width: 900px) {
             .menu-toggle {
-                display: block; /* Muestra el botón hamburguesa en móviles */
+                display: block; 
             }
 
             .nav-links {
@@ -427,7 +606,7 @@
             }
 
             .nav-links.active {
-                max-height: 300px; /* Altura desplegada del menú */
+                max-height: 350px; 
             }
 
             .nav-links li {
@@ -442,8 +621,17 @@
                 gap: 30px;
             }
 
+            .instructor-card-wide {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .instructor-img-container {
+                min-height: 350px;
+            }
+
             .hero h1 {
-                font-size: 2.2rem; /* Se ajusta para pantallas chicas */
+                font-size: 2.2rem; 
             }
 
             .section-title {
@@ -452,6 +640,13 @@
 
             section {
                 padding: 70px 15px 40px 15px;
+            }
+
+            .schedule-table {
+                font-size: 0.85rem;
+            }
+            .schedule-table th, .schedule-table td {
+                padding: 10px;
             }
         }
     </style>
@@ -472,6 +667,9 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#programas">Programas</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#instructores">Instructores</a></li>
+                <li><a href="#faq">FAQ</a></li>
                 <li><a href="#federacion">Federación CKF</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -521,6 +719,79 @@
                 <i class="fas fa-shield-alt"></i>
                 <h3>Defensa Personal Real</h3>
                 <p>Técnicas dinámicas y adaptadas a situaciones reales de la vida cotidiana, priorizando la prevención y la reacción efectiva.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN HORARIOS -->
+    <div id="horarios" class="schedule-section">
+        <div class="schedule-container">
+            <h2 class="section-title" style="margin-bottom: 30px;">Horarios de Clases</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Programa</th>
+                        <th>Días</th>
+                        <th>Horario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Kenpo Karate (General)</strong></td>
+                        <td>Lunes y Miércoles <em>(excepto festivos)</em></td>
+                        <td>19:30 - 21:00 hrs</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- SECCIÓN INSTRUCTORES -->
+    <section id="instructores">
+        <h2 class="section-title">Instructor</h2>
+        <div class="instructor-card-wide">
+            <div class="instructor-img-container">
+                <img src="profesor.png" alt="Instructor Principal Sensei Carlos Lagos">
+            </div>
+            <div class="instructor-content-wide">
+                <h3>Sensei Carlos Lagos</h3>
+                <div class="instructor-role">Cinto Negro 1er Grado Black Belt - CKF</div>
+                <div class="instructor-bio">
+                    <h4>Trayectoria en Kenpo Karate</h4>
+                    <p>Mi camino en el arte marcial del Kenpo Karate comenzó en septiembre de 2013, cuando ingresé a la escuela Dojo MASS, en su sede de Independencia. Desde entonces, he mantenido un compromiso constante con la disciplina, el aprendizaje y la superación personal. Con el paso de los años, mi progreso técnico y formativo me llevó a trasladarme en 2021 a la sede Dojo MASS Lo Prado, donde alcancé los tres grados de Cinturón Café y obtuve el Grado de Monitor.</p>
+                    
+                    <h4>Fundación de Filiales y Desarrollo Profesional</h4>
+                    <p>Ese mismo año, impulsado por el deseo de compartir el arte del Kenpo, asumí el desafío de fundar una nueva filial: Dojo MASS Huechuraba, consolidándome posteriormente en la Villa René Escauriza. A comienzos de 2023, continué mi formación bajo la guía del Maestro René Huaquimil, culminando este proceso en marzo de 2025 al obtener mi Cinturón Negro 1er Dan.</p>
+                    
+                    <h4>Transición a International Lagos Kenpo Karate Studio (ILKKS)</h4>
+                    <p>En septiembre de 2025, me integré formalmente a la CKF y a la escuela del Maestro Roberto Vidal (8º Dan). Esta transición dio origen a nuestro nuevo dojo: <strong>International Lagos Kenpo Karate Studio (ILKKS)</strong>.</p>
+                    <p>Actualmente, desarrollo mi labor docente en ILKKS (sede Valle Verde, Av. El Sauce 1850, Huechuraba), donde continuo transmitiendo la filosofía y práctica del Kenpo a las nuevas generaciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
+    <section id="faq">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Necesito experiencia previa para inscribirme?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>No se necesita ninguna experiencia previa. Nuestros programas están diseñados para recibir tanto a principiantes absolutos como a personas con experiencia previa en artes marciales.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Qué debo llevar a mi primera clase de prueba?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Solo necesitas ropa deportiva cómoda (polera y pantalón deportivo o buzo) y una botella con agua para mantenerte hidratado. Entrenamos descalzos en el dojo.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -584,7 +855,7 @@
         <p>&copy; 2026 International Lagos Kenpo Karate Studio. Todos los derechos reservados. | Miembro CKF.</p>
     </footer>
 
-    <!-- SCRIPT DE MENÚ HAMBURGUESA Y WHATSAPP -->
+    <!-- SCRIPT DE MENÚ HAMBURGUESA, WHATSAPP Y ACORDEÓN FAQ -->
     <script>
         // Lógica del Menú Hamburguesa en Celulares
         const menuToggle = document.getElementById('menuToggle');
@@ -604,6 +875,21 @@
                 const icon = menuToggle.querySelector('i');
                 icon.classList.add('fa-bars');
                 icon.classList.remove('fa-times');
+            });
+        });
+
+        // Lógica de Acordeón para Preguntas Frecuentes (FAQ)
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    if (faq !== item) {
+                        faq.classList.remove('active');
+                    }
+                });
+
+                item.classList.toggle('active');
             });
         });
 
