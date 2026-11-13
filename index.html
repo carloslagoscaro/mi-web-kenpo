@@ -127,6 +127,7 @@
             cursor: pointer;
             background: none;
             border: none;
+            padding: 5px;
         }
 
         /* --- HERO SECTION --- */
@@ -168,6 +169,7 @@
             max-width: 950px;
             position: relative;
             z-index: 3;
+            width: 100%;
         }
 
         .hero-badge {
@@ -242,8 +244,9 @@
             background-color: var(--waze-color);
             color: #0a0a0a;
             box-shadow: 0 4px 15px rgba(51, 204, 255, 0.25);
-            margin-top: 10px;
+            margin-top: 12px;
             width: 100%;
+            padding: 13px 20px;
         }
 
         .btn-waze:hover {
@@ -257,6 +260,7 @@
             box-shadow: 0 4px 15px rgba(66, 133, 244, 0.25);
             margin-top: 10px;
             width: 100%;
+            padding: 13px 20px;
         }
 
         .btn-maps:hover {
@@ -322,6 +326,7 @@
             width: 100%;
             height: 350px;
             object-fit: cover;
+            display: block;
             transition: transform 0.6s ease;
         }
 
@@ -332,7 +337,7 @@
         /* --- PROGRAMS SECTION --- */
         .programs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
             gap: 30px;
         }
 
@@ -386,14 +391,25 @@
             margin: 0 auto;
         }
 
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            border: 1px solid var(--border-color);
+        }
+
         .schedule-table {
             width: 100%;
             border-collapse: collapse;
             background-color: var(--surface-card);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            border: 1px solid var(--border-color);
+        }
+
+        .schedule-table caption {
+            padding: 12px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            caption-side: bottom;
         }
 
         .schedule-table th, .schedule-table td {
@@ -452,6 +468,7 @@
             height: 100%;
             object-fit: cover;
             object-position: top center;
+            display: block;
             transition: transform 0.5s ease;
         }
 
@@ -520,6 +537,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -534,6 +552,7 @@
         .faq-question i {
             color: var(--primary-color);
             transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
 
         .faq-answer {
@@ -570,6 +589,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        .ckf-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
         }
 
         .ckf-section p {
@@ -618,10 +642,16 @@
             margin-bottom: 25px;
         }
 
-        .contact-info-item i {
+        .contact-info-item > div {
+            width: 100%;
+        }
+
+        .contact-info-item i.fa-map-marker-alt,
+        .contact-info-item i.fa-phone-alt {
             font-size: 1.4rem;
             color: var(--primary-color);
             margin-top: 4px;
+            flex-shrink: 0;
         }
 
         .contact-info-item h4 {
@@ -866,7 +896,7 @@
             }
 
             .nav-links.active {
-                max-height: 450px; 
+                max-height: 480px; 
             }
 
             .nav-links li {
@@ -887,7 +917,7 @@
             }
 
             .instructor-img-container {
-                min-height: 380px;
+                min-height: 360px;
             }
 
             .hero h1 {
@@ -901,6 +931,87 @@
 
             section {
                 padding: 90px 20px 60px 20px;
+            }
+        }
+
+        /* Ajustes específicos para teléfonos móviles pequeños */
+        @media (max-width: 576px) {
+            .nav-container {
+                padding: 12px 18px;
+            }
+
+            .logo-container img {
+                height: 40px;
+            }
+
+            .logo-container span {
+                font-size: 0.68rem;
+            }
+
+            .hero {
+                padding: 120px 16px 60px;
+            }
+
+            .hero-badge {
+                width: 125px;
+            }
+
+            .hero-tag {
+                letter-spacing: 3px;
+                font-size: 0.72rem;
+            }
+
+            .hero h1 {
+                font-size: 2.1rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                padding: 14px 20px;
+                font-size: 0.85rem;
+            }
+
+            .section-title {
+                font-size: 1.65rem;
+            }
+
+            .about-img img {
+                height: 260px;
+            }
+
+            .schedule-table th, .schedule-table td {
+                padding: 14px 16px;
+                font-size: 0.88rem;
+            }
+
+            .instructor-card-wide {
+                padding: 22px;
+                gap: 25px;
+            }
+
+            .instructor-img-container {
+                min-height: 290px;
+            }
+
+            .instructor-content-wide h3 {
+                font-size: 1.65rem;
+            }
+
+            .faq-question {
+                padding: 18px 20px;
+                font-size: 0.92rem;
+            }
+
+            .contact-info-card, .contact-form {
+                padding: 24px 20px;
+            }
+
+            .contact-info-item {
+                gap: 14px;
             }
         }
     </style>
@@ -986,23 +1097,25 @@
         <div id="horarios" class="schedule-section">
             <div class="schedule-container">
                 <h2 class="section-title" style="margin-bottom: 30px;">Horarios de Clases</h2>
-                <table class="schedule-table">
-                    <caption>Horario general de entrenamiento</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Programa</th>
-                            <th scope="col">Días</th>
-                            <th scope="col">Horario</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Kenpo Karate (General)</strong></td>
-                            <td>Lunes y Miércoles <em>(excepto festivos)</em></td>
-                            <td>19:30 - 21:00 hrs</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <caption>Horario general de entrenamiento</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Programa</th>
+                                <th scope="col">Días</th>
+                                <th scope="col">Horario</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Kenpo Karate (General)</strong></td>
+                                <td>Lunes y Miércoles <em>(excepto festivos)</em></td>
+                                <td>19:30 - 21:00 hrs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
