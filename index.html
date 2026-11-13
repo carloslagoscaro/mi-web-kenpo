@@ -22,6 +22,8 @@
             --text-gray: #9ca3af;
             --border-color: #27272a;
             --waze-color: #33ccff;
+            --maps-color: #4285F4;
+            --whatsapp-color: #25d366;
         }
 
         * {
@@ -127,7 +129,7 @@
             border: none;
         }
 
-        /* --- HERO SECTION CON FONDO DIFUMINADO PROFESIONAL --- */
+        /* --- HERO SECTION --- */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -139,7 +141,6 @@
             overflow: hidden;
         }
 
-        /* Capa independiente para el fondo difuminado y oscurecido */
         .hero-bg {
             position: absolute;
             top: -10px;
@@ -147,12 +148,11 @@
             right: -10px;
             bottom: -10px;
             background: url('dojo.png') no-repeat center center/cover;
-            filter: blur(6px) brightness(0.45); /* Difuminado sutil y oscurecimiento integrado */
-            transform: scale(1.05); /* Evita bordes blancos por el blur */
+            filter: blur(6px) brightness(0.45);
+            transform: scale(1.05);
             z-index: 1;
         }
 
-        /* Degradado superior e inferior para fundir con la página */
         .hero::after {
             content: '';
             position: absolute;
@@ -167,7 +167,7 @@
         .hero-content {
             max-width: 950px;
             position: relative;
-            z-index: 3; /* Asegura que el contenido flote por encima del fondo difuminado */
+            z-index: 3;
         }
 
         .hero-badge {
@@ -242,14 +242,25 @@
             background-color: var(--waze-color);
             color: #0a0a0a;
             box-shadow: 0 4px 15px rgba(51, 204, 255, 0.25);
-            margin-top: 15px;
+            margin-top: 10px;
             width: 100%;
         }
 
         .btn-waze:hover {
             background-color: #25b3e6;
             color: #000;
-            box-shadow: 0 8px 25px rgba(51, 204, 255, 0.4);
+        }
+
+        .btn-maps {
+            background-color: var(--maps-color);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(66, 133, 244, 0.25);
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .btn-maps:hover {
+            background-color: #3367d6;
         }
 
         /* --- SECTIONS GENERAL --- */
@@ -337,23 +348,10 @@
             overflow: hidden;
         }
 
-        .program-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(180deg, rgba(255,30,38,0.03) 0%, transparent 100%);
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
         .program-card:hover {
             transform: translateY(-8px);
             border-color: rgba(255, 30, 38, 0.4);
             box-shadow: 0 20px 45px rgba(0,0,0,0.5);
-        }
-
-        .program-card:hover::before {
-            opacity: 1;
         }
 
         .program-card i {
@@ -416,10 +414,6 @@
         .schedule-table td {
             color: var(--text-gray);
             font-size: 0.95rem;
-        }
-
-        .schedule-table tr:last-child td {
-            border-bottom: none;
         }
 
         .schedule-table tr:hover td {
@@ -624,10 +618,6 @@
             margin-bottom: 25px;
         }
 
-        .contact-info-item:last-child {
-            margin-bottom: 0;
-        }
-
         .contact-info-item i {
             font-size: 1.4rem;
             color: var(--primary-color);
@@ -648,7 +638,7 @@
         .map-container {
             margin-top: 25px;
             width: 100%;
-            height: 200px;
+            height: 220px;
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid var(--border-color);
@@ -658,48 +648,134 @@
             width: 100%;
             height: 100%;
             border: 0;
-            filter: grayscale(30%) contrast(110%) invert(90%) hue-rotate(180deg);
         }
 
+        /* Formulario de Mensajería Estilizado */
         .contact-form {
             background-color: var(--surface-card);
             padding: 40px;
             border-radius: 14px;
             border: 1px solid var(--border-color);
+            border-top: 4px solid var(--whatsapp-color);
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
+        .contact-form-header {
+            margin-bottom: 25px;
+        }
+
+        .contact-form-header h4 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-form-header h4 i {
+            color: var(--whatsapp-color);
+        }
+
+        .contact-form-header p {
+            color: var(--text-gray);
+            font-size: 0.92rem;
+        }
+
         .form-inputs-group {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 20px;
             flex-grow: 1;
-            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-field label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-gray);
         }
 
         .contact-form input, .contact-form textarea {
-            padding: 16px;
+            padding: 15px 18px;
             background-color: var(--darker-color);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 10px;
             color: #fff;
             font-family: 'Roboto', sans-serif;
             font-size: 0.95rem;
             width: 100%;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .contact-form textarea {
-            resize: none;
+            resize: vertical;
+            min-height: 150px;
+            flex-grow: 1;
         }
 
         .contact-form input:focus, .contact-form textarea:focus {
             outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(255, 30, 38, 0.2);
+            border-color: var(--whatsapp-color);
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.15);
+            background-color: #0e0e11;
+        }
+
+        .btn-whatsapp-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--whatsapp-color), #1ebe5d);
+            color: #fff;
+            padding: 16px 30px;
+            border-radius: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            font-size: 0.92rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+            width: 100%;
+        }
+
+        .btn-whatsapp-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
+            filter: brightness(1.05);
+        }
+
+        .btn-whatsapp-submit i {
+            font-size: 1.3rem;
+        }
+
+        .form-feedback {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--whatsapp-color);
+            margin-top: 12px;
+            min-height: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .form-feedback.visible {
+            opacity: 1;
         }
 
         /* --- SOCIAL MEDIA SECTION --- */
@@ -746,19 +822,16 @@
         .social-icon.facebook:hover {
             background-color: #1877f2;
             color: #fff;
-            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
         }
 
         .social-icon.instagram:hover {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5914 45%, #c62937 60%, #db2777 90%);
             color: #fff;
-            box-shadow: 0 8px 20px rgba(219, 39, 119, 0.4);
         }
 
         .social-icon.tiktok:hover {
             background-color: #000000;
             color: #25f4ee;
-            box-shadow: 0 8px 20px rgba(37, 244, 238, 0.3);
         }
 
         /* --- FOOTER --- */
@@ -860,7 +933,7 @@
     </header>
 
     <main>
-        <!-- SECCIÓN HERO / INICIO CON FONDO DIFUMINADO -->
+        <!-- SECCIÓN HERO -->
         <section id="inicio" class="hero">
             <div class="hero-bg"></div>
             <div class="hero-content">
@@ -1008,6 +1081,10 @@
                                 <a href="https://waze.com/ul?q=Avenida%20El%20Sauce%201850%2C%20Huechuraba" target="_blank" rel="noopener noreferrer" class="btn btn-waze">
                                     <i class="fa-brands fa-waze" aria-hidden="true"></i> Abrir Ruta en Waze
                                 </a>
+                                <!-- Botón Google Maps Directo -->
+                                <a href="https://maps.google.com/?q=Avenida+El+Sauce+1850,+Huechuraba" target="_blank" rel="noopener noreferrer" class="btn btn-maps">
+                                    <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Abrir en Google Maps
+                                </a>
                             </div>
                         </div>
                         <div class="contact-info-item">
@@ -1019,10 +1096,10 @@
                         </div>
                     </div>
 
-                    <!-- Mapa embebido de Google Maps optimizado -->
+                    <!-- Mapa embebido de Google Maps -->
                     <div class="map-container">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.0664973347575!2d-70.655!3d-33.365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c50000000001%3A0x0!2sAv.+El+Sauce+1850%2C+Huechuraba%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl" 
+                            src="https://maps.google.com/maps?q=Avenida%20El%20Sauce%201850,%20Huechuraba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                             allowfullscreen="" 
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
@@ -1031,16 +1108,28 @@
                     </div>
                 </div>
 
+                <!-- Formulario Único de Mensajería a WhatsApp -->
                 <form class="contact-form" id="whatsappForm">
-                    <div>
-                        <h4 style="color: #fff; margin-bottom: 5px;">Envíanos un Mensaje</h4>
-                        <p style="color: var(--text-gray); font-size: 0.9rem; margin-bottom: 15px;">Te responderemos directamente por WhatsApp.</p>
+                    <div class="contact-form-header">
+                        <h4><i class="fab fa-whatsapp"></i> Envíanos un Mensaje</h4>
+                        <p>Completa tus datos y te responderemos directamente por WhatsApp.</p>
                     </div>
                     <div class="form-inputs-group">
-                        <input type="text" id="nombre" placeholder="Tu Nombre Completo" required aria-label="Tu Nombre Completo">
-                        <textarea id="consulta" rows="5" placeholder="¿En qué programa estás interesado o qué dudas tienes?" required aria-label="Tu Consulta"></textarea>
+                        <div class="form-field">
+                            <label for="nombre">Nombre Completo</label>
+                            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="consulta">Mensaje o Consulta</label>
+                            <textarea id="consulta" placeholder="Hola, me gustaría agendar una clase de prueba para..." required></textarea>
+                        </div>
                     </div>
-                    <button type="submit" class="btn"><i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar a WhatsApp</button>
+                    <div>
+                        <button type="submit" class="btn-whatsapp-submit">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar Mensaje a WhatsApp
+                        </button>
+                        <div class="form-feedback" id="formFeedback">Abriendo WhatsApp con tu consulta...</div>
+                    </div>
                 </form>
             </div>
         </section>
@@ -1069,7 +1158,6 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Lógica del Menú Hamburguesa con control de accesibilidad ARIA
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
 
@@ -1081,7 +1169,6 @@
             icon.classList.toggle('fa-times');
         });
 
-        // Cerrar menú al hacer clic en un enlace (en dispositivos móviles)
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -1092,7 +1179,6 @@
             });
         });
 
-        // Lógica de Acordeón para Preguntas Frecuentes (FAQ) con control de ARIA
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const item = question.parentElement;
@@ -1110,16 +1196,21 @@
             });
         });
 
-        // Lógica de Envío a WhatsApp
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const nombre = document.getElementById('nombre').value.trim();
             const consulta = document.getElementById('consulta').value.trim();
+            const feedback = document.getElementById('formFeedback');
             const telefono = "56932291414"; 
             
             const texto = `Hola, mi nombre es *${nombre}*. ${consulta}`;
             const mensajeUrl = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(texto)}`;
             
+            feedback.classList.add('visible');
+            setTimeout(() => {
+                feedback.classList.remove('visible');
+            }, 4000);
+
             window.open(mensajeUrl, '_blank', 'noopener,noreferrer');
         });
     </script>
