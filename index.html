@@ -240,6 +240,19 @@
             box-shadow: 0 8px 30px rgba(255, 30, 38, 0.6);
         }
 
+        .btn-outline-gold {
+            background-color: transparent;
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.15);
+        }
+
+        .btn-outline-gold:hover {
+            background-color: var(--accent-gold);
+            color: #0b0b0b;
+            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.35);
+        }
+
         .btn-waze {
             background-color: var(--waze-color);
             color: #0a0a0a;
@@ -573,7 +586,7 @@
             transform: rotate(180deg);
         }
 
-        /* --- FEDERATION SECTION --- */
+        /* --- FEDERATION & AFFILIATIONS SECTION --- */
         .ckf-section {
             background-color: var(--surface-color);
             text-align: center;
@@ -597,8 +610,8 @@
         }
 
         .ckf-section p {
-            max-width: 700px;
-            margin: 0 auto 35px;
+            max-width: 750px;
+            margin: 0 auto 30px;
             color: var(--text-gray);
             font-size: 1.05rem;
         }
@@ -606,7 +619,7 @@
         .ckf-badge {
             width: 170px;
             height: auto;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             border-radius: 10px;
             filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
             transition: transform 0.3s;
@@ -614,6 +627,55 @@
 
         .ckf-badge:hover {
             transform: scale(1.05);
+        }
+
+        .affiliation-box {
+            background-color: var(--surface-card);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 12px;
+            padding: 25px 35px;
+            max-width: 700px;
+            width: 100%;
+            margin-bottom: 35px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .affiliation-box h3 {
+            font-size: 1.15rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .affiliation-box p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+        }
+
+        .kenpochile-link {
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .kenpochile-link:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .ckf-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            width: 100%;
+            max-width: 600px;
         }
 
         /* --- CONTACT & MAP SECTION --- */
@@ -874,6 +936,18 @@
             border-top: 1px solid var(--border-color);
         }
 
+        footer a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 992px) {
             .menu-toggle {
@@ -934,7 +1008,6 @@
             }
         }
 
-        /* Ajustes específicos para teléfonos móviles pequeños */
         @media (max-width: 576px) {
             .nav-container {
                 padding: 12px 18px;
@@ -1001,6 +1074,10 @@
                 font-size: 1.65rem;
             }
 
+            .affiliation-box {
+                padding: 20px;
+            }
+
             .faq-question {
                 padding: 18px 20px;
                 font-size: 0.92rem;
@@ -1036,7 +1113,7 @@
                     <li><a href="#horarios">Horarios</a></li>
                     <li><a href="#instructores">Instructores</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#federacion">Federación CKF</a></li>
+                    <li><a href="#federacion">Afiliaciones</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -1051,7 +1128,7 @@
                 <img src="Insignia.png" alt="Insignia Oficial" class="hero-badge" loading="lazy" decoding="async">
                 <div class="hero-tag">Academia Oficial de Artes Marciales</div>
                 <h1 class="oriental-title">International Lagos Kenpo Karate Studio</h1>
-                <p>Disciplina, Humildad y Respeto bajo los lineamientos oficiales de la Chinese Karate Federation (CKF).</p>
+                <p>Disciplina, Humildad y Respeto bajo los lineamientos oficiales de la Chinese Karate Federation (CKF) y afiliados a KenpoChile.</p>
                 <a href="#contacto" class="btn">Reserva tu Clase de Prueba</a>
             </div>
         </section>
@@ -1062,7 +1139,7 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p>En <strong>International Lagos Kenpo Karate Studio</strong> formamos artistas marciales íntegros, enfocándonos tanto en la defensa personal efectiva como en el desarrollo del carácter, la disciplina y los valores tradicionales.</p>
-                    <p>Formamos parte activa de la prestigiosa <strong>Chinese Karate Federation (CKF)</strong>, lo que garantiza un estándar técnico riguroso, programas de graduación certificados y un constante perfeccionamiento en el arte del Kenpo.</p>
+                    <p>Formamos parte activa de la prestigiosa <strong>Chinese Karate Federation (CKF)</strong> y estamos afiliados a <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="kenpochile-link">KenpoChile</a>, lo que garantiza un estándar técnico riguroso, programas de graduación certificados y un constante perfeccionamiento en el arte del Kenpo.</p>
                     <a href="#programas" class="btn" style="margin-top: 10px;">Conoce más</a>
                 </div>
                 <div class="about-img">
@@ -1169,13 +1246,25 @@
             </div>
         </section>
 
-        <!-- SECCIÓN FEDERACIÓN CKF -->
+        <!-- SECCIÓN FEDERACIÓN CKF Y AFILIACIÓN KENPOCHILE -->
         <section id="federacion" class="ckf-section">
             <div class="ckf-content">
                 <h2>Avalado por la Chinese Karate Federation (CKF)</h2>
                 <p>Pertenecer a la CKF nos otorga el respaldo de una organización sólida, fomentando la hermandad entre dojos, seminarios oficiales y un riguroso programa de grados internacionales.</p>
                 <img src="ckf.png" alt="Insignia Oficial CKF" class="ckf-badge" loading="lazy" decoding="async">
-                <a href="#contacto" class="btn">Únete a la Comunidad</a>
+                
+                <!-- Bloque de Afiliación KenpoChile -->
+                <div class="affiliation-box">
+                    <h3><i class="fas fa-award" style="color: var(--accent-gold); margin-right: 8px;" aria-hidden="true"></i>Escuela Afiliada a KenpoChile</h3>
+                    <p>Nuestra academia forma parte oficial de la red nacional <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="kenpochile-link">kenpochile.cl</a>, promoviendo la difusión, el desarrollo técnico y los eventos oficiales del Kenpo en Chile.</p>
+                </div>
+
+                <div class="ckf-actions">
+                    <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i> Visitar KenpoChile.cl
+                    </a>
+                    <a href="#contacto" class="btn">Únete a la Comunidad</a>
+                </div>
             </div>
         </section>
 
@@ -1266,7 +1355,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 International Lagos Kenpo Karate Studio. Todos los derechos reservados. | Miembro CKF.</p>
+        <p>&copy; 2026 International Lagos Kenpo Karate Studio. Todos los derechos reservados. | Miembro CKF &bull; Afiliado a <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer">KenpoChile</a>.</p>
     </footer>
 
     <!-- SCRIPTS -->
