@@ -7,7 +7,7 @@
     
     <!-- Meta Descripciones y SEO Local -->
     <meta name="description" content="Academia oficial de Kenpo Karate en Huechuraba. Clases de defensa personal para niños, jóvenes y adultos avaladas por la CKF y KenpoChile. ¡Reserva tu clase de prueba!">
-    <link rel="canonical" href="https://www.ilkks.cl/"> <!-- Reemplaza con tu dominio final si lo tienes -->
+    <link rel="canonical" href="https://www.ilkks.cl/">
 
     <!-- Open Graph / Redes Sociales y WhatsApp Previews -->
     <meta property="og:title" content="International Lagos Kenpo Karate Studio | Clases en Huechuraba">
@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://www.ilkks.cl/">
     <meta property="og:image" content="Insignia.png">
 
-    <!-- Schema.org Structured Data (LocalBusiness / MartialArtsSchool) para Google Maps y SEO Local -->
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -103,17 +103,35 @@
             color: #fff;
         }
 
+        /* --- BARRA DE PROGRESO DE LECTURA --- */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
+            z-index: 1002;
+            transition: width 0.1s ease-out;
+        }
+
         /* --- HEADER & NAV --- */
         header {
-            background-color: rgba(11, 11, 11, 0.9);
+            background-color: rgba(11, 11, 11, 0.85);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background-color: rgba(5, 5, 5, 0.96);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.75);
+            border-bottom-color: rgba(255, 30, 38, 0.25);
         }
 
         .nav-container {
@@ -122,7 +140,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 30px;
+            padding: 16px 30px;
+            transition: padding 0.35s ease;
+        }
+
+        header.scrolled .nav-container {
+            padding: 10px 30px;
         }
 
         .logo-container {
@@ -137,6 +160,11 @@
             width: auto;
             mix-blend-mode: screen; 
             filter: drop-shadow(0 0 8px rgba(255, 30, 38, 0.4));
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .logo-container:hover img {
+            transform: scale(1.08) rotate(-4deg);
         }
 
         .logo-container span {
@@ -163,10 +191,30 @@
             font-size: 0.88rem;
             transition: color 0.3s ease;
             letter-spacing: 0.5px;
+            position: relative;
+            padding: 6px 0;
         }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active-link {
+            color: #ffffff;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active-link::after {
+            width: 100%;
         }
 
         .menu-toggle {
@@ -177,6 +225,11 @@
             background: none;
             border: none;
             padding: 5px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            color: var(--primary-color);
         }
 
         /* --- HERO SECTION --- */
@@ -186,21 +239,46 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 140px 20px 80px;
+            padding: 140px 20px 90px;
             position: relative;
             overflow: hidden;
+            max-width: 100%;
         }
 
         .hero-bg {
             position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
             background: url('dojo.png') no-repeat center center/cover;
-            filter: blur(6px) brightness(0.45);
-            transform: scale(1.05);
+            filter: blur(5px) brightness(0.4);
             z-index: 1;
+            animation: kenBurns 22s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        @keyframes kenBurns {
+            0% { transform: scale(1.04) translate(0, 0); }
+            100% { transform: scale(1.14) translate(-1.5%, -1%); }
+        }
+
+        #heroParticles {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 20%, rgba(5, 5, 5, 0.88) 100%);
+            z-index: 2;
+            pointer-events: none;
         }
 
         .hero::after {
@@ -209,9 +287,10 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 120px;
+            height: 140px;
             background: linear-gradient(to top, var(--dark-color), transparent);
             z-index: 2;
+            pointer-events: none;
         }
 
         .hero-content {
@@ -221,18 +300,37 @@
             width: 100%;
         }
 
+        .hero-animate {
+            opacity: 0;
+            transform: translateY(28px);
+            animation: heroEntrance 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        .delay-2 { animation-delay: 0.25s; }
+        .delay-3 { animation-delay: 0.4s; }
+        .delay-4 { animation-delay: 0.55s; }
+        .delay-5 { animation-delay: 0.7s; }
+
+        @keyframes heroEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .hero-badge {
             width: 160px;
             height: auto;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
             mix-blend-mode: screen;
             filter: drop-shadow(0 0 25px rgba(255, 30, 38, 0.6));
-            animation: pulseGlow 3s infinite alternate;
+            animation: heroEntrance 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards, floatBadge 4s ease-in-out 1s infinite alternate;
+            transition: transform 0.4s ease;
         }
 
-        @keyframes pulseGlow {
-            0% { filter: drop-shadow(0 0 15px rgba(255, 30, 38, 0.4)); }
-            100% { filter: drop-shadow(0 0 30px rgba(255, 30, 38, 0.8)); }
+        @keyframes floatBadge {
+            0% { filter: drop-shadow(0 0 15px rgba(255, 30, 38, 0.45)); transform: translateY(0) scale(1); }
+            100% { filter: drop-shadow(0 0 35px rgba(255, 30, 38, 0.85)); transform: translateY(-8px) scale(1.03); }
         }
 
         .hero-tag {
@@ -246,7 +344,7 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.6rem;
             margin-bottom: 20px;
             color: #ffffff;
             text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
@@ -255,7 +353,7 @@
 
         .hero p {
             font-size: 1.15rem;
-            color: var(--text-gray);
+            color: #d1d5db;
             margin-bottom: 35px;
             max-width: 700px;
             margin-left: auto;
@@ -277,16 +375,33 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             font-size: 0.9rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease, box-shadow 0.3s ease;
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 20px rgba(255, 30, 38, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .btn:hover::before {
+            left: 130%;
         }
 
         .btn:hover {
             background-color: var(--primary-hover);
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(255, 30, 38, 0.6);
+            box-shadow: 0 10px 30px rgba(255, 30, 38, 0.65);
         }
 
         .btn-outline-gold {
@@ -329,6 +444,26 @@
             background-color: #3367d6;
         }
 
+        /* --- CLASES DE SCROLL REVEAL --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(35px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.reveal-left {
+            transform: translateX(-35px);
+        }
+
+        .reveal.reveal-right {
+            transform: translateX(35px);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
         /* --- SECTIONS GENERAL --- */
         section {
             padding: 110px 20px 80px 20px;
@@ -350,11 +485,16 @@
         .section-title::after {
             content: '';
             display: block;
-            width: 60px;
+            width: 50px;
             height: 3px;
             background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
             margin: 15px auto 0;
             border-radius: 2px;
+            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .section-title.visible::after {
+            width: 95px;
         }
 
         /* --- ABOUT SECTION --- */
@@ -384,23 +524,35 @@
             border: 1px solid var(--border-color);
         }
 
+        .about-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 2px solid transparent;
+            border-radius: 14px;
+            transition: border-color 0.4s ease;
+            pointer-events: none;
+        }
+
+        .about-img:hover::after {
+            border-color: rgba(197, 160, 89, 0.5);
+        }
+
         .about-img img {
             width: 100%;
             height: 350px;
             object-fit: cover;
             display: block;
-            transition: transform 0.6s ease;
+            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform;
         }
 
-        .about-img:hover img {
-            transform: scale(1.04);
-        }
-
-        /* --- PROGRAMS SECTION --- */
+        /* --- PROGRAMS SECTION CON TILT 3D --- */
         .programs-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
             gap: 30px;
+            perspective: 1000px;
         }
 
         .program-card {
@@ -409,22 +561,44 @@
             border-radius: 12px;
             border: 1px solid var(--border-color);
             border-top: 4px solid var(--primary-color);
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.2s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             position: relative;
             overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle 220px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 30, 38, 0.14), transparent 80%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .program-card:hover::before {
+            opacity: 1;
         }
 
         .program-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 30, 38, 0.4);
-            box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+            border-color: rgba(255, 30, 38, 0.55);
+            box-shadow: 0 22px 45px rgba(0,0,0,0.65), 0 0 25px rgba(255, 30, 38, 0.18);
         }
 
         .program-card i {
             font-size: 2.4rem;
             color: var(--primary-color);
             margin-bottom: 22px;
+            display: inline-block;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
+            transform: translateZ(20px);
+        }
+
+        .program-card:hover i {
+            transform: translateZ(30px) scale(1.18) rotate(-6deg);
+            color: var(--accent-gold);
         }
 
         .program-card h3 {
@@ -432,11 +606,13 @@
             font-size: 1.3rem;
             letter-spacing: 0.5px;
             color: #fff;
+            transform: translateZ(15px);
         }
 
         .program-card p {
             color: var(--text-gray);
             font-size: 0.95rem;
+            transform: translateZ(10px);
         }
 
         /* --- SCHEDULE SECTION --- */
@@ -478,6 +654,7 @@
             padding: 20px 26px;
             text-align: left;
             border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
         }
 
         .schedule-table th {
@@ -494,9 +671,14 @@
             font-size: 0.95rem;
         }
 
-        .schedule-table tr:hover td {
+        .schedule-table tbody tr:hover td {
             color: #fff;
             background-color: var(--surface-card-hover);
+        }
+
+        .schedule-table tbody tr:hover td:first-child {
+            padding-left: 32px;
+            border-left: 3px solid var(--accent-gold);
         }
 
         /* --- INSTRUCTOR SECTION --- */
@@ -512,6 +694,12 @@
             align-items: start;
             padding: 40px;
             box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .instructor-card-wide:hover {
+            border-color: rgba(197, 160, 89, 0.35);
+            box-shadow: 0 25px 55px rgba(0,0,0,0.6);
         }
 
         .instructor-img-container {
@@ -531,11 +719,11 @@
             object-fit: cover;
             object-position: top center;
             display: block;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .instructor-img-container:hover img {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
         .instructor-content-wide {
@@ -557,6 +745,45 @@
             letter-spacing: 1.5px;
         }
 
+        .instructor-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 8px 0;
+        }
+
+        .stat-box {
+            background-color: var(--darker-color);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px 12px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-gold);
+        }
+
+        .stat-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-gray);
+            margin-top: 4px;
+            display: block;
+        }
+
         .instructor-bio h4 {
             font-size: 1.1rem;
             color: #fff;
@@ -564,6 +791,12 @@
             margin-bottom: 8px;
             border-left: 3px solid var(--primary-color);
             padding-left: 12px;
+            transition: border-color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .instructor-bio h4:hover {
+            border-left-color: var(--accent-gold);
+            padding-left: 16px;
         }
 
         .instructor-bio p {
@@ -587,11 +820,18 @@
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid var(--border-color);
-            transition: border-color 0.3s;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
         }
 
         .faq-item:hover {
-            border-color: rgba(255, 30, 38, 0.3);
+            border-color: rgba(255, 30, 38, 0.35);
+            transform: translateX(4px);
+        }
+
+        .faq-item.active {
+            border-left-color: var(--primary-color);
+            background-color: var(--surface-card-hover);
         }
 
         .faq-question {
@@ -613,14 +853,14 @@
 
         .faq-question i {
             color: var(--primary-color);
-            transition: transform 0.3s ease;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             flex-shrink: 0;
         }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.35s ease-out, padding 0.35s ease;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
             padding: 0 25px;
             color: var(--text-gray);
             font-size: 0.95rem;
@@ -633,6 +873,7 @@
 
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
+            color: var(--accent-gold);
         }
 
         /* --- FEDERATION & AFFILIATIONS SECTION --- */
@@ -671,11 +912,11 @@
             margin-bottom: 30px;
             border-radius: 10px;
             filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
-            transition: transform 0.3s;
+            transition: transform 0.25s ease-out, filter 0.4s ease;
         }
 
         .ckf-badge:hover {
-            transform: scale(1.05);
+            filter: drop-shadow(0 14px 28px rgba(197, 160, 89, 0.4));
         }
 
         .affiliation-box {
@@ -692,6 +933,12 @@
             align-items: center;
             gap: 12px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .affiliation-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
 
         .affiliation-box h3 {
@@ -791,7 +1038,6 @@
             border: 0;
         }
 
-        /* Formulario de Mensajería Estilizado */
         .contact-form {
             background-color: var(--surface-card);
             padding: 40px;
@@ -872,6 +1118,7 @@
             border-color: var(--whatsapp-color);
             box-shadow: 0 0 15px rgba(37, 211, 102, 0.15);
             background-color: #0e0e11;
+            transform: translateY(-1px);
         }
 
         .btn-whatsapp-submit {
@@ -893,12 +1140,14 @@
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
             width: 100%;
+            position: relative;
+            overflow: hidden;
         }
 
         .btn-whatsapp-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45);
-            filter: brightness(1.05);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+            filter: brightness(1.06);
         }
 
         .btn-whatsapp-submit i {
@@ -917,6 +1166,46 @@
 
         .form-feedback.visible {
             opacity: 1;
+        }
+
+        /* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 26px;
+            right: 26px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-color);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.9rem;
+            text-decoration: none;
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
+            z-index: 999;
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+        }
+
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 2px solid var(--whatsapp-color);
+            animation: whatsappPulse 2.2s infinite ease-out;
+            z-index: -1;
+        }
+
+        @keyframes whatsappPulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.45); opacity: 0; }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-4px);
+            background-color: #1ebe5d;
         }
 
         /* --- SOCIAL MEDIA SECTION --- */
@@ -944,35 +1233,38 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
+            width: 52px;
+            height: 52px;
             background-color: var(--surface-card);
             color: var(--light-color);
             font-size: 1.3rem;
             border-radius: 50%;
             border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
             text-decoration: none;
         }
 
         .social-icon:hover {
-            transform: translateY(-5px);
+            transform: translateY(-6px) scale(1.08);
             border-color: transparent;
         }
 
         .social-icon.facebook:hover {
             background-color: #1877f2;
             color: #fff;
+            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
         }
 
         .social-icon.instagram:hover {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5914 45%, #c62937 60%, #db2777 90%);
             color: #fff;
+            box-shadow: 0 8px 20px rgba(219, 39, 119, 0.4);
         }
 
         .social-icon.tiktok:hover {
             background-color: #000000;
             color: #25f4ee;
+            box-shadow: 0 8px 20px rgba(37, 244, 238, 0.3);
         }
 
         /* --- FOOTER --- */
@@ -997,7 +1289,22 @@
             text-decoration: underline;
         }
 
-        /* --- RESPONSIVE DESIGN --- */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+            #heroParticles {
+                display: none;
+            }
+        }
+
         @media (max-width: 992px) {
             .menu-toggle {
                 display: block; 
@@ -1014,7 +1321,7 @@
                 gap: 0;
                 max-height: 0;
                 overflow: hidden;
-                transition: max-height 0.35s ease-in-out;
+                transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                 border-bottom: 1px solid var(--border-color);
             }
 
@@ -1071,7 +1378,7 @@
             }
 
             .hero {
-                padding: 120px 16px 60px;
+                padding: 120px 16px 85px;
             }
 
             .hero-badge {
@@ -1123,6 +1430,10 @@
                 font-size: 1.65rem;
             }
 
+            .instructor-stats {
+                grid-template-columns: 1fr;
+            }
+
             .affiliation-box {
                 padding: 20px;
             }
@@ -1139,16 +1450,27 @@
             .contact-info-item {
                 gap: 14px;
             }
+
+            .whatsapp-float {
+                width: 54px;
+                height: 54px;
+                font-size: 1.7rem;
+                bottom: 20px;
+                right: 20px;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- BARRA DE PROGRESO SUPERIOR -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- HEADER Y NAVEGACIÓN -->
-    <header>
+    <header id="mainHeader">
         <div class="nav-container">
             <a href="#inicio" class="logo-container">
-                <img src="Insignia.png" alt="Insignia International Lagos Kenpo Karate Studio" loading="lazy" decoding="async">
+                <img src="Insignia.png" alt="Insignia International Lagos Kenpo Karate Studio" decoding="async">
                 <span>International Lagos <br>Kenpo Karate Studio</span>
             </a>
             <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">
@@ -1170,48 +1492,51 @@
     </header>
 
     <main>
-        <!-- SECCIÓN HERO -->
+        <!-- SECCIÓN HERO CON PARTÍCULAS -->
         <section id="inicio" class="hero">
-            <div class="hero-bg"></div>
+            <div class="hero-bg" id="heroBg"></div>
+            <canvas id="heroParticles" aria-hidden="true"></canvas>
             <div class="hero-content">
-                <img src="Insignia.png" alt="Insignia Oficial" class="hero-badge" loading="lazy" decoding="async">
-                <div class="hero-tag">Academia Oficial de Artes Marciales en Huechuraba</div>
-                <h1 class="oriental-title">International Lagos Kenpo Karate Studio</h1>
-                <p>Disciplina, Humildad y Respeto bajo los lineamientos oficiales de la Chinese Karate Federation (CKF) y afiliados a KenpoChile.</p>
-                <a href="#contacto" class="btn">Reserva tu Clase de Prueba</a>
+                <img src="Insignia.png" alt="Insignia Oficial" class="hero-badge" decoding="async">
+                <div class="hero-tag hero-animate delay-2">Academia Oficial de Artes Marciales en Huechuraba</div>
+                <h1 class="oriental-title hero-animate delay-3">International Lagos Kenpo Karate Studio</h1>
+                <p class="hero-animate delay-4">Disciplina, Humildad y Respeto bajo los lineamientos oficiales de la Chinese Karate Federation (CKF) y afiliados a KenpoChile.</p>
+                <div class="hero-animate delay-5">
+                    <a href="#contacto" class="btn magnetic-btn">Reserva tu Clase de Prueba</a>
+                </div>
             </div>
         </section>
 
         <!-- SECCIÓN NOSOTROS -->
         <section id="nosotros">
-            <h2 class="section-title">Sobre Nuestro Dojo</h2>
+            <h2 class="section-title reveal">Sobre Nuestro Dojo</h2>
             <div class="about-grid">
-                <div class="about-text">
+                <div class="about-text reveal reveal-left">
                     <p>En <strong>International Lagos Kenpo Karate Studio</strong> formamos artistas marciales íntegros en Huechuraba, enfocándonos tanto en la defensa personal efectiva como en el desarrollo del carácter, la disciplina y los valores tradicionales.</p>
                     <p>Formamos parte activa de la prestigiosa <strong>Chinese Karate Federation (CKF)</strong> y estamos afiliados a <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="kenpochile-link">KenpoChile</a>, lo que garantiza un estándar técnico riguroso, programas de graduación certificados y un constante perfeccionamiento en el arte del Kenpo.</p>
                     <a href="#programas" class="btn" style="margin-top: 10px;">Conoce más</a>
                 </div>
-                <div class="about-img">
-                    <img src="dojo.png" alt="Instalaciones del Dojo Lagos Kenpo" loading="lazy" decoding="async">
+                <div class="about-img reveal reveal-right">
+                    <img src="dojo.png" id="aboutParallaxImg" alt="Instalaciones del Dojo Lagos Kenpo" loading="lazy" decoding="async">
                 </div>
             </div>
         </section>
 
         <!-- SECCIÓN PROGRAMAS -->
         <section id="programas">
-            <h2 class="section-title">Programas de Entrenamiento</h2>
+            <h2 class="section-title reveal">Programas de Entrenamiento</h2>
             <div class="programs-grid">
-                <article class="program-card">
+                <article class="program-card tilt-card reveal" style="transition-delay: 0.05s;">
                     <i class="fas fa-child" aria-hidden="true"></i>
                     <h3>Kenpo Infantil</h3>
                     <p>Diseñado para niños en Huechuraba, enfocado en mejorar la concentración, el respeto, la coordinación motriz y la confianza a través de la actividad física y marcial.</p>
                 </article>
-                <article class="program-card">
+                <article class="program-card tilt-card reveal" style="transition-delay: 0.15s;">
                     <i class="fas fa-user-ninja" aria-hidden="true"></i>
                     <h3>Kenpo Juvenil y Adultos</h3>
                     <p>Clases orientadas al combate, defensa personal avanzada, acondicionamiento físico y el estudio técnico profundo del sistema en un ambiente seguro.</p>
                 </article>
-                <article class="program-card">
+                <article class="program-card tilt-card reveal" style="transition-delay: 0.25s;">
                     <i class="fas fa-shield-alt" aria-hidden="true"></i>
                     <h3>Defensa Personal Real</h3>
                     <p>Técnicas dinámicas y adaptadas a situaciones reales de la vida cotidiana, priorizando la prevención y la reacción efectiva.</p>
@@ -1222,8 +1547,8 @@
         <!-- SECCIÓN HORARIOS -->
         <div id="horarios" class="schedule-section">
             <div class="schedule-container">
-                <h2 class="section-title" style="margin-bottom: 30px;">Horarios de Clases</h2>
-                <div class="table-responsive">
+                <h2 class="section-title reveal" style="margin-bottom: 30px;">Horarios de Clases</h2>
+                <div class="table-responsive reveal">
                     <table class="schedule-table">
                         <caption>Horario general de entrenamiento en Huechuraba</caption>
                         <thead>
@@ -1247,14 +1572,30 @@
 
         <!-- SECCIÓN INSTRUCTORES -->
         <section id="instructores">
-            <h2 class="section-title">Instructor</h2>
-            <article class="instructor-card-wide">
+            <h2 class="section-title reveal">Instructor</h2>
+            <article class="instructor-card-wide reveal">
                 <div class="instructor-img-container">
                     <img src="profesor.png" alt="Instructor Principal Sensei Carlos Lagos" loading="lazy" decoding="async">
                 </div>
                 <div class="instructor-content-wide">
                     <h3>Sensei Carlos Lagos</h3>
                     <div class="instructor-role">Cinto Negro 1er Grado Black Belt - CKF</div>
+                    
+                    <div class="instructor-stats" id="instructorStats">
+                        <div class="stat-box">
+                            <span class="stat-number" data-target="2013" data-prefix="Desde ">2013</span>
+                            <span class="stat-label">Inicios en Kenpo</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" data-target="13" data-prefix="+">0</span>
+                            <span class="stat-label">Años de Práctica</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number" data-target="1" data-suffix="er Dan">0</span>
+                            <span class="stat-label">Cinturón Negro CKF</span>
+                        </div>
+                    </div>
+
                     <div class="instructor-bio">
                         <h4>Trayectoria en Kenpo Karate</h4>
                         <p>Mi camino en el arte marcial del Kenpo Karate comenzó en septiembre de 2013, cuando ingresé a la escuela Dojo MASS, en su sede de Independencia. Desde entonces, he mantenido un compromiso constante con la disciplina, el aprendizaje y la superación personal. Con el paso de los años, mi progreso técnico y formativo me llevó a trasladarme en 2021 a la sede Dojo MASS Lo Prado, donde alcancé los tres grados de Cinturón Café y obtuve el Grado de Monitor.</p>
@@ -1272,8 +1613,8 @@
 
         <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
         <section id="faq">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
-            <div class="faq-container">
+            <h2 class="section-title reveal">Preguntas Frecuentes</h2>
+            <div class="faq-container reveal">
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
                         <span>¿Necesito experiencia previa para inscribirme?</span>
@@ -1297,12 +1638,11 @@
 
         <!-- SECCIÓN FEDERACIÓN CKF Y AFILIACIÓN KENPOCHILE -->
         <section id="federacion" class="ckf-section">
-            <div class="ckf-content">
+            <div class="ckf-content reveal">
                 <h2>Avalado por la Chinese Karate Federation (CKF)</h2>
                 <p>Pertenecer a la CKF nos otorga el respaldo de una organización sólida, fomentando la hermandad entre dojos, seminarios oficiales y un riguroso programa de grados internacionales.</p>
-                <img src="ckf.png" alt="Insignia Oficial CKF" class="ckf-badge" loading="lazy" decoding="async">
+                <img src="ckf.png" alt="Insignia Oficial CKF" class="ckf-badge tilt-card" loading="lazy" decoding="async">
                 
-                <!-- Bloque de Afiliación KenpoChile -->
                 <div class="affiliation-box">
                     <h3><i class="fas fa-award" style="color: var(--accent-gold); margin-right: 8px;" aria-hidden="true"></i>Escuela Afiliada a KenpoChile</h3>
                     <p>Nuestra academia forma parte oficial de la red nacional <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="kenpochile-link">kenpochile.cl</a>, promoviendo la difusión, el desarrollo técnico y los eventos oficiales del Kenpo en Chile.</p>
@@ -1319,20 +1659,18 @@
 
         <!-- SECCIÓN CONTACTO -->
         <section id="contacto">
-            <h2 class="section-title">Contáctanos</h2>
+            <h2 class="section-title reveal">Contáctanos</h2>
             <div class="contact-grid">
-                <div class="contact-info-card">
+                <div class="contact-info-card reveal reveal-left">
                     <div class="contact-info-content">
                         <div class="contact-info-item">
                             <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                             <div>
                                 <h4>Ubicación</h4>
                                 <p>Avenida El Sauce 1850, Huechuraba</p>
-                                <!-- Botón Waze -->
                                 <a href="https://waze.com/ul?q=Avenida%20El%20Sauce%201850%2C%20Huechuraba" target="_blank" rel="noopener noreferrer" class="btn btn-waze">
                                     <i class="fa-brands fa-waze" aria-hidden="true"></i> Abrir Ruta en Waze
                                 </a>
-                                <!-- Botón Google Maps Directo -->
                                 <a href="https://maps.google.com/?q=Avenida+El+Sauce+1850,+Huechuraba" target="_blank" rel="noopener noreferrer" class="btn btn-maps">
                                     <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Abrir en Google Maps
                                 </a>
@@ -1347,7 +1685,6 @@
                         </div>
                     </div>
 
-                    <!-- Mapa embebido de Google Maps -->
                     <div class="map-container">
                         <iframe 
                             src="https://maps.google.com/maps?q=Avenida%20El%20Sauce%201850,%20Huechuraba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
@@ -1360,7 +1697,7 @@
                 </div>
 
                 <!-- Formulario Único de Mensajería a WhatsApp -->
-                <form class="contact-form" id="whatsappForm">
+                <form class="contact-form reveal reveal-right" id="whatsappForm">
                     <div class="contact-form-header">
                         <h4><i class="fab fa-whatsapp"></i> Envíanos un Mensaje</h4>
                         <p>Completa tus datos y te responderemos directamente por WhatsApp.</p>
@@ -1386,7 +1723,7 @@
         </section>
 
         <!-- SECCIÓN REDES SOCIALES -->
-        <aside class="social-section" aria-label="Redes Sociales">
+        <aside class="social-section reveal" aria-label="Redes Sociales">
             <h3>Síguenos en Redes Sociales</h3>
             <div class="social-icons">
                 <a href="https://www.facebook.com/share/19S6CM4fR1/" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
@@ -1401,6 +1738,15 @@
             </div>
         </aside>
     </main>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://api.whatsapp.com/send?phone=56932291414&text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20una%20clase%20de%20prueba%20de%20Kenpo%20Karate." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="whatsapp-float" 
+       aria-label="Chatear por WhatsApp">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
 
     <!-- FOOTER -->
     <footer>
@@ -1464,6 +1810,181 @@
 
             window.open(mensajeUrl, '_blank', 'noopener,noreferrer');
         });
+
+        const scrollProgress = document.getElementById('scrollProgress');
+        const mainHeader = document.getElementById('mainHeader');
+        const sections = document.querySelectorAll('section[id], div[id="horarios"]');
+        const navItems = document.querySelectorAll('.nav-links a');
+        const aboutParallaxImg = document.getElementById('aboutParallaxImg');
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+
+            if (scrollTop > 50) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+
+            if (aboutParallaxImg && window.innerWidth > 768) {
+                const rect = aboutParallaxImg.parentElement.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const offset = (rect.top - window.innerHeight / 2) * 0.06;
+                    aboutParallaxImg.style.transform = `scale(1.08) translateY(${offset}px)`;
+                }
+            }
+
+            let currentSection = '';
+            sections.forEach(sec => {
+                const sectionTop = sec.offsetTop - 160;
+                if (scrollTop >= sectionTop) {
+                    currentSection = sec.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(link => {
+                link.classList.remove('active-link');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active-link');
+                }
+            });
+        }, { passive: true });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        const statsContainer = document.getElementById('instructorStats');
+        let statsAnimated = false;
+        if (statsContainer) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && !statsAnimated) {
+                    statsAnimated = true;
+                    document.querySelectorAll('.stat-number').forEach(counter => {
+                        const target = parseInt(counter.getAttribute('data-target'), 10);
+                        const prefix = counter.getAttribute('data-prefix') || '';
+                        const suffix = counter.getAttribute('data-suffix') || '';
+                        const start = target > 100 ? target - 15 : 0;
+                        const duration = 1400;
+                        const startTime = performance.now();
+
+                        function updateCount(currentTime) {
+                            const elapsed = currentTime - startTime;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const easeOut = 1 - Math.pow(1 - progress, 3);
+                            const currentVal = Math.floor(start + (target - start) * easeOut);
+                            counter.textContent = `${prefix}${currentVal}${suffix}`;
+                            if (progress < 1) {
+                                requestAnimationFrame(updateCount);
+                            } else {
+                                counter.textContent = `${prefix}${target}${suffix}`;
+                            }
+                        }
+                        requestAnimationFrame(updateCount);
+                    });
+                }
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsContainer);
+        }
+
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                if (window.innerWidth < 768) return;
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = ((y - centerY) / centerY) * -6;
+                const rotateY = ((x - centerX) / centerX) * 6;
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+            });
+        });
+
+        document.querySelectorAll('.magnetic-btn').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                if (window.innerWidth < 768) return;
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.18}px, ${y * 0.25}px)`;
+            });
+
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        const canvas = document.getElementById('heroParticles');
+        if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const ctx = canvas.getContext('2d');
+            let width, height, particles = [];
+
+            function resizeCanvas() {
+                width = canvas.width = canvas.offsetWidth;
+                height = canvas.height = canvas.offsetHeight;
+            }
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            const particleCount = window.innerWidth < 768 ? 22 : 42;
+            const colors = ['rgba(255, 30, 38, ', 'rgba(197, 160, 89, '];
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    radius: Math.random() * 2.2 + 0.8,
+                    speedY: -(Math.random() * 0.55 + 0.2),
+                    speedX: (Math.random() - 0.5) * 0.35,
+                    alpha: Math.random() * 0.6 + 0.2,
+                    color: colors[Math.floor(Math.random() * colors.length)]
+                });
+            }
+
+            function animateParticles() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.y += p.speedY;
+                    p.x += p.speedX;
+                    if (p.y < -10) {
+                        p.y = height + 10;
+                        p.x = Math.random() * width;
+                    }
+                    if (p.x < -10) p.x = width + 10;
+                    if (p.x > width + 10) p.x = -10;
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `${p.color}${p.alpha})`;
+                    ctx.fill();
+                });
+                requestAnimationFrame(animateParticles);
+            }
+            animateParticles();
+        }
     </script>
 </body>
 </html>
