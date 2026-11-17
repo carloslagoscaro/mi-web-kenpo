@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0b0b">
     <title>Clases de Kenpo Karate en Huechuraba | International Lagos Kenpo Studio</title>
-    
+
     <!-- Meta Descripciones y SEO Local -->
     <meta name="description" content="Academia oficial de Kenpo Karate en Huechuraba. Clases de defensa personal para niños, jóvenes y adultos avaladas por la CKF y KenpoChile. ¡Reserva tu clase de prueba!">
     <link rel="canonical" href="https://www.ilkks.cl/">
@@ -14,7 +15,11 @@
     <meta property="og:description" content="Aprende Kenpo Karate y defensa personal en Huechuraba. Disciplina, técnica y respaldo oficial CKF.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.ilkks.cl/">
-    <meta property="og:image" content="Insignia.png">
+    <meta property="og:image" content="https://www.ilkks.cl/Insignia.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="International Lagos Kenpo Karate Studio">
+    <meta name="twitter:description" content="Kenpo Karate y defensa personal en Huechuraba. Respaldo oficial CKF y KenpoChile.">
+    <meta name="twitter:image" content="https://www.ilkks.cl/Insignia.png">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -22,7 +27,8 @@
       "@context": "https://schema.org",
       "@type": "SportsActivityLocation",
       "name": "International Lagos Kenpo Karate Studio",
-      "image": "Insignia.png",
+      "description": "Academia oficial de Kenpo Karate y defensa personal en Huechuraba, Chile. Miembro de la Chinese Karate Federation (CKF) y afiliada a KenpoChile.",
+      "image": "https://www.ilkks.cl/Insignia.png",
       "url": "https://www.ilkks.cl/",
       "telephone": "+56932291414",
       "address": {
@@ -52,16 +58,59 @@
       ]
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Necesito experiencia previa para inscribirme?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No se necesita ninguna experiencia previa. Nuestros programas están diseñados para recibir tanto a principiantes absolutos como a personas con experiencia previa en artes marciales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué debo llevar a mi primera clase de prueba?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Solo necesitas ropa deportiva cómoda (polera y pantalón deportivo o buzo) y una botella con agua para mantenerte hidratado. Entrenamos descalzos en el dojo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde se realizan las clases?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "En Avenida El Sauce 1850, sede Valle Verde, Huechuraba. Puedes abrir la ruta en Waze o Google Maps desde la sección de contacto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo reservo una clase de prueba?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Escríbenos por WhatsApp al +56 9 3229 1414 o completa el formulario de la sección de contacto. Te confirmaremos el horario disponible."
+          }
+        }
+      ]
+    }
+    </script>
 
-    <!-- Google Fonts -->
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
             --primary-color: #ff1e26;
             --primary-hover: #d41119;
             --accent-gold: #c5a059;
+            --gold-light: #ecd8ad;
             --dark-color: #0b0b0b;
             --darker-color: #050505;
             --surface-color: #121212;
@@ -73,34 +122,68 @@
             --waze-color: #33ccff;
             --maps-color: #4285F4;
             --whatsapp-color: #25d366;
+            --font-display: 'Montserrat', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+            --font-brush: 'Ma Shan Zheng', cursive;
+            --radius: 16px;
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
+            scroll-padding-top: 96px;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: var(--font-body);
             background-color: var(--dark-color);
             color: var(--light-color);
             line-height: 1.7;
             overflow-x: hidden;
         }
 
-        h2, h3, h4 {
-            font-family: 'Montserrat', sans-serif;
+        /* Grano sutil sobre toda la página */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            z-index: 9990;
+            pointer-events: none;
+            opacity: 0.045;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+        }
+
+        ::selection {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--darker-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-gold));
+            border-radius: 10px;
+            border: 2px solid var(--darker-color);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-display);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .oriental-title {
-            font-family: 'Ma Shan Zheng', cursive;
-            letter-spacing: 3px;
-            font-weight: normal;
-            color: #fff;
+        img {
+            max-width: 100%;
         }
 
         /* --- BARRA DE PROGRESO DE LECTURA --- */
@@ -112,26 +195,47 @@
             width: 0%;
             background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
             z-index: 1002;
-            transition: width 0.1s ease-out;
+            box-shadow: 0 0 12px rgba(255, 30, 38, 0.6);
+        }
+
+        /* --- HALO QUE SIGUE AL CURSOR --- */
+        .cursor-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 520px;
+            height: 520px;
+            margin: -260px 0 0 -260px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 30, 38, 0.16), rgba(197, 160, 89, 0.06) 45%, transparent 70%);
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            will-change: transform;
+        }
+
+        .cursor-glow.on {
+            opacity: 1;
         }
 
         /* --- HEADER & NAV --- */
         header {
-            background-color: rgba(11, 11, 11, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background-color: rgba(11, 11, 11, 0.82);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: background-color 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         }
 
         header.scrolled {
             background-color: rgba(5, 5, 5, 0.96);
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.75);
-            border-bottom-color: rgba(255, 30, 38, 0.25);
+            border-bottom-color: rgba(255, 30, 38, 0.28);
         }
 
         .nav-container {
@@ -140,27 +244,30 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 16px 30px;
+            gap: 20px;
+            padding: 14px 30px;
             transition: padding 0.35s ease;
+            position: relative;
+            z-index: 30;
         }
 
         header.scrolled .nav-container {
-            padding: 10px 30px;
+            padding: 9px 30px;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 13px;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .logo-container img {
-            height: 48px;
+            height: 47px;
             width: auto;
-            mix-blend-mode: screen; 
-            filter: drop-shadow(0 0 8px rgba(255, 30, 38, 0.4));
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            filter: drop-shadow(0 0 8px rgba(255, 30, 38, 0.45));
+            transition: transform 0.4s var(--ease-out);
         }
 
         .logo-container:hover img {
@@ -168,8 +275,8 @@
         }
 
         .logo-container span {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.75rem;
+            font-family: var(--font-display);
+            font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
             color: #ffffff;
@@ -180,19 +287,21 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 24px;
+            gap: 21px;
             align-items: center;
+            margin-left: auto;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-gray);
             font-weight: 500;
-            font-size: 0.88rem;
+            font-size: 0.83rem;
             transition: color 0.3s ease;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.4px;
             position: relative;
             padding: 6px 0;
+            white-space: nowrap;
         }
 
         .nav-links a::after {
@@ -203,7 +312,7 @@
             width: 0%;
             height: 2px;
             background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: width 0.3s var(--ease-out);
             transform: translateX(-50%);
         }
 
@@ -217,50 +326,139 @@
             width: 100%;
         }
 
+        .nav-links .nav-cta {
+            background: linear-gradient(135deg, var(--primary-color), #b30710);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.72rem;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            box-shadow: 0 6px 18px rgba(255, 30, 38, 0.35);
+            transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease;
+        }
+
+        .nav-links .nav-cta::after {
+            display: none;
+        }
+
+        .nav-links .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(255, 30, 38, 0.5);
+        }
+
         .menu-toggle {
             display: none;
-            font-size: 1.5rem;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            font-size: 1.35rem;
             color: var(--light-color);
             cursor: pointer;
-            background: none;
-            border: none;
-            padding: 5px;
-            transition: transform 0.3s ease, color 0.3s ease;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         .menu-toggle:hover {
             color: var(--primary-color);
+            border-color: rgba(255, 30, 38, 0.4);
         }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO --- */
         .hero {
             min-height: 100vh;
+            min-height: 100svh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 140px 20px 90px;
+            padding: 150px 22px 140px;
             position: relative;
             overflow: hidden;
-            max-width: 100%;
         }
 
         .hero-bg {
             position: absolute;
-            top: -20px;
-            left: -20px;
-            right: -20px;
-            bottom: -20px;
+            top: -22px;
+            left: -22px;
+            right: -22px;
+            bottom: -22px;
             background: url('dojo.png') no-repeat center center/cover;
-            filter: blur(5px) brightness(0.4);
+            filter: blur(4px) brightness(0.42) saturate(0.9);
             z-index: 1;
-            animation: kenBurns 22s ease-in-out infinite alternate;
+            animation: kenBurns 24s ease-in-out infinite alternate;
             will-change: transform;
         }
 
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 50% 10%, rgba(255, 30, 38, 0.16), transparent 55%),
+                linear-gradient(180deg, rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.78));
+        }
+
         @keyframes kenBurns {
-            0% { transform: scale(1.04) translate(0, 0); }
-            100% { transform: scale(1.14) translate(-1.5%, -1%); }
+            0% { transform: scale(1.05) translate(0, 0); }
+            100% { transform: scale(1.16) translate(-1.6%, -1.2%); }
+        }
+
+        .hero-orbs {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(70px);
+            pointer-events: none;
+        }
+
+        .orb-red {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 30, 38, 0.3);
+            top: 8%;
+            right: -100px;
+            animation: drift 17s ease-in-out infinite alternate;
+        }
+
+        .orb-gold {
+            width: 320px;
+            height: 320px;
+            background: rgba(197, 160, 89, 0.18);
+            bottom: 4%;
+            left: -90px;
+            animation: drift 21s ease-in-out infinite alternate-reverse;
+        }
+
+        @keyframes drift {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(-46px, 34px) scale(1.18); }
+        }
+
+        .hero-kanji {
+            position: absolute;
+            top: 50%;
+            right: 4%;
+            transform: translateY(-50%);
+            font-family: var(--font-brush);
+            font-size: 17rem;
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.035);
+            writing-mode: vertical-rl;
+            z-index: 2;
+            pointer-events: none;
+            user-select: none;
         }
 
         #heroParticles {
@@ -268,7 +466,7 @@
             inset: 0;
             width: 100%;
             height: 100%;
-            z-index: 2;
+            z-index: 3;
             pointer-events: none;
         }
 
@@ -276,8 +474,8 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, transparent 20%, rgba(5, 5, 5, 0.88) 100%);
-            z-index: 2;
+            background: radial-gradient(circle at center, transparent 22%, rgba(5, 5, 5, 0.86) 100%);
+            z-index: 3;
             pointer-events: none;
         }
 
@@ -287,80 +485,209 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 140px;
+            height: 190px;
             background: linear-gradient(to top, var(--dark-color), transparent);
-            z-index: 2;
+            z-index: 4;
             pointer-events: none;
         }
 
         .hero-content {
-            max-width: 950px;
+            max-width: 960px;
             position: relative;
-            z-index: 3;
+            z-index: 5;
             width: 100%;
+            will-change: transform;
         }
 
-        .hero-animate {
+        .hero-content > * {
             opacity: 0;
-            transform: translateY(28px);
-            animation: heroEntrance 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            animation: heroIn 0.95s var(--ease-out) forwards;
         }
 
-        .delay-2 { animation-delay: 0.25s; }
-        .delay-3 { animation-delay: 0.4s; }
-        .delay-4 { animation-delay: 0.55s; }
-        .delay-5 { animation-delay: 0.7s; }
+        .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+        .hero-content > *:nth-child(2) { animation-delay: 0.28s; }
+        .hero-content > *:nth-child(3) { animation-delay: 0.44s; }
+        .hero-content > *:nth-child(4) { animation-delay: 0.62s; }
+        .hero-content > *:nth-child(5) { animation-delay: 0.78s; }
+        .hero-content > *:nth-child(6) { animation-delay: 0.94s; }
 
-        @keyframes heroEntrance {
+        @keyframes heroIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        .hero-badge {
-            width: 160px;
+        .hero-emblem {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            display: grid;
+            place-items: center;
+        }
+
+        .hero-emblem::before {
+            content: '';
+            position: absolute;
+            inset: -14px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 30, 38, 0.3), transparent 66%);
+            filter: blur(8px);
+            animation: auraPulse 4.5s ease-in-out infinite;
+        }
+
+        .hero-emblem img {
+            position: relative;
+            z-index: 2;
+            width: 116px;
             height: auto;
-            margin-bottom: 22px;
-            mix-blend-mode: screen;
-            filter: drop-shadow(0 0 25px rgba(255, 30, 38, 0.6));
-            animation: heroEntrance 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards, floatBadge 4s ease-in-out 1s infinite alternate;
-            transition: transform 0.4s ease;
+            filter: drop-shadow(0 0 22px rgba(255, 30, 38, 0.55));
+            animation: floatBadge 5.5s ease-in-out infinite;
+        }
+
+        .emblem-ring {
+            position: absolute;
+            inset: -4px;
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            border-radius: 50%;
+        }
+
+        .emblem-ring.ring2 {
+            inset: -20px;
+            border-style: dashed;
+            border-color: rgba(255, 30, 38, 0.3);
+            animation: spin 28s linear infinite;
+        }
+
+        @keyframes auraPulse {
+            0%, 100% { opacity: 0.55; transform: scale(0.94); }
+            50% { opacity: 1; transform: scale(1.06); }
         }
 
         @keyframes floatBadge {
-            0% { filter: drop-shadow(0 0 15px rgba(255, 30, 38, 0.45)); transform: translateY(0) scale(1); }
-            100% { filter: drop-shadow(0 0 35px rgba(255, 30, 38, 0.85)); transform: translateY(-8px) scale(1.03); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-9px) rotate(1.2deg); }
         }
 
-        .hero-tag {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.8rem;
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-eyebrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            font-family: var(--font-display);
+            font-size: 0.72rem;
             font-weight: 700;
             color: var(--accent-gold);
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 15px;
+            letter-spacing: 4.5px;
+            margin-bottom: 18px;
+        }
+
+        .hero-eyebrow span {
+            display: block;
+            width: 34px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold));
+        }
+
+        .hero-eyebrow span:last-child {
+            background: linear-gradient(90deg, var(--accent-gold), transparent);
         }
 
         .hero h1 {
-            font-size: 3.6rem;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            text-transform: none;
+            line-height: 1.05;
+        }
+
+        .hero-title-brush {
+            display: block;
+            font-family: var(--font-brush);
+            font-weight: 400;
+            font-size: clamp(2.4rem, 6.6vw, 4.8rem);
+            letter-spacing: 0.02em;
+            padding: 0 0.08em 0.14em;
+            background: linear-gradient(100deg, #f6e7c2 0%, #e2c183 22%, #fffaf0 42%, #c5a059 62%, #f0dcae 82%, #f6e7c2 100%);
+            background-size: 220% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            animation: shineText 9s linear infinite;
+            filter: drop-shadow(0 8px 34px rgba(197, 160, 89, 0.28));
+        }
+
+        @keyframes shineText {
+            to { background-position: 220% center; }
+        }
+
+        .hero-title-solid {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: clamp(1.05rem, 2.9vw, 2.05rem);
+            letter-spacing: 0.24em;
             color: #ffffff;
-            text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
-            line-height: 1.15;
+            margin-top: 4px;
+            text-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
         }
 
-        .hero p {
-            font-size: 1.15rem;
+        .hero-title-solid em {
+            font-style: normal;
+            background: linear-gradient(90deg, var(--accent-gold), var(--gold-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
             color: #d1d5db;
-            margin-bottom: 35px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 32px;
+            max-width: 720px;
         }
 
-        /* --- BUTTONS --- */
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-bottom: 34px;
+        }
+
+        .hero-meta {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px 30px;
+            font-size: 0.82rem;
+            color: var(--text-gray);
+        }
+
+        .hero-meta li {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        .hero-meta i {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+        }
+
+        /* --- BOTONES --- */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -368,19 +695,21 @@
             gap: 10px;
             background-color: var(--primary-color);
             color: #fff;
-            padding: 15px 34px;
-            border-radius: 8px;
+            padding: 15px 32px;
+            border-radius: 10px;
             text-decoration: none;
+            font-family: var(--font-display);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.9rem;
-            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 0.82rem;
+            transition: transform 0.25s var(--ease-out), background-color 0.3s ease, box-shadow 0.3s ease;
             border: none;
             cursor: pointer;
             box-shadow: 0 4px 20px rgba(255, 30, 38, 0.35);
             position: relative;
             overflow: hidden;
+            white-space: nowrap;
         }
 
         .btn::before {
@@ -388,47 +717,59 @@
             position: absolute;
             top: 0;
             left: -100%;
-            width: 60%;
+            width: 55%;
             height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-            transition: left 0.6s ease;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+            transition: left 0.65s ease;
+            pointer-events: none;
         }
 
         .btn:hover::before {
-            left: 130%;
+            left: 140%;
         }
 
         .btn:hover {
             background-color: var(--primary-hover);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 30, 38, 0.65);
+            box-shadow: 0 12px 32px rgba(255, 30, 38, 0.6);
+        }
+
+        .btn i {
+            font-size: 0.8rem;
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .btn:hover i {
+            transform: translateX(3px);
         }
 
         .btn-outline-gold {
             background-color: transparent;
             color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.15);
+            border: 1px solid rgba(197, 160, 89, 0.7);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.12);
         }
 
         .btn-outline-gold:hover {
             background-color: var(--accent-gold);
             color: #0b0b0b;
-            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.35);
+            box-shadow: 0 10px 28px rgba(197, 160, 89, 0.35);
         }
 
         .btn-waze {
             background-color: var(--waze-color);
             color: #0a0a0a;
             box-shadow: 0 4px 15px rgba(51, 204, 255, 0.25);
-            margin-top: 12px;
+            margin-top: 14px;
             width: 100%;
             padding: 13px 20px;
+            border-radius: 9px;
         }
 
         .btn-waze:hover {
             background-color: #25b3e6;
             color: #000;
+            box-shadow: 0 10px 25px rgba(51, 204, 255, 0.35);
         }
 
         .btn-maps {
@@ -438,25 +779,81 @@
             margin-top: 10px;
             width: 100%;
             padding: 13px 20px;
+            border-radius: 9px;
         }
 
         .btn-maps:hover {
             background-color: #3367d6;
+            box-shadow: 0 10px 25px rgba(66, 133, 244, 0.35);
         }
 
-        /* --- CLASES DE SCROLL REVEAL --- */
+        /* --- CINTA EN MOVIMIENTO --- */
+        .marquee-wrap {
+            position: relative;
+            z-index: 7;
+            margin-top: -42px;
+        }
+
+        .marquee {
+            transform: rotate(-1.4deg) scale(1.03);
+            background: linear-gradient(90deg, #ff1e26, #b30710 45%, #e0151c 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+            overflow: hidden;
+            box-shadow: 0 18px 50px rgba(255, 30, 38, 0.22);
+        }
+
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            width: max-content;
+            padding: 15px 0;
+            animation: marquee 34s linear infinite;
+        }
+
+        .marquee:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        .marquee-track span {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 0.9rem;
+            letter-spacing: 0.26em;
+            text-transform: uppercase;
+            color: #fff;
+            padding: 0 26px;
+            white-space: nowrap;
+        }
+
+        .marquee-track span:nth-child(even) {
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.65);
+        }
+
+        .marquee-track i {
+            font-style: normal;
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        @keyframes marquee {
+            to { transform: translateX(-50%); }
+        }
+
+        /* --- REVEAL AL SCROLL --- */
         .reveal {
             opacity: 0;
-            transform: translateY(35px);
-            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            transform: translateY(32px);
+            transition: opacity 0.85s var(--ease-out) var(--d, 0s), transform 0.85s var(--ease-out) var(--d, 0s);
         }
 
         .reveal.reveal-left {
-            transform: translateX(-35px);
+            transform: translateX(-42px);
         }
 
         .reveal.reveal-right {
-            transform: translateX(35px);
+            transform: translateX(42px);
         }
 
         .reveal.visible {
@@ -464,493 +861,138 @@
             transform: translate(0, 0);
         }
 
-        /* --- SECTIONS GENERAL --- */
-        section {
-            padding: 110px 20px 80px 20px;
+        /* --- SECCIONES --- */
+        .section {
+            position: relative;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 112px 24px 88px;
+            overflow: hidden;
+        }
+
+        .section-full {
+            position: relative;
+            padding: 104px 24px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 58px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+        }
+
+        .eyebrow::before,
+        .eyebrow::after {
+            content: '';
+            width: 26px;
+            height: 1px;
+            background: rgba(197, 160, 89, 0.55);
+        }
+
+        .kicker {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.4rem;
-            margin-bottom: 60px;
-            position: relative;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
+            font-size: clamp(1.75rem, 4vw, 2.65rem);
+            font-weight: 800;
+            margin-top: 14px;
             color: #fff;
+            letter-spacing: 0.03em;
+            line-height: 1.2;
         }
 
         .section-title::after {
             content: '';
             display: block;
-            width: 50px;
+            width: 46px;
             height: 3px;
             background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
-            margin: 15px auto 0;
+            margin: 16px auto 0;
             border-radius: 2px;
-            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: width 0.8s var(--ease-out) 0.15s;
         }
 
-        .section-title.visible::after {
-            width: 95px;
+        .section-head.visible .section-title::after {
+            width: 96px;
         }
 
-        /* --- ABOUT SECTION --- */
+        .section-head p.lead {
+            margin-top: 18px;
+            color: var(--text-gray);
+            font-size: 1.02rem;
+        }
+
+        /* --- NOSOTROS --- */
+        .glow-orb {
+            position: absolute;
+            width: 460px;
+            height: 460px;
+            border-radius: 50%;
+            filter: blur(90px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-orb.red {
+            background: rgba(255, 30, 38, 0.09);
+            top: 10%;
+            right: -180px;
+        }
+
+        .glow-orb.gold {
+            background: rgba(197, 160, 89, 0.07);
+            bottom: 0;
+            left: -200px;
+        }
+
         .about-grid {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 50px;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 62px;
             align-items: center;
         }
 
         .about-text p {
             color: var(--text-gray);
-            margin-bottom: 22px;
-            font-size: 1.05rem;
+            margin-bottom: 20px;
+            font-size: 1.03rem;
+        }
+
+        .about-text .lead {
+            font-size: 1.14rem;
+            color: #d8dbe0;
         }
 
         .about-text strong {
             color: var(--light-color);
-        }
-
-        .about-img {
-            text-align: center;
-            position: relative;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-            border: 1px solid var(--border-color);
-        }
-
-        .about-img::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 2px solid transparent;
-            border-radius: 14px;
-            transition: border-color 0.4s ease;
-            pointer-events: none;
-        }
-
-        .about-img:hover::after {
-            border-color: rgba(197, 160, 89, 0.5);
-        }
-
-        .about-img img {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-            will-change: transform;
-        }
-
-        /* --- PROGRAMS SECTION CON TILT 3D --- */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 30px;
-            perspective: 1000px;
-        }
-
-        .program-card {
-            background-color: var(--surface-card);
-            padding: 40px 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            border-top: 4px solid var(--primary-color);
-            transition: transform 0.2s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            position: relative;
-            overflow: hidden;
-            transform-style: preserve-3d;
-        }
-
-        .program-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle 220px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 30, 38, 0.14), transparent 80%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .program-card:hover::before {
-            opacity: 1;
-        }
-
-        .program-card:hover {
-            border-color: rgba(255, 30, 38, 0.55);
-            box-shadow: 0 22px 45px rgba(0,0,0,0.65), 0 0 25px rgba(255, 30, 38, 0.18);
-        }
-
-        .program-card i {
-            font-size: 2.4rem;
-            color: var(--primary-color);
-            margin-bottom: 22px;
-            display: inline-block;
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.3s ease;
-            transform: translateZ(20px);
-        }
-
-        .program-card:hover i {
-            transform: translateZ(30px) scale(1.18) rotate(-6deg);
-            color: var(--accent-gold);
-        }
-
-        .program-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            letter-spacing: 0.5px;
-            color: #fff;
-            transform: translateZ(15px);
-        }
-
-        .program-card p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            transform: translateZ(10px);
-        }
-
-        /* --- SCHEDULE SECTION --- */
-        .schedule-section {
-            background-color: var(--surface-color);
-            padding: 100px 20px;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            max-width: 100%;
-        }
-
-        .schedule-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .table-responsive {
-            width: 100%;
-            overflow-x: auto;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            border: 1px solid var(--border-color);
-        }
-
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            background-color: var(--surface-card);
-        }
-
-        .schedule-table caption {
-            padding: 12px;
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            caption-side: bottom;
-        }
-
-        .schedule-table th, .schedule-table td {
-            padding: 20px 26px;
-            text-align: left;
-            border-bottom: 1px solid var(--border-color);
-            transition: background-color 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
-        }
-
-        .schedule-table th {
-            background: linear-gradient(90deg, var(--primary-color), #b30710);
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        .schedule-table td {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        .schedule-table tbody tr:hover td {
-            color: #fff;
-            background-color: var(--surface-card-hover);
-        }
-
-        .schedule-table tbody tr:hover td:first-child {
-            padding-left: 32px;
-            border-left: 3px solid var(--accent-gold);
-        }
-
-        /* --- INSTRUCTOR SECTION --- */
-        .instructor-card-wide {
-            background-color: var(--surface-card);
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            border-bottom: 4px solid var(--primary-color);
-            display: grid;
-            grid-template-columns: 380px 1fr;
-            gap: 40px;
-            align-items: start;
-            padding: 40px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.4);
-            transition: border-color 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .instructor-card-wide:hover {
-            border-color: rgba(197, 160, 89, 0.35);
-            box-shadow: 0 25px 55px rgba(0,0,0,0.6);
-        }
-
-        .instructor-img-container {
-            width: 100%;
-            height: 100%;
-            min-height: 480px;
-            background-color: #121212;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border: 1px solid var(--border-color);
-        }
-
-        .instructor-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-            display: block;
-            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .instructor-img-container:hover img {
-            transform: scale(1.04);
-        }
-
-        .instructor-content-wide {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .instructor-content-wide h3 {
-            font-size: 2.1rem;
-            color: #fff;
-        }
-
-        .instructor-role {
-            color: var(--accent-gold);
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .instructor-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 14px;
-            margin: 8px 0;
-        }
-
-        .stat-box {
-            background-color: var(--darker-color);
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            padding: 14px 12px;
-            text-align: center;
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .stat-box:hover {
-            transform: translateY(-3px);
-            border-color: var(--accent-gold);
-        }
-
-        .stat-number {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.45rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            display: block;
-            line-height: 1.2;
-        }
-
-        .stat-label {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: var(--text-gray);
-            margin-top: 4px;
-            display: block;
-        }
-
-        .instructor-bio h4 {
-            font-size: 1.1rem;
-            color: #fff;
-            margin-top: 20px;
-            margin-bottom: 8px;
-            border-left: 3px solid var(--primary-color);
-            padding-left: 12px;
-            transition: border-color 0.3s ease, padding-left 0.3s ease;
-        }
-
-        .instructor-bio h4:hover {
-            border-left-color: var(--accent-gold);
-            padding-left: 16px;
-        }
-
-        .instructor-bio p {
-            color: var(--text-gray);
-            font-size: 0.95rem;
-            line-height: 1.75;
-            margin-bottom: 15px;
-        }
-
-        /* --- FAQ SECTION --- */
-        .faq-container {
-            max-width: 850px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .faq-item {
-            background-color: var(--surface-card);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            border-left: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            border-color: rgba(255, 30, 38, 0.35);
-            transform: translateX(4px);
-        }
-
-        .faq-item.active {
-            border-left-color: var(--primary-color);
-            background-color: var(--surface-card-hover);
-        }
-
-        .faq-question {
-            padding: 22px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1rem;
-            background: none;
-            border: none;
-            width: 100%;
-            color: var(--light-color);
-            text-align: left;
-        }
-
-        .faq-question i {
-            color: var(--primary-color);
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-shrink: 0;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease;
-            padding: 0 25px;
-            color: var(--text-gray);
-            font-size: 0.95rem;
-        }
-
-        .faq-item.active .faq-answer {
-            max-height: 300px;
-            padding: 0 25px 22px 25px;
-        }
-
-        .faq-item.active .faq-question i {
-            transform: rotate(180deg);
-            color: var(--accent-gold);
-        }
-
-        /* --- FEDERATION & AFFILIATIONS SECTION --- */
-        .ckf-section {
-            background-color: var(--surface-color);
-            text-align: center;
-            padding: 100px 20px;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            max-width: 100%;
-        }
-
-        .ckf-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .ckf-section h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .ckf-section p {
-            max-width: 750px;
-            margin: 0 auto 30px;
-            color: var(--text-gray);
-            font-size: 1.05rem;
-        }
-
-        .ckf-badge {
-            width: 170px;
-            height: auto;
-            margin-bottom: 30px;
-            border-radius: 10px;
-            filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
-            transition: transform 0.25s ease-out, filter 0.4s ease;
-        }
-
-        .ckf-badge:hover {
-            filter: drop-shadow(0 14px 28px rgba(197, 160, 89, 0.4));
-        }
-
-        .affiliation-box {
-            background-color: var(--surface-card);
-            border: 1px solid var(--border-color);
-            border-left: 4px solid var(--accent-gold);
-            border-radius: 12px;
-            padding: 25px 35px;
-            max-width: 700px;
-            width: 100%;
-            margin-bottom: 35px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-        }
-
-        .affiliation-box:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        }
-
-        .affiliation-box h3 {
-            font-size: 1.15rem;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        .affiliation-box p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: var(--text-gray);
         }
 
         .kenpochile-link {
@@ -965,69 +1007,1240 @@
             text-decoration: underline;
         }
 
+        .about-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 28px 0 30px;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 13px 16px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            transition: transform 0.35s var(--ease-out), border-color 0.35s ease, background-color 0.35s ease;
+        }
+
+        .about-features li:hover {
+            transform: translateX(6px);
+            border-color: rgba(197, 160, 89, 0.4);
+            background-color: rgba(255, 255, 255, 0.04);
+        }
+
+        .af-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 10px;
+            background: rgba(255, 30, 38, 0.1);
+            border: 1px solid rgba(255, 30, 38, 0.22);
+            color: var(--primary-color);
+            font-size: 0.95rem;
+        }
+
+        .about-features strong {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 0.88rem;
+            letter-spacing: 0.4px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .about-features li > div > span {
+            display: block;
+            font-size: 0.83rem;
+            color: var(--text-gray);
+            line-height: 1.5;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            transform: translate(18px, 18px);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            border-radius: var(--radius);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .about-img {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 24px 55px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--border-color);
+            z-index: 1;
+            height: 470px;
+        }
+
+        .about-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(5, 5, 5, 0.85) 0%, transparent 45%);
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.9s var(--ease-out);
+            will-change: transform;
+        }
+
+        .about-img:hover img {
+            transform: scale(1.06);
+        }
+
+        .about-caption {
+            position: absolute;
+            left: 16px;
+            top: 16px;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(6, 6, 8, 0.62);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            color: rgba(255, 255, 255, 0.9);
+            font-family: var(--font-display);
+            font-size: 0.62rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .about-caption i {
+            color: var(--accent-gold);
+        }
+
+        .seal {
+            position: absolute;
+            left: -16px;
+            bottom: -22px;
+            width: 126px;
+            height: 126px;
+            border-radius: 50%;
+            background: #0c0c0e;
+            border: 1px solid rgba(197, 160, 89, 0.5);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.65);
+            z-index: 3;
+            display: grid;
+            place-items: center;
+        }
+
+        .seal svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            animation: spin 26s linear infinite;
+        }
+
+        .seal svg text {
+            font-family: var(--font-display);
+            font-size: 9.4px;
+            font-weight: 700;
+            letter-spacing: 2.1px;
+            fill: var(--accent-gold);
+            text-transform: uppercase;
+        }
+
+        .seal-center {
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 1.12rem;
+            letter-spacing: 1px;
+            color: #fff;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .seal-center small {
+            display: block;
+            font-size: 0.5rem;
+            letter-spacing: 2.6px;
+            color: var(--text-gray);
+            margin-top: 3px;
+        }
+
+        /* --- PROGRAMAS --- */
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 26px;
+            perspective: 1100px;
+        }
+
+        .program-card {
+            background: linear-gradient(170deg, #1a1a1e 0%, #121214 100%);
+            padding: 42px 32px 36px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            transition: transform 0.25s ease-out, box-shadow 0.4s ease, border-color 0.4s ease;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .program-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle 240px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 30, 38, 0.15), transparent 75%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .program-card:hover::before {
+            opacity: 1;
+        }
+
+        .program-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.55s var(--ease-out);
+        }
+
+        .program-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .program-card:hover {
+            border-color: rgba(255, 30, 38, 0.5);
+            box-shadow: 0 26px 55px rgba(0, 0, 0, 0.65), 0 0 30px rgba(255, 30, 38, 0.16);
+        }
+
+        .program-card.tilting {
+            transition: box-shadow 0.4s ease, border-color 0.4s ease;
+        }
+
+        .card-num {
+            position: absolute;
+            top: 14px;
+            right: 22px;
+            font-family: var(--font-display);
+            font-weight: 900;
+            font-size: 3.3rem;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.09);
+            pointer-events: none;
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 30, 38, 0.09);
+            border: 1px solid rgba(255, 30, 38, 0.25);
+            margin-bottom: 24px;
+            transform: translateZ(24px);
+            transition: transform 0.45s var(--ease-out), background 0.35s ease, border-color 0.35s ease;
+        }
+
+        .card-icon i {
+            font-size: 1.55rem;
+            color: var(--primary-color);
+            transition: color 0.35s ease;
+        }
+
+        .program-card:hover .card-icon {
+            background: linear-gradient(135deg, var(--primary-color), #b30710);
+            border-color: transparent;
+            transform: translateZ(34px) scale(1.08) rotate(-5deg);
+            box-shadow: 0 12px 26px rgba(255, 30, 38, 0.4);
+        }
+
+        .program-card:hover .card-icon i {
+            color: #fff;
+        }
+
+        .program-card h3 {
+            margin-bottom: 13px;
+            font-size: 1.18rem;
+            letter-spacing: 0.6px;
+            color: #fff;
+            transform: translateZ(16px);
+        }
+
+        .program-card p {
+            color: var(--text-gray);
+            font-size: 0.94rem;
+            transform: translateZ(10px);
+            margin-bottom: 22px;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-gold);
+            font-family: var(--font-display);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transform: translateZ(14px);
+        }
+
+        .card-link i {
+            font-size: 0.7rem;
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .card-link:hover i {
+            transform: translateX(5px);
+        }
+
+        /* --- HORARIOS --- */
+        .schedule-section {
+            background:
+                radial-gradient(ellipse at 15% 0%, rgba(255, 30, 38, 0.07), transparent 55%),
+                radial-gradient(ellipse at 90% 100%, rgba(197, 160, 89, 0.06), transparent 50%),
+                var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .schedule-kanji {
+            position: absolute;
+            right: 3%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-brush);
+            font-size: 15rem;
+            color: rgba(255, 255, 255, 0.025);
+            pointer-events: none;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .schedule-container {
+            max-width: 1120px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 0.92fr 1.08fr;
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        .next-class {
+            background: linear-gradient(160deg, #1c1c21, #111113);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 38px 34px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 46px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .next-class::before {
+            content: '';
+            position: absolute;
+            top: -70px;
+            right: -70px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 30, 38, 0.18), transparent 70%);
+            pointer-events: none;
+        }
+
+        .next-class::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-gold));
+        }
+
+        .cd-kicker {
+            font-family: var(--font-display);
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        .cd-day {
+            font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+            color: #fff;
+            letter-spacing: 0.02em;
+            text-transform: none;
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+
+        .cd-note {
+            color: var(--text-gray);
+            font-size: 0.86rem;
+            margin-bottom: 24px;
+        }
+
+        .cd-timer {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 9px;
+            margin-bottom: 26px;
+        }
+
+        .cd-cell {
+            background: var(--darker-color);
+            border: 1px solid var(--border-color);
+            border-radius: 11px;
+            padding: 13px 6px 10px;
+            text-align: center;
+            transition: border-color 0.3s ease;
+        }
+
+        .cd-cell:hover {
+            border-color: rgba(197, 160, 89, 0.45);
+        }
+
+        .cd-cell span {
+            display: block;
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.65rem;
+            line-height: 1;
+            color: #fff;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .cd-cell small {
+            display: block;
+            margin-top: 7px;
+            font-size: 0.58rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        .next-class .btn-whatsapp-submit {
+            margin-top: auto;
+        }
+
+        .next-class.is-live .cd-kicker {
+            color: var(--whatsapp-color);
+        }
+
+        .next-class.is-live .cd-kicker::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--whatsapp-color);
+            margin-right: 9px;
+            vertical-align: 1px;
+            animation: livePulse 1.3s ease-out infinite;
+        }
+
+        @keyframes livePulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+            100% { box-shadow: 0 0 0 9px rgba(37, 211, 102, 0); }
+        }
+
+        .schedule-card {
+            background: linear-gradient(170deg, #1a1a1e, #121214);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: 0 20px 46px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .schedule-card-head {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .schedule-card-head h3 {
+            font-size: 0.98rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .sched-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 13px;
+            border-radius: 999px;
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px solid rgba(197, 160, 89, 0.35);
+            color: var(--accent-gold);
+            font-family: var(--font-display);
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: transparent;
+        }
+
+        .schedule-table caption {
+            padding: 12px 4px 0;
+            font-size: 0.78rem;
+            color: var(--text-gray);
+            caption-side: bottom;
+            text-align: left;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 18px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            transition: background-color 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+        }
+
+        .schedule-table th {
+            background: linear-gradient(90deg, var(--primary-color), #b30710);
+            color: #fff;
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            letter-spacing: 1.2px;
+        }
+
+        .schedule-table td {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+
+        .schedule-table td strong {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .schedule-table td:last-child {
+            white-space: nowrap;
+        }
+
+        .schedule-table tbody tr:hover td {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.035);
+        }
+
+        .schedule-table tbody tr:hover td:first-child {
+            padding-left: 26px;
+        }
+
+        .day-pill {
+            display: inline-block;
+            padding: 3px 10px;
+            margin: 2px 5px 2px 0;
+            border-radius: 999px;
+            background: rgba(255, 30, 38, 0.1);
+            border: 1px solid rgba(255, 30, 38, 0.25);
+            color: var(--primary-color);
+            font-family: var(--font-display);
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        .schedule-foot {
+            margin-top: auto;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        .schedule-foot i {
+            color: var(--accent-gold);
+        }
+
+        .schedule-foot a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .schedule-foot a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* --- INSTRUCTOR --- */
+        .instructor-card {
+            background: linear-gradient(160deg, #1a1a1f 0%, #0f0f11 100%);
+            border-radius: 22px;
+            border: 1px solid var(--border-color);
+            border-bottom: 4px solid var(--primary-color);
+            display: grid;
+            grid-template-columns: 1.02fr 1fr;
+            gap: 46px;
+            align-items: center;
+            padding: 44px;
+            box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .instructor-card::before {
+            content: '';
+            position: absolute;
+            top: -140px;
+            left: -120px;
+            width: 480px;
+            height: 480px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 30, 38, 0.10), transparent 65%);
+            pointer-events: none;
+        }
+
+        .instructor-card:hover {
+            border-color: rgba(197, 160, 89, 0.35);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.65);
+        }
+
+        .photo-wrap {
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            height: 560px;
+        }
+
+        .photo-glow {
+            position: absolute;
+            width: 380px;
+            height: 440px;
+            left: 50%;
+            top: 52%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(255, 30, 38, 0.22), rgba(197, 160, 89, 0.09) 45%, transparent 70%);
+            filter: blur(16px);
+            pointer-events: none;
+        }
+
+        .photo-ring {
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            left: 50%;
+            top: 48%;
+            margin: -180px 0 0 -180px;
+            border: 1px dashed rgba(197, 160, 89, 0.3);
+            border-radius: 50%;
+            animation: spin 42s linear infinite;
+            pointer-events: none;
+        }
+
+        .photo-wrap::after {
+            content: '';
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 68%;
+            height: 26px;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, rgba(0, 0, 0, 0.75), transparent 70%);
+            filter: blur(6px);
+        }
+
+        .instructor-cutout {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 28px 38px rgba(0, 0, 0, 0.65));
+            animation: levitate 7s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @keyframes levitate {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-13px); }
+        }
+
+        .instructor-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 6px 0;
+        }
+
+        .instructor-content h3 {
+            font-size: clamp(1.7rem, 3.4vw, 2.3rem);
+            color: #fff;
+            margin: 10px 0 8px;
+        }
+
+        .instructor-role {
+            color: var(--accent-gold);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            margin-bottom: 18px;
+        }
+
+        .instructor-intro {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            margin-bottom: 26px;
+            max-width: 52ch;
+        }
+
+        .instructor-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .instructor-link {
+            align-self: flex-start;
+            margin-top: 24px;
+            padding: 13px 24px;
+            font-size: 0.7rem;
+        }
+
+        .instructor-link i {
+            font-size: 0.62rem;
+            transition: transform 0.3s var(--ease-out);
+        }
+
+        .instructor-link:hover i {
+            transform: translateY(3px);
+        }
+
+        .stat-box {
+            background-color: rgba(5, 5, 5, 0.55);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+            transition: transform 0.3s var(--ease-out), border-color 0.3s ease;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-gold);
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: block;
+            line-height: 1.2;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        .stat-label {
+            font-size: 0.66rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-gray);
+            margin-top: 5px;
+            display: block;
+        }
+
+        .trayectoria {
+            max-width: 880px;
+            margin: 80px auto 0;
+        }
+
+        .trayectoria-head {
+            text-align: center;
+            margin-bottom: 44px;
+        }
+
+        .trayectoria-head h3 {
+            font-family: var(--font-display);
+            font-size: clamp(1.4rem, 2.8vw, 1.85rem);
+            color: #fff;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 34px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 6px;
+            bottom: 10px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-gold));
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 1.7s var(--ease-out) 0.25s;
+        }
+
+        .timeline.visible::before {
+            transform: scaleY(1);
+        }
+
+        .tl-item {
+            position: relative;
+            padding-bottom: 22px;
+            opacity: 0;
+            transform: translateY(14px);
+            transition: opacity 0.6s ease, transform 0.6s var(--ease-out);
+        }
+
+        .timeline.visible .tl-item {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: calc(var(--i) * 0.11s + 0.2s);
+        }
+
+        .tl-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .tl-item::before {
+            content: '';
+            position: absolute;
+            left: -34px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--dark-color);
+            border: 2px solid var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(255, 30, 38, 0.1);
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .tl-item:hover::before {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 5px rgba(197, 160, 89, 0.16);
+        }
+
+        .tl-year {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 1.8px;
+            color: var(--accent-gold);
+            margin-bottom: 3px;
+        }
+
+        .tl-item h4 {
+            font-size: 0.92rem;
+            color: #fff;
+            letter-spacing: 0.4px;
+            margin-bottom: 3px;
+        }
+
+        .tl-item p {
+            color: var(--text-gray);
+            font-size: 0.87rem;
+            line-height: 1.65;
+        }
+
+        /* --- FAQ --- */
+        .faq-container {
+            max-width: 860px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .faq-item {
+            background: linear-gradient(170deg, #19191d, #121214);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-left: 3px solid transparent;
+            transition: border-color 0.3s ease, transform 0.3s var(--ease-out), background-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 30, 38, 0.35);
+            transform: translateX(4px);
+        }
+
+        .faq-item.active {
+            border-left-color: var(--primary-color);
+            background-color: var(--surface-card-hover);
+        }
+
+        .faq-question {
+            padding: 21px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 18px;
+            cursor: pointer;
+            font-family: var(--font-display);
+            font-weight: 600;
+            font-size: 0.95rem;
+            background: none;
+            border: none;
+            width: 100%;
+            color: var(--light-color);
+            text-align: left;
+        }
+
+        .faq-q-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .faq-num {
+            font-family: var(--font-display);
+            font-size: 0.68rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        .faq-question i {
+            color: var(--primary-color);
+            transition: transform 0.4s var(--ease-out), color 0.3s ease;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s var(--ease-out), padding 0.35s ease;
+            padding: 0 24px;
+            color: var(--text-gray);
+            font-size: 0.93rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 320px;
+            padding: 0 24px 22px 24px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(135deg);
+            color: var(--accent-gold);
+        }
+
+        /* --- FEDERACIÓN --- */
+        .ckf-section {
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(255, 30, 38, 0.08), transparent 55%),
+                radial-gradient(ellipse at 50% 100%, rgba(197, 160, 89, 0.06), transparent 55%),
+                var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .ckf-kanji {
+            position: absolute;
+            left: 2%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-brush);
+            font-size: 16rem;
+            color: rgba(255, 255, 255, 0.025);
+            line-height: 1;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .ckf-section h2 {
+            font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+            color: #fff;
+            margin-top: 12px;
+        }
+
+        .ckf-section > .section-inner > p {
+            max-width: 760px;
+            margin: 18px auto 0;
+            color: var(--text-gray);
+            font-size: 1rem;
+        }
+
+        .ckf-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 22px;
+            margin: 38px 0 34px;
+        }
+
+        .badge-card {
+            background: linear-gradient(170deg, #1a1a1e, #111113);
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+            padding: 24px 32px 20px;
+            min-width: 216px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.35s var(--ease-out), border-color 0.35s ease, box-shadow 0.35s ease;
+            transform-style: preserve-3d;
+        }
+
+        .badge-card:hover {
+            border-color: rgba(197, 160, 89, 0.5);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5), 0 0 26px rgba(197, 160, 89, 0.14);
+        }
+
+        .badge-card img {
+            width: 172px;
+            height: 152px;
+            object-fit: contain;
+            padding: 10px;
+            background: #070708;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.45));
+            animation: floatSoft 7s ease-in-out infinite;
+        }
+
+        .badge-card:nth-child(2) img {
+            animation-delay: 1.4s;
+        }
+
+        .badge-card span {
+            font-family: var(--font-display);
+            font-size: 0.62rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--text-gray);
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        @keyframes floatSoft {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-9px); }
+        }
+
+        .affiliation-box {
+            background: rgba(24, 24, 27, 0.85);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 14px;
+            padding: 26px 34px;
+            max-width: 760px;
+            width: 100%;
+            margin: 0 auto 34px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.3);
+            transition: transform 0.35s var(--ease-out), box-shadow 0.35s ease;
+            text-align: center;
+        }
+
+        .affiliation-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.5);
+        }
+
+        .affiliation-box h3 {
+            font-size: 1.02rem;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .affiliation-box p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--text-gray);
+        }
+
         .ckf-actions {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 16px;
-            width: 100%;
-            max-width: 600px;
+            gap: 14px;
         }
 
-        /* --- CONTACT & MAP SECTION --- */
+        /* --- CONTACTO --- */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 30px;
             align-items: stretch;
         }
 
-        .contact-info-card {
-            background-color: var(--surface-card);
-            padding: 40px;
-            border-radius: 14px;
+        .contact-info-card,
+        .contact-form {
+            background: linear-gradient(170deg, #1a1a1e, #111113);
+            padding: 38px;
+            border-radius: var(--radius);
             border: 1px solid var(--border-color);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            box-shadow: 0 20px 46px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
+        }
+
+        .contact-info-card {
             justify-content: space-between;
         }
 
         .contact-info-item {
             display: flex;
             align-items: flex-start;
-            gap: 18px;
-            margin-bottom: 25px;
+            gap: 16px;
+            margin-bottom: 26px;
         }
 
         .contact-info-item > div {
             width: 100%;
         }
 
-        .contact-info-item i.fa-map-marker-alt,
-        .contact-info-item i.fa-phone-alt {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-top: 4px;
+        .ci-icon {
+            width: 46px;
+            height: 46px;
             flex-shrink: 0;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: rgba(255, 30, 38, 0.1);
+            border: 1px solid rgba(255, 30, 38, 0.22);
+            color: var(--primary-color);
+            font-size: 1.05rem;
         }
 
         .contact-info-item h4 {
-            font-size: 1rem;
+            font-size: 0.92rem;
             color: #fff;
             margin-bottom: 4px;
+            letter-spacing: 0.6px;
         }
 
         .contact-info-item p {
             color: var(--text-gray);
-            font-size: 0.95rem;
+            font-size: 0.94rem;
+        }
+
+        .phone-row {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .phone-row p {
+            font-family: var(--font-display);
+            font-weight: 600;
+            color: #fff;
+            letter-spacing: 0.4px;
+        }
+
+        .copy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: transparent;
+            border: 1px solid rgba(197, 160, 89, 0.45);
+            color: var(--accent-gold);
+            font-family: var(--font-display);
+            font-size: 0.64rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s var(--ease-out);
+        }
+
+        .copy-btn:hover {
+            background-color: var(--accent-gold);
+            color: #0b0b0b;
+            transform: translateY(-2px);
         }
 
         .map-container {
-            margin-top: 25px;
+            margin-top: auto;
             width: 100%;
-            height: 220px;
-            border-radius: 10px;
+            height: 224px;
+            border-radius: 12px;
             overflow: hidden;
             border: 1px solid var(--border-color);
         }
@@ -1036,26 +2249,25 @@
             width: 100%;
             height: 100%;
             border: 0;
+            filter: grayscale(1) invert(0.9) hue-rotate(180deg) contrast(0.92) brightness(0.95);
+            transition: filter 0.6s ease;
+        }
+
+        .map-container:hover iframe {
+            filter: grayscale(0.55) invert(0.9) hue-rotate(180deg) contrast(0.95) brightness(1);
         }
 
         .contact-form {
-            background-color: var(--surface-card);
-            padding: 40px;
-            border-radius: 14px;
-            border: 1px solid var(--border-color);
             border-top: 4px solid var(--whatsapp-color);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            display: flex;
-            flex-direction: column;
             justify-content: space-between;
         }
 
         .contact-form-header {
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         .contact-form-header h4 {
-            font-size: 1.25rem;
+            font-size: 1.18rem;
             color: #fff;
             margin-bottom: 6px;
             display: flex;
@@ -1069,15 +2281,15 @@
 
         .contact-form-header p {
             color: var(--text-gray);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
         .form-inputs-group {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 18px;
             flex-grow: 1;
-            margin-bottom: 28px;
+            margin-bottom: 26px;
         }
 
         .form-field {
@@ -1087,38 +2299,45 @@
         }
 
         .form-field label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 0.78rem;
+            font-family: var(--font-display);
+            font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.9px;
             color: var(--text-gray);
         }
 
-        .contact-form input, .contact-form textarea {
-            padding: 15px 18px;
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px 17px;
             background-color: var(--darker-color);
             border: 1px solid var(--border-color);
             border-radius: 10px;
             color: #fff;
-            font-family: 'Roboto', sans-serif;
-            font-size: 0.95rem;
+            font-family: var(--font-body);
+            font-size: 0.94rem;
             width: 100%;
-            transition: all 0.3s ease;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 150px;
+            min-height: 148px;
             flex-grow: 1;
         }
 
-        .contact-form input:focus, .contact-form textarea:focus {
+        .contact-form input:focus,
+        .contact-form textarea:focus {
             outline: none;
             border-color: var(--whatsapp-color);
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.15);
+            box-shadow: 0 0 16px rgba(37, 211, 102, 0.15);
             background-color: #0e0e11;
             transform: translateY(-1px);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: #5b5b63;
         }
 
         .btn-whatsapp-submit {
@@ -1130,33 +2349,34 @@
             color: #fff;
             padding: 16px 30px;
             border-radius: 10px;
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-display);
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.8px;
-            font-size: 0.92rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.85rem;
+            transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease, filter 0.3s ease;
             border: none;
             cursor: pointer;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
             width: 100%;
             position: relative;
             overflow: hidden;
+            text-decoration: none;
         }
 
         .btn-whatsapp-submit:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
             filter: brightness(1.06);
         }
 
         .btn-whatsapp-submit i {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
         }
 
         .form-feedback {
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             color: var(--whatsapp-color);
             margin-top: 12px;
             min-height: 20px;
@@ -1168,34 +2388,237 @@
             opacity: 1;
         }
 
-        /* --- BOTÓN FLOTANTE DE WHATSAPP --- */
+        /* --- CTA FINAL --- */
+        .cta-band {
+            position: relative;
+            padding: 118px 24px;
+            text-align: center;
+            overflow: hidden;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .cta-band::before {
+            content: '';
+            position: absolute;
+            inset: -24px;
+            background: url('dojo.png') no-repeat center center/cover;
+            filter: blur(5px) brightness(0.34) saturate(0.85);
+            animation: kenBurns 26s ease-in-out infinite alternate;
+            z-index: 0;
+        }
+
+        .cta-band::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 50% 100%, rgba(255, 30, 38, 0.3), transparent 60%),
+                linear-gradient(180deg, rgba(5, 5, 5, 0.82), rgba(5, 5, 5, 0.9));
+            z-index: 1;
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .cta-inner h2 {
+            font-size: clamp(1.75rem, 4.4vw, 3rem);
+            color: #fff;
+            margin: 16px 0 16px;
+            line-height: 1.2;
+        }
+
+        .cta-inner h2 span {
+            color: var(--accent-gold);
+        }
+
+        .cta-inner p {
+            color: #cbd0d6;
+            max-width: 620px;
+            margin: 0 auto 30px;
+            font-size: 1.02rem;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--darker-color);
+            border-top: 1px solid var(--border-color);
+            padding: 64px 24px 28px;
+            font-size: 0.86rem;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1.1fr;
+            gap: 44px;
+            padding-bottom: 42px;
+        }
+
+        .footer-brand .logo-container img {
+            height: 54px;
+        }
+
+        .footer-brand .logo-container {
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            color: var(--text-gray);
+            max-width: 320px;
+            margin-bottom: 22px;
+            line-height: 1.7;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background-color: var(--surface-card);
+            color: var(--light-color);
+            font-size: 1.05rem;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            transition: transform 0.35s var(--ease-out), background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.06);
+            border-color: transparent;
+        }
+
+        .social-icon.facebook:hover {
+            background-color: #1877f2;
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(24, 119, 242, 0.4);
+        }
+
+        .social-icon.instagram:hover {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5914 45%, #c62937 60%, #db2777 90%);
+            color: #fff;
+            box-shadow: 0 10px 22px rgba(219, 39, 119, 0.4);
+        }
+
+        .social-icon.tiktok:hover {
+            background-color: #000000;
+            color: #25f4ee;
+            box-shadow: 0 10px 22px rgba(37, 244, 238, 0.3);
+        }
+
+        .footer-col h4 {
+            font-size: 0.74rem;
+            letter-spacing: 1.8px;
+            color: #fff;
+            margin-bottom: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .footer-col ul a:hover {
+            color: var(--accent-gold);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: var(--text-gray);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer-contact i {
+            color: var(--primary-color);
+            margin-top: 5px;
+            font-size: 0.8rem;
+        }
+
+        .footer-contact a {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.78rem;
+        }
+
+        .footer-bottom a {
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .footer-bottom a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        /* --- BOTÓN FLOTANTE WHATSAPP --- */
         .whatsapp-float {
             position: fixed;
             bottom: 26px;
             right: 26px;
             width: 60px;
             height: 60px;
+            padding-left: 19px;
             background-color: var(--whatsapp-color);
             color: #fff;
-            border-radius: 50%;
+            border-radius: 999px;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.9rem;
+            font-size: 1.75rem;
             text-decoration: none;
             box-shadow: 0 6px 25px rgba(37, 211, 102, 0.45);
             z-index: 999;
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease;
+            overflow: hidden;
+            transition: width 0.4s var(--ease-out), transform 0.3s var(--ease-out), background-color 0.3s ease;
         }
 
         .whatsapp-float::before {
             content: '';
             position: absolute;
             inset: 0;
-            border-radius: 50%;
+            border-radius: 999px;
             border: 2px solid var(--whatsapp-color);
-            animation: whatsappPulse 2.2s infinite ease-out;
+            animation: whatsappPulse 2.4s infinite ease-out;
             z-index: -1;
+            pointer-events: none;
         }
 
         @keyframes whatsappPulse {
@@ -1204,167 +2627,239 @@
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1) translateY(-4px);
+            width: 198px;
+            transform: translateY(-3px);
             background-color: #1ebe5d;
         }
 
-        /* --- SOCIAL MEDIA SECTION --- */
-        .social-section {
-            background-color: var(--surface-color);
-            text-align: center;
-            padding: 70px 20px;
-            border-top: 1px solid var(--border-color);
+        .whatsapp-float:hover::before {
+            opacity: 0;
+            animation: none;
         }
 
-        .social-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
-            color: #fff;
+        .whatsapp-float i {
+            flex-shrink: 0;
         }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .wa-label {
+            margin-left: 12px;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.4px;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: opacity 0.3s ease 0.1s, transform 0.3s ease 0.1s;
         }
 
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 52px;
-            height: 52px;
-            background-color: var(--surface-card);
-            color: var(--light-color);
-            font-size: 1.3rem;
+        .whatsapp-float:hover .wa-label {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* --- VOLVER ARRIBA --- */
+        .back-top {
+            position: fixed;
+            right: 30px;
+            bottom: 104px;
+            width: 46px;
+            height: 46px;
             border-radius: 50%;
-            border: 1px solid var(--border-color);
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            background: conic-gradient(var(--accent-gold) calc(var(--p, 0) * 1%), rgba(255, 255, 255, 0.1) 0);
+            display: grid;
+            place-items: center;
+            z-index: 998;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s var(--ease-out);
         }
 
-        .social-icon:hover {
-            transform: translateY(-6px) scale(1.08);
-            border-color: transparent;
+        .back-top::before {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: #0d0d0f;
+            border-radius: 50%;
         }
 
-        .social-icon.facebook:hover {
-            background-color: #1877f2;
+        .back-top i {
+            position: relative;
+            z-index: 1;
             color: #fff;
-            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.4);
+            font-size: 0.82rem;
+            transition: transform 0.25s ease;
         }
 
-        .social-icon.instagram:hover {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #df5914 45%, #c62937 60%, #db2777 90%);
+        .back-top:hover i {
+            transform: translateY(-2px);
+        }
+
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* --- TOAST --- */
+        .toast {
+            position: fixed;
+            left: 50%;
+            bottom: 34px;
+            transform: translate(-50%, 18px);
+            background: #141417;
+            border: 1px solid rgba(197, 160, 89, 0.55);
             color: #fff;
-            box-shadow: 0 8px 20px rgba(219, 39, 119, 0.4);
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            box-shadow: 0 14px 34px rgba(0, 0, 0, 0.55);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s var(--ease-out), visibility 0.3s ease;
+            z-index: 9995;
+            white-space: nowrap;
         }
 
-        .social-icon.tiktok:hover {
-            background-color: #000000;
-            color: #25f4ee;
-            box-shadow: 0 8px 20px rgba(37, 244, 238, 0.3);
+        .toast.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, 0);
         }
 
-        /* --- FOOTER --- */
-        footer {
-            background-color: var(--darker-color);
-            text-align: center;
-            padding: 40px 20px;
-            color: var(--text-gray);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        footer a {
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        footer a:hover {
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-            .reveal {
-                opacity: 1;
-                transform: none;
-            }
-            #heroParticles {
-                display: none;
-            }
-        }
-
-        @media (max-width: 992px) {
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+        @media (max-width: 1080px) {
             .menu-toggle {
-                display: block; 
+                display: flex;
             }
 
             .nav-links {
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 0;
                 left: 0;
                 width: 100%;
-                background-color: rgba(11, 11, 11, 0.98);
+                height: 100vh;
+                height: 100dvh;
+                margin-left: 0;
                 flex-direction: column;
-                align-items: center;
+                justify-content: center;
                 gap: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                border-bottom: 1px solid var(--border-color);
+                padding: 96px 24px 40px;
+                background:
+                    radial-gradient(ellipse at 50% 0%, rgba(255, 30, 38, 0.14), transparent 55%),
+                    rgba(6, 6, 7, 0.985);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: opacity 0.35s ease, transform 0.35s var(--ease-out), visibility 0.35s ease;
+                z-index: 5;
+                overflow-y: auto;
             }
 
             .nav-links.active {
-                max-height: 480px; 
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
             }
 
             .nav-links li {
                 width: 100%;
                 text-align: center;
-                padding: 16px 0;
-                border-bottom: 1px solid var(--border-color);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+                opacity: 0;
+                transform: translateY(16px);
+                transition: opacity 0.4s ease, transform 0.4s var(--ease-out);
             }
 
-            .about-grid, .contact-grid {
+            .nav-links.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .nav-links.active li:nth-child(1) { transition-delay: 0.05s; }
+            .nav-links.active li:nth-child(2) { transition-delay: 0.09s; }
+            .nav-links.active li:nth-child(3) { transition-delay: 0.13s; }
+            .nav-links.active li:nth-child(4) { transition-delay: 0.17s; }
+            .nav-links.active li:nth-child(5) { transition-delay: 0.21s; }
+            .nav-links.active li:nth-child(6) { transition-delay: 0.25s; }
+            .nav-links.active li:nth-child(7) { transition-delay: 0.29s; }
+            .nav-links.active li:nth-child(8) { transition-delay: 0.33s; }
+            .nav-links.active li:nth-child(9) { transition-delay: 0.37s; }
+
+            .nav-links a {
+                display: block;
+                padding: 16px 0;
+                font-family: var(--font-display);
+                font-size: 1.02rem;
+                letter-spacing: 1px;
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .nav-links .nav-cta {
+                display: inline-block;
+                margin: 16px 0 6px;
+                padding: 13px 28px;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            .about-grid,
+            .contact-grid,
+            .schedule-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
 
-            .instructor-card-wide {
+            .about-visual {
+                max-width: 620px;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .instructor-card {
                 grid-template-columns: 1fr;
-                padding: 30px;
+                padding: 34px;
+                gap: 26px;
             }
 
-            .instructor-img-container {
-                min-height: 360px;
+            .photo-wrap {
+                height: 480px;
+                max-width: 460px;
+                margin: 0 auto;
+                width: 100%;
             }
 
-            .hero h1 {
-                font-size: 2.6rem; 
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 36px;
             }
 
-            .section-title {
-                font-size: 2rem;
-                margin-bottom: 40px;
+            .section {
+                padding: 92px 24px 70px;
             }
 
-            section {
-                padding: 90px 20px 60px 20px;
+            .section-full {
+                padding: 86px 24px;
+            }
+
+            .hero {
+                padding-bottom: 120px;
             }
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 720px) {
             .nav-container {
                 padding: 12px 18px;
             }
@@ -1374,89 +2869,249 @@
             }
 
             .logo-container span {
-                font-size: 0.68rem;
+                font-size: 0.64rem;
+            }
+
+            header.scrolled .nav-container {
+                padding: 8px 18px;
             }
 
             .hero {
-                padding: 120px 16px 85px;
+                padding: 122px 18px 108px;
             }
 
-            .hero-badge {
-                width: 125px;
+            .hero-emblem {
+                width: 126px;
+                height: 126px;
             }
 
-            .hero-tag {
-                letter-spacing: 3px;
-                font-size: 0.72rem;
+            .hero-emblem img {
+                width: 98px;
             }
 
-            .hero h1 {
-                font-size: 2.1rem;
+            .hero-eyebrow {
+                font-size: 0.56rem;
+                letter-spacing: 2px;
+                gap: 9px;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .hero-eyebrow span {
+                width: 14px;
             }
 
-            .btn {
+            .hero-title-solid {
+                letter-spacing: 0.16em;
+            }
+
+            .hero-sub {
+                font-size: 0.98rem;
+            }
+
+            .hero-cta .btn {
                 width: 100%;
-                padding: 14px 20px;
-                font-size: 0.85rem;
             }
 
-            .section-title {
-                font-size: 1.65rem;
+            .hero-meta {
+                gap: 10px 20px;
+                font-size: 0.76rem;
             }
 
-            .about-img img {
-                height: 260px;
+            .hero-kanji {
+                font-size: 10rem;
+                right: -2%;
+                opacity: 0.6;
             }
 
-            .schedule-table th, .schedule-table td {
-                padding: 14px 16px;
-                font-size: 0.88rem;
+            .marquee-track span {
+                font-size: 0.78rem;
+                padding: 0 18px;
+                letter-spacing: 0.2em;
             }
 
-            .instructor-card-wide {
-                padding: 22px;
-                gap: 25px;
+            .about-img {
+                height: 330px;
             }
 
-            .instructor-img-container {
-                min-height: 290px;
+            .about-visual::before {
+                transform: translate(10px, 10px);
             }
 
-            .instructor-content-wide h3 {
-                font-size: 1.65rem;
+            .seal {
+                width: 100px;
+                height: 100px;
+                left: -12px;
+                bottom: -16px;
+            }
+
+            .seal-center {
+                font-size: 0.9rem;
+            }
+
+            .seal-center small {
+                font-size: 0.42rem;
+                letter-spacing: 2px;
+            }
+
+            .next-class {
+                padding: 30px 22px;
+            }
+
+            .cd-cell span {
+                font-size: 1.35rem;
+            }
+
+            .schedule-card {
+                padding: 22px 18px;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 15px 13px;
+                font-size: 0.82rem;
+            }
+
+            .instructor-card {
+                padding: 26px 20px;
+            }
+
+            .photo-wrap {
+                height: 420px;
+            }
+
+            .photo-glow {
+                width: 280px;
+                height: 330px;
+            }
+
+            .photo-ring {
+                width: 270px;
+                height: 270px;
+                margin: -135px 0 0 -135px;
+            }
+
+            .instructor-link {
+                align-self: stretch;
+                justify-content: center;
+            }
+
+            .trayectoria {
+                margin-top: 56px;
             }
 
             .instructor-stats {
                 grid-template-columns: 1fr;
             }
 
-            .affiliation-box {
-                padding: 20px;
+            .timeline {
+                padding-left: 30px;
+            }
+
+            .tl-item::before {
+                left: -30px;
             }
 
             .faq-question {
-                padding: 18px 20px;
-                font-size: 0.92rem;
+                padding: 18px 18px;
+                font-size: 0.88rem;
             }
 
-            .contact-info-card, .contact-form {
+            .faq-q-left {
+                gap: 12px;
+            }
+
+            .contact-info-card,
+            .contact-form {
                 padding: 24px 20px;
             }
 
             .contact-info-item {
-                gap: 14px;
+                gap: 13px;
+            }
+
+            .badge-card {
+                min-width: 160px;
+                padding: 18px 20px 16px;
+            }
+
+            .badge-card img {
+                width: 140px;
+                height: 124px;
+            }
+
+            .affiliation-box {
+                padding: 20px;
+            }
+
+            .ckf-actions .btn,
+            .cta-actions .btn {
+                width: 100%;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
 
             .whatsapp-float {
                 width: 54px;
                 height: 54px;
-                font-size: 1.7rem;
                 bottom: 20px;
                 right: 20px;
+                padding-left: 16px;
+                font-size: 1.6rem;
+            }
+
+            .whatsapp-float:hover {
+                width: 54px;
+            }
+
+            .wa-label {
+                display: none;
+            }
+
+            .back-top {
+                right: 23px;
+                bottom: 88px;
+                width: 42px;
+                height: 42px;
+            }
+
+            .toast {
+                font-size: 0.76rem;
+                max-width: 92vw;
+                white-space: normal;
+                text-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .reveal,
+            .timeline .tl-item {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .timeline::before {
+                transform: scaleY(1) !important;
+            }
+
+            .marquee-track {
+                animation: none !important;
+            }
+
+            .cursor-glow,
+            #heroParticles {
+                display: none;
             }
         }
     </style>
@@ -1466,183 +3121,434 @@
     <!-- BARRA DE PROGRESO SUPERIOR -->
     <div class="scroll-progress" id="scrollProgress"></div>
 
+    <!-- HALO QUE SIGUE AL CURSOR -->
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
     <!-- HEADER Y NAVEGACIÓN -->
     <header id="mainHeader">
         <div class="nav-container">
-            <a href="#inicio" class="logo-container">
+            <a href="#inicio" class="logo-container" aria-label="International Lagos Kenpo Karate Studio — inicio">
                 <img src="Insignia.png" alt="Insignia International Lagos Kenpo Karate Studio" decoding="async">
                 <span>International Lagos <br>Kenpo Karate Studio</span>
             </a>
-            <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menú de Navegación" aria-expanded="false">
-                <i class="fas fa-bars" aria-hidden="true"></i>
-            </button>
-            <nav>
+
+            <nav aria-label="Navegación principal">
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#nosotros">Nosotros</a></li>
                     <li><a href="#programas">Programas</a></li>
                     <li><a href="#horarios">Horarios</a></li>
-                    <li><a href="#instructores">Instructores</a></li>
+                    <li><a href="#instructores">Instructor</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#federacion">Afiliaciones</a></li>
                     <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="#contacto" class="nav-cta">Clase de prueba</a></li>
                 </ul>
             </nav>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="navLinks">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </header>
 
     <main>
-        <!-- SECCIÓN HERO CON PARTÍCULAS -->
+        <!-- HERO -->
         <section id="inicio" class="hero">
-            <div class="hero-bg" id="heroBg"></div>
+            <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-orbs" aria-hidden="true">
+                <span class="orb orb-red"></span>
+                <span class="orb orb-gold"></span>
+            </div>
+            <div class="hero-kanji" aria-hidden="true">拳法</div>
             <canvas id="heroParticles" aria-hidden="true"></canvas>
-            <div class="hero-content">
-                <img src="Insignia.png" alt="Insignia Oficial" class="hero-badge" decoding="async">
-                <div class="hero-tag hero-animate delay-2">Academia Oficial de Artes Marciales en Huechuraba</div>
-                <h1 class="oriental-title hero-animate delay-3">International Lagos Kenpo Karate Studio</h1>
-                <p class="hero-animate delay-4">Disciplina, Humildad y Respeto bajo los lineamientos oficiales de la Chinese Karate Federation (CKF) y afiliados a KenpoChile.</p>
-                <div class="hero-animate delay-5">
-                    <a href="#contacto" class="btn magnetic-btn">Reserva tu Clase de Prueba</a>
+
+            <div class="hero-content" id="heroContent">
+                <div class="hero-emblem">
+                    <span class="emblem-ring" aria-hidden="true"></span>
+                    <span class="emblem-ring ring2" aria-hidden="true"></span>
+                    <img src="Insignia.png" alt="Insignia oficial ILKKS" fetchpriority="high" decoding="async">
                 </div>
+
+                <p class="hero-eyebrow">
+                    <span aria-hidden="true"></span>
+                    Academia oficial de artes marciales · Huechuraba
+                    <span aria-hidden="true"></span>
+                </p>
+
+                <h1>
+                    <span class="hero-title-brush">International Lagos</span>
+                    <span class="hero-title-solid">Kenpo Karate <em>Studio</em></span>
+                </h1>
+
+                <p class="hero-sub">Disciplina, humildad y respeto bajo los lineamientos oficiales de la Chinese Karate Federation (CKF) y afiliados a KenpoChile.</p>
+
+                <div class="hero-cta">
+                    <a href="#contacto" class="btn magnetic-btn">Reserva tu clase de prueba <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#programas" class="btn btn-outline-gold">Ver programas</a>
+                </div>
+
+                <ul class="hero-meta">
+                    <li><i class="fas fa-users" aria-hidden="true"></i> Niños, jóvenes y adultos</li>
+                    <li><i class="fas fa-shield-halved" aria-hidden="true"></i> Defensa personal real</li>
+                    <li><i class="fas fa-award" aria-hidden="true"></i> Respaldo CKF</li>
+                </ul>
             </div>
         </section>
 
-        <!-- SECCIÓN NOSOTROS -->
-        <section id="nosotros">
-            <h2 class="section-title reveal">Sobre Nuestro Dojo</h2>
-            <div class="about-grid">
-                <div class="about-text reveal reveal-left">
-                    <p>En <strong>International Lagos Kenpo Karate Studio</strong> formamos artistas marciales íntegros en Huechuraba, enfocándonos tanto en la defensa personal efectiva como en el desarrollo del carácter, la disciplina y los valores tradicionales.</p>
-                    <p>Formamos parte activa de la prestigiosa <strong>Chinese Karate Federation (CKF)</strong> y estamos afiliados a <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="kenpochile-link">KenpoChile</a>, lo que garantiza un estándar técnico riguroso, programas de graduación certificados y un constante perfeccionamiento en el arte del Kenpo.</p>
-                    <a href="#programas" class="btn" style="margin-top: 10px;">Conoce más</a>
-                </div>
-                <div class="about-img reveal reveal-right">
-                    <img src="dojo.png" id="aboutParallaxImg" alt="Instalaciones del Dojo Lagos Kenpo" loading="lazy" decoding="async">
-                </div>
-            </div>
-        </section>
-
-        <!-- SECCIÓN PROGRAMAS -->
-        <section id="programas">
-            <h2 class="section-title reveal">Programas de Entrenamiento</h2>
-            <div class="programs-grid">
-                <article class="program-card tilt-card reveal" style="transition-delay: 0.05s;">
-                    <i class="fas fa-child" aria-hidden="true"></i>
-                    <h3>Kenpo Infantil</h3>
-                    <p>Diseñado para niños en Huechuraba, enfocado en mejorar la concentración, el respeto, la coordinación motriz y la confianza a través de la actividad física y marcial.</p>
-                </article>
-                <article class="program-card tilt-card reveal" style="transition-delay: 0.15s;">
-                    <i class="fas fa-user-ninja" aria-hidden="true"></i>
-                    <h3>Kenpo Juvenil y Adultos</h3>
-                    <p>Clases orientadas al combate, defensa personal avanzada, acondicionamiento físico y el estudio técnico profundo del sistema en un ambiente seguro.</p>
-                </article>
-                <article class="program-card tilt-card reveal" style="transition-delay: 0.25s;">
-                    <i class="fas fa-shield-alt" aria-hidden="true"></i>
-                    <h3>Defensa Personal Real</h3>
-                    <p>Técnicas dinámicas y adaptadas a situaciones reales de la vida cotidiana, priorizando la prevención y la reacción efectiva.</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- SECCIÓN HORARIOS -->
-        <div id="horarios" class="schedule-section">
-            <div class="schedule-container">
-                <h2 class="section-title reveal" style="margin-bottom: 30px;">Horarios de Clases</h2>
-                <div class="table-responsive reveal">
-                    <table class="schedule-table">
-                        <caption>Horario general de entrenamiento en Huechuraba</caption>
-                        <thead>
-                            <tr>
-                                <th scope="col">Programa</th>
-                                <th scope="col">Días</th>
-                                <th scope="col">Horario</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Kenpo Karate (General)</strong></td>
-                                <td>Lunes y Miércoles <em>(excepto festivos)</em></td>
-                                <td>19:30 - 21:00 hrs</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <!-- CINTA DE VALORES -->
+        <div class="marquee-wrap" aria-hidden="true">
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span>Disciplina</span><i>✦</i>
+                    <span>Humildad</span><i>✦</i>
+                    <span>Respeto</span><i>✦</i>
+                    <span>Técnica</span><i>✦</i>
+                    <span>Constancia</span><i>✦</i>
+                    <span>Honor</span><i>✦</i>
+                    <span>Disciplina</span><i>✦</i>
+                    <span>Humildad</span><i>✦</i>
+                    <span>Respeto</span><i>✦</i>
+                    <span>Técnica</span><i>✦</i>
+                    <span>Constancia</span><i>✦</i>
+                    <span>Honor</span><i>✦</i>
                 </div>
             </div>
         </div>
 
-        <!-- SECCIÓN INSTRUCTORES -->
-        <section id="instructores">
-            <h2 class="section-title reveal">Instructor</h2>
-            <article class="instructor-card-wide reveal">
-                <div class="instructor-img-container">
-                    <img src="profesor.png" alt="Instructor Principal Sensei Carlos Lagos" loading="lazy" decoding="async">
+        <!-- NOSOTROS -->
+        <section id="nosotros" class="section">
+            <span class="glow-orb red" aria-hidden="true"></span>
+            <span class="glow-orb gold" aria-hidden="true"></span>
+
+            <div class="section-head reveal">
+                <span class="eyebrow">01 · Nuestro Dojo</span>
+                <h2 class="section-title">Sobre Nuestro Dojo</h2>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-text reveal reveal-left">
+                    <p class="lead">En <strong>International Lagos Kenpo Karate Studio</strong> formamos artistas marciales íntegros en Huechuraba, enfocándonos tanto en la defensa personal efectiva como en el desarrollo del carácter, la disciplina y los valores tradicionales.</p>
+                    <p>Formamos parte activa de la prestigiosa <strong>Chinese Karate Federation (CKF)</strong> y estamos afiliados a <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="kenpochile-link">KenpoChile</a>, lo que garantiza un estándar técnico riguroso, programas de graduación certificados y un constante perfeccionamiento en el arte del Kenpo.</p>
+
+                    <ul class="about-features">
+                        <li>
+                            <span class="af-icon"><i class="fas fa-hand-fist" aria-hidden="true"></i></span>
+                            <div>
+                                <strong>Defensa personal efectiva</strong>
+                                <span>Técnica aplicada a situaciones reales</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="af-icon"><i class="fas fa-users" aria-hidden="true"></i></span>
+                            <div>
+                                <strong>Comunidad y hermandad</strong>
+                                <span>Un dojo para niños, jóvenes y adultos</span>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="af-icon"><i class="fas fa-medal" aria-hidden="true"></i></span>
+                            <div>
+                                <strong>Graduaciones certificadas</strong>
+                                <span>Programa oficial respaldado por la CKF</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <a href="#programas" class="btn">Conoce los programas <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
-                <div class="instructor-content-wide">
+
+                <div class="about-visual reveal reveal-right">
+                    <div class="about-img">
+                        <img src="dojo.png" id="aboutParallaxImg" alt="Instalaciones del dojo ILKKS en Huechuraba" loading="lazy" decoding="async">
+                        <div class="about-caption">
+                            <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            Sede Valle Verde · Av. El Sauce 1850
+                        </div>
+                    </div>
+
+                    <div class="seal" aria-hidden="true">
+                        <svg viewBox="0 0 120 120">
+                            <defs>
+                                <path id="sealPath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" fill="none"></path>
+                            </defs>
+                            <text>
+                                <textPath href="#sealPath" startOffset="0">ILKKS • HUECHURABA • DESDE 2013 • </textPath>
+                            </text>
+                        </svg>
+                        <div class="seal-center">
+                            2013
+                            <small>ILKKS</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROGRAMAS -->
+        <section id="programas" class="section">
+            <div class="section-head reveal">
+                <span class="eyebrow">02 · Programas</span>
+                <h2 class="section-title">Programas de Entrenamiento</h2>
+                <p class="lead">Elige el camino que mejor se adapte a tu edad y objetivos. Todos los programas se entrenan en un ambiente seguro y formativo.</p>
+            </div>
+
+            <div class="programs-grid">
+                <article class="program-card tilt-card reveal" style="--d: 0.05s;">
+                    <span class="card-num" aria-hidden="true">01</span>
+                    <div class="card-icon"><i class="fas fa-child" aria-hidden="true"></i></div>
+                    <h3>Kenpo Infantil</h3>
+                    <p>Diseñado para niños en Huechuraba, enfocado en mejorar la concentración, el respeto, la coordinación motriz y la confianza a través de la actividad física y marcial.</p>
+                    <a href="#contacto" class="card-link">Reservar clase <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+
+                <article class="program-card tilt-card reveal" style="--d: 0.15s;">
+                    <span class="card-num" aria-hidden="true">02</span>
+                    <div class="card-icon"><i class="fas fa-user-ninja" aria-hidden="true"></i></div>
+                    <h3>Kenpo Juvenil y Adultos</h3>
+                    <p>Clases orientadas al combate, defensa personal avanzada, acondicionamiento físico y el estudio técnico profundo del sistema en un ambiente seguro.</p>
+                    <a href="#contacto" class="card-link">Reservar clase <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+
+                <article class="program-card tilt-card reveal" style="--d: 0.25s;">
+                    <span class="card-num" aria-hidden="true">03</span>
+                    <div class="card-icon"><i class="fas fa-shield-halved" aria-hidden="true"></i></div>
+                    <h3>Defensa Personal Real</h3>
+                    <p>Técnicas dinámicas y adaptadas a situaciones reales de la vida cotidiana, priorizando la prevención y la reacción efectiva.</p>
+                    <a href="#contacto" class="card-link">Reservar clase <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                </article>
+            </div>
+        </section>
+
+        <!-- HORARIOS -->
+        <section id="horarios" class="section-full schedule-section">
+            <div class="schedule-kanji" aria-hidden="true">時間</div>
+            <div class="schedule-container">
+                <div class="section-head reveal">
+                    <span class="eyebrow">03 · Horarios</span>
+                    <h2 class="section-title">Horarios de Clases</h2>
+                </div>
+
+                <div class="schedule-grid">
+                    <article class="next-class reveal reveal-left" id="cdCard">
+                        <span class="cd-kicker" id="cdKicker">Próxima clase</span>
+                        <h3 class="cd-day" id="cdDay">Miércoles · 19:30 hrs</h3>
+                        <p class="cd-note" id="cdNote">Lunes y miércoles · excepto festivos</p>
+
+                        <div class="cd-timer" role="timer" aria-label="Cuenta regresiva para la próxima clase">
+                            <div class="cd-cell"><span id="cdD">0</span><small>Días</small></div>
+                            <div class="cd-cell"><span id="cdH">0</span><small>Horas</small></div>
+                            <div class="cd-cell"><span id="cdM">0</span><small>Min</small></div>
+                            <div class="cd-cell"><span id="cdS">0</span><small>Seg</small></div>
+                        </div>
+
+                        <a href="https://api.whatsapp.com/send?phone=56932291414&text=Hola%2C%20me%20gustar%C3%ADa%20reservar%20un%20cupo%20para%20la%20clase%20de%20Kenpo%20Karate."
+                           target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-submit">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i> Reservar cupo
+                        </a>
+                    </article>
+
+                    <div class="schedule-card reveal reveal-right">
+                        <div class="schedule-card-head">
+                            <h3>Horario semanal</h3>
+                            <span class="sched-badge"><i class="fas fa-calendar-days" aria-hidden="true"></i> 2 clases por semana</span>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="schedule-table">
+                                <caption>Horario general de entrenamiento en Huechuraba · Excepto festivos</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Programa</th>
+                                        <th scope="col">Días</th>
+                                        <th scope="col">Horario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Kenpo Karate (General)</strong></td>
+                                        <td>
+                                            <span class="day-pill">Lun</span>
+                                            <span class="day-pill">Mié</span>
+                                        </td>
+                                        <td>19:30 - 21:00 hrs</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="schedule-foot">
+                            <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            <span>Sede Valle Verde · Av. El Sauce 1850, Huechuraba ·</span>
+                            <a href="https://maps.google.com/?q=Avenida+El+Sauce+1850,+Huechuraba" target="_blank" rel="noopener noreferrer">Ver mapa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSTRUCTOR -->
+        <section id="instructores" class="section">
+            <div class="section-head reveal">
+                <span class="eyebrow">04 · Instructor</span>
+                <h2 class="section-title">Nuestro Instructor</h2>
+            </div>
+
+            <article class="instructor-card reveal">
+                <div class="photo-wrap">
+                    <span class="photo-glow" aria-hidden="true"></span>
+                    <span class="photo-ring" aria-hidden="true"></span>
+                    <img class="instructor-cutout" src="profesor.png" alt="Sensei Carlos Lagos, instructor principal de ILKKS, en posición de combate" loading="lazy" decoding="async">
+                </div>
+
+                <div class="instructor-content">
+                    <span class="kicker">Instructor principal · ILKKS</span>
                     <h3>Sensei Carlos Lagos</h3>
-                    <div class="instructor-role">Cinto Negro 1er Grado Black Belt - CKF</div>
-                    
+                    <div class="instructor-role">Cinto Negro 1er Grado Black Belt — CKF</div>
+
+                    <p class="instructor-intro">Desde 2013 en el camino del Kenpo: formado en Dojo MASS, monitor desde 2021 y Cinturón Negro 1er Dan en 2025. Hoy dirige ILKKS en Valle Verde, transmitiendo disciplina, técnica y filosofía marcial a cada generación.</p>
+
                     <div class="instructor-stats" id="instructorStats">
                         <div class="stat-box">
                             <span class="stat-number" data-target="2013" data-prefix="Desde ">2013</span>
                             <span class="stat-label">Inicios en Kenpo</span>
                         </div>
                         <div class="stat-box">
-                            <span class="stat-number" data-target="13" data-prefix="+">0</span>
+                            <span class="stat-number" data-target="13" data-prefix="+">+13</span>
                             <span class="stat-label">Años de Práctica</span>
                         </div>
                         <div class="stat-box">
-                            <span class="stat-number" data-target="1" data-suffix="er Dan">0</span>
+                            <span class="stat-number" data-target="1" data-suffix="er Dan">1er Dan</span>
                             <span class="stat-label">Cinturón Negro CKF</span>
                         </div>
                     </div>
 
-                    <div class="instructor-bio">
-                        <h4>Trayectoria en Kenpo Karate</h4>
-                        <p>Mi camino en el arte marcial del Kenpo Karate comenzó en septiembre de 2013, cuando ingresé a la escuela Dojo MASS, en su sede de Independencia. Desde entonces, he mantenido un compromiso constante con la disciplina, el aprendizaje y la superación personal. Con el paso de los años, mi progreso técnico y formativo me llevó a trasladarme en 2021 a la sede Dojo MASS Lo Prado, donde alcancé los tres grados de Cinturón Café y obtuve el Grado de Monitor.</p>
-                        
-                        <h4>Fundación de Filiales y Desarrollo Profesional</h4>
-                        <p>Ese mismo año, impulsado por el deseo de compartir el arte del Kenpo, asumí el desafío de fundar una nueva filial: Dojo MASS Huechuraba, consolidándome posteriormente en la Villa René Escauriza. A comienzos de 2023, continué mi formación bajo la guía del Maestro René Huaquimil, culminando este proceso en marzo de 2025 al obtener mi Cinturón Negro 1er Dan.</p>
-                        
-                        <h4>Transición a International Lagos Kenpo Karate Studio (ILKKS)</h4>
-                        <p>En septiembre de 2025, me integré formalmente a la CKF y a la escuela del Maestro Roberto Vidal (8º Dan). Esta transición dio origen a nuestro nuevo dojo: <strong>International Lagos Kenpo Karate Studio (ILKKS)</strong>.</p>
-                        <p>Actualmente, desarrollo mi labor docente en ILKKS (sede Valle Verde, Av. El Sauce 1850, Huechuraba), donde continuo transmitiendo la filosofía y práctica del Kenpo a las nuevas generaciones.</p>
-                    </div>
+                    <a href="#trayectoria" class="btn btn-outline-gold instructor-link">Ver trayectoria <i class="fas fa-arrow-down" aria-hidden="true"></i></a>
                 </div>
             </article>
+
+            <div class="trayectoria" id="trayectoria">
+                <div class="trayectoria-head reveal">
+                    <span class="kicker">Trayectoria · 2013 — hoy</span>
+                    <h3>El camino en el Kenpo</h3>
+                </div>
+
+                <div class="timeline reveal" id="timeline">
+                        <div class="tl-item" style="--i: 0;">
+                            <span class="tl-year">2013</span>
+                            <h4>Los inicios en el Kenpo</h4>
+                            <p>Mi camino en el arte marcial comenzó en septiembre de 2013, cuando ingresé a la escuela Dojo MASS, en su sede de Independencia. Desde entonces mantengo un compromiso constante con la disciplina, el aprendizaje y la superación personal.</p>
+                        </div>
+                        <div class="tl-item" style="--i: 1;">
+                            <span class="tl-year">2021</span>
+                            <h4>Cinturón Café, Monitor y fundación de filial</h4>
+                            <p>Me trasladé a la sede Dojo MASS Lo Prado, donde alcancé los tres grados de Cinturón Café y obtuve el Grado de Monitor. Ese mismo año fundé la filial Dojo MASS Huechuraba, consolidada posteriormente en la Villa René Escauriza.</p>
+                        </div>
+                        <div class="tl-item" style="--i: 2;">
+                            <span class="tl-year">2023</span>
+                            <h4>Formación continua</h4>
+                            <p>Continué mi formación bajo la guía del Maestro René Huaquimil, profundizando en la técnica y la enseñanza del sistema.</p>
+                        </div>
+                        <div class="tl-item" style="--i: 3;">
+                            <span class="tl-year">Marzo 2025</span>
+                            <h4>Cinturón Negro 1er Dan</h4>
+                            <p>Culminé este proceso formativo obteniendo el Cinturón Negro 1er Dan, un paso más en el camino marcial.</p>
+                        </div>
+                        <div class="tl-item" style="--i: 4;">
+                            <span class="tl-year">Septiembre 2025</span>
+                            <h4>Nace ILKKS</h4>
+                            <p>Me integré formalmente a la CKF y a la escuela del Maestro Roberto Vidal (8º Dan). Esta transición dio origen a nuestro nuevo dojo: International Lagos Kenpo Karate Studio (ILKKS).</p>
+                        </div>
+                        <div class="tl-item" style="--i: 5;">
+                            <span class="tl-year">Hoy</span>
+                            <h4>Docencia en Valle Verde</h4>
+                            <p>Desarrollo mi labor docente en ILKKS, sede Valle Verde (Av. El Sauce 1850, Huechuraba), continuando la transmisión de la filosofía y práctica del Kenpo a las nuevas generaciones.</p>
+                        </div>
+                </div>
+            </div>
         </section>
 
-        <!-- SECCIÓN PREGUNTAS FRECUENTES (FAQ) -->
-        <section id="faq">
-            <h2 class="section-title reveal">Preguntas Frecuentes</h2>
+        <!-- FAQ -->
+        <section id="faq" class="section">
+            <div class="section-head reveal">
+                <span class="eyebrow">05 · Preguntas Frecuentes</span>
+                <h2 class="section-title">Preguntas Frecuentes</h2>
+            </div>
+
             <div class="faq-container reveal">
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>¿Necesito experiencia previa para inscribirme?</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        <span class="faq-q-left">
+                            <span class="faq-num">01</span>
+                            <span>¿Necesito experiencia previa para inscribirme?</span>
+                        </span>
+                        <i class="fas fa-plus" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer">
                         <p>No se necesita ninguna experiencia previa. Nuestros programas están diseñados para recibir tanto a principiantes absolutos como a personas con experiencia previa en artes marciales.</p>
                     </div>
                 </div>
+
                 <div class="faq-item">
                     <button class="faq-question" aria-expanded="false">
-                        <span>¿Qué debo llevar a mi primera clase de prueba?</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                        <span class="faq-q-left">
+                            <span class="faq-num">02</span>
+                            <span>¿Qué debo llevar a mi primera clase de prueba?</span>
+                        </span>
+                        <i class="fas fa-plus" aria-hidden="true"></i>
                     </button>
                     <div class="faq-answer">
                         <p>Solo necesitas ropa deportiva cómoda (polera y pantalón deportivo o buzo) y una botella con agua para mantenerte hidratado. Entrenamos descalzos en el dojo.</p>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-q-left">
+                            <span class="faq-num">03</span>
+                            <span>¿Dónde se realizan las clases?</span>
+                        </span>
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>En Avenida El Sauce 1850, sede Valle Verde, Huechuraba. Puedes abrir la ruta en Waze o Google Maps desde la sección de contacto.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-q-left">
+                            <span class="faq-num">04</span>
+                            <span>¿Cómo reservo una clase de prueba?</span>
+                        </span>
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Escríbenos por WhatsApp al +56 9 3229 1414 o completa el formulario de la sección de contacto. Te confirmaremos el horario disponible.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- SECCIÓN FEDERACIÓN CKF Y AFILIACIÓN KENPOCHILE -->
-        <section id="federacion" class="ckf-section">
-            <div class="ckf-content reveal">
+        <!-- FEDERACIÓN CKF Y AFILIACIÓN KENPOCHILE -->
+        <section id="federacion" class="section-full ckf-section">
+            <div class="ckf-kanji" aria-hidden="true">武</div>
+            <div class="section-inner reveal">
+                <span class="eyebrow">06 · Respaldo Oficial</span>
                 <h2>Avalado por la Chinese Karate Federation (CKF)</h2>
                 <p>Pertenecer a la CKF nos otorga el respaldo de una organización sólida, fomentando la hermandad entre dojos, seminarios oficiales y un riguroso programa de grados internacionales.</p>
-                <img src="ckf.png" alt="Insignia Oficial CKF" class="ckf-badge tilt-card" loading="lazy" decoding="async">
-                
+
+                <div class="ckf-badges">
+                    <div class="badge-card tilt-card">
+                        <img src="ckf.png" alt="Insignia oficial de la Chinese Karate Federation" loading="lazy" decoding="async">
+                        <span>Chinese Karate Federation<br>Miembro oficial</span>
+                    </div>
+                    <div class="badge-card tilt-card">
+                        <img src="Insignia.png" alt="Insignia de International Lagos Kenpo Karate Studio" loading="lazy" decoding="async">
+                        <span>International Lagos<br>Kenpo Karate Studio</span>
+                    </div>
+                </div>
+
                 <div class="affiliation-box">
                     <h3><i class="fas fa-award" style="color: var(--accent-gold); margin-right: 8px;" aria-hidden="true"></i>Escuela Afiliada a KenpoChile</h3>
                     <p>Nuestra academia forma parte oficial de la red nacional <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="kenpochile-link">kenpochile.cl</a>, promoviendo la difusión, el desarrollo técnico y los eventos oficiales del Kenpo en Chile.</p>
@@ -1652,19 +3558,24 @@
                     <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer" class="btn btn-outline-gold">
                         <i class="fas fa-external-link-alt" aria-hidden="true"></i> Visitar KenpoChile.cl
                     </a>
-                    <a href="#contacto" class="btn">Únete a la Comunidad</a>
+                    <a href="#contacto" class="btn">Únete a la Comunidad <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN CONTACTO -->
-        <section id="contacto">
-            <h2 class="section-title reveal">Contáctanos</h2>
+        <!-- CONTACTO -->
+        <section id="contacto" class="section">
+            <div class="section-head reveal">
+                <span class="eyebrow">07 · Contacto</span>
+                <h2 class="section-title">Contáctanos</h2>
+                <p class="lead">¿Listo para dar el primer paso? Escríbenos y coordinemos tu clase de prueba.</p>
+            </div>
+
             <div class="contact-grid">
                 <div class="contact-info-card reveal reveal-left">
                     <div class="contact-info-content">
                         <div class="contact-info-item">
-                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            <span class="ci-icon"><i class="fas fa-map-location-dot" aria-hidden="true"></i></span>
                             <div>
                                 <h4>Ubicación</h4>
                                 <p>Avenida El Sauce 1850, Huechuraba</p>
@@ -1676,315 +3587,614 @@
                                 </a>
                             </div>
                         </div>
+
                         <div class="contact-info-item">
-                            <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                            <span class="ci-icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
                             <div>
                                 <h4>Teléfono / WhatsApp</h4>
-                                <p>+56 9 32291414</p>
+                                <div class="phone-row">
+                                    <p>+56 9 3229 1414</p>
+                                    <button type="button" class="copy-btn" id="copyPhone">
+                                        <i class="far fa-copy" aria-hidden="true"></i> Copiar
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="map-container">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=Avenida%20El%20Sauce%201850,%20Huechuraba&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                            allowfullscreen="" 
-                            loading="lazy" 
+                        <iframe
+                            src="https://maps.google.com/maps?q=Avenida%20El%20Sauce%201850,%20Huechuraba&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                            allowfullscreen=""
+                            loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Ubicación International Lagos Kenpo Karate Studio">
                         </iframe>
                     </div>
                 </div>
 
-                <!-- Formulario Único de Mensajería a WhatsApp -->
                 <form class="contact-form reveal reveal-right" id="whatsappForm">
                     <div class="contact-form-header">
-                        <h4><i class="fab fa-whatsapp"></i> Envíanos un Mensaje</h4>
+                        <h4><i class="fab fa-whatsapp" aria-hidden="true"></i> Envíanos un Mensaje</h4>
                         <p>Completa tus datos y te responderemos directamente por WhatsApp.</p>
                     </div>
+
                     <div class="form-inputs-group">
                         <div class="form-field">
                             <label for="nombre">Nombre Completo</label>
-                            <input type="text" id="nombre" placeholder="Ej: Juan Pérez" required>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" autocomplete="name" required>
                         </div>
                         <div class="form-field">
                             <label for="consulta">Mensaje o Consulta</label>
-                            <textarea id="consulta" placeholder="Hola, me gustaría agendar una clase de prueba para..." required></textarea>
+                            <textarea id="consulta" name="consulta" placeholder="Hola, me gustaría agendar una clase de prueba para..." required></textarea>
                         </div>
                     </div>
+
                     <div>
                         <button type="submit" class="btn-whatsapp-submit">
                             <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar Mensaje a WhatsApp
                         </button>
-                        <div class="form-feedback" id="formFeedback">Abriendo WhatsApp con tu consulta...</div>
+                        <div class="form-feedback" id="formFeedback" aria-live="polite">Abriendo WhatsApp con tu consulta...</div>
                     </div>
                 </form>
             </div>
         </section>
 
-        <!-- SECCIÓN REDES SOCIALES -->
-        <aside class="social-section reveal" aria-label="Redes Sociales">
-            <h3>Síguenos en Redes Sociales</h3>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/share/19S6CM4fR1/" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook">
-                    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.instagram.com/ilkks_kenpo_karate?dlrf=c3hlZnJyMjBudWdh" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
-                    <i class="fab fa-instagram" aria-hidden="true"></i>
-                </a>
-                <a href="https://www.tiktok.com/@ilkks_kenpokarate?_r=1&_t=ZS-9B6vE0LaG2e" target="_blank" rel="noopener noreferrer" class="social-icon tiktok" aria-label="TikTok">
-                    <i class="fab fa-tiktok" aria-hidden="true"></i>
-                </a>
+        <!-- CTA FINAL -->
+        <section class="cta-band">
+            <div class="cta-inner reveal">
+                <span class="eyebrow">Tu primer paso</span>
+                <h2>La disciplina se entrena <span>desde el primer día.</span></h2>
+                <p>Reserva tu clase de prueba en Huechuraba y descubre el Kenpo Karate de la mano de un instructor certificado CKF.</p>
+                <div class="cta-actions">
+                    <a href="https://api.whatsapp.com/send?phone=56932291414&text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20clase%20de%20prueba%20de%20Kenpo%20Karate."
+                       target="_blank" rel="noopener noreferrer" class="btn magnetic-btn">
+                        <i class="fab fa-whatsapp" aria-hidden="true"></i> Escríbenos por WhatsApp
+                    </a>
+                    <a href="#horarios" class="btn btn-outline-gold">Ver horarios</a>
+                </div>
             </div>
-        </aside>
+        </section>
     </main>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://api.whatsapp.com/send?phone=56932291414&text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20una%20clase%20de%20prueba%20de%20Kenpo%20Karate." 
-       target="_blank" 
-       rel="noopener noreferrer" 
-       class="whatsapp-float" 
+    <a href="https://api.whatsapp.com/send?phone=56932291414&text=Hola%2C%20me%20gustar%C3%ADa%20consultar%20por%20una%20clase%20de%20prueba%20de%20Kenpo%20Karate."
+       target="_blank"
+       rel="noopener noreferrer"
+       class="whatsapp-float"
        aria-label="Chatear por WhatsApp">
         <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        <span class="wa-label">Escríbenos</span>
     </a>
+
+    <!-- VOLVER ARRIBA -->
+    <button class="back-top" id="backTop" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 International Lagos Kenpo Karate Studio. Todos los derechos reservados. | Miembro CKF &bull; Afiliado a <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer">KenpoChile</a>.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="#inicio" class="logo-container" aria-label="Volver al inicio">
+                    <img src="Insignia.png" alt="Insignia ILKKS" loading="lazy" decoding="async">
+                    <span>International Lagos <br>Kenpo Karate Studio</span>
+                </a>
+                <p>Academia de Kenpo Karate y defensa personal en Huechuraba. Disciplina, humildad y respeto, con el respaldo oficial de la CKF.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/share/19S6CM4fR1/" target="_blank" rel="noopener noreferrer" class="social-icon facebook" aria-label="Facebook de ILKKS">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/ilkks_kenpo_karate?dlrf=c3hlZnJyMjBudWdh" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram de ILKKS">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@ilkks_kenpokarate?_r=1&_t=ZS-9B6vE0LaG2e" target="_blank" rel="noopener noreferrer" class="social-icon tiktok" aria-label="TikTok de ILKKS">
+                        <i class="fab fa-tiktok" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explorar</h4>
+                <ul>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#programas">Programas</a></li>
+                    <li><a href="#horarios">Horarios</a></li>
+                    <li><a href="#instructores">Instructor</a></li>
+                    <li><a href="#faq">Preguntas frecuentes</a></li>
+                    <li><a href="#federacion">Afiliaciones</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h4>Contacto</h4>
+                <p><i class="fas fa-location-dot" aria-hidden="true"></i> Av. El Sauce 1850, Huechuraba, Santiago</p>
+                <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+56932291414">+56 9 3229 1414</a></p>
+                <p><i class="fas fa-clock" aria-hidden="true"></i> Lunes y miércoles · 19:30 – 21:00</p>
+                <p><i class="fas fa-award" aria-hidden="true"></i> Miembro CKF · Afiliado a KenpoChile</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year">2026</span> International Lagos Kenpo Karate Studio. Todos los derechos reservados. | Miembro CKF &bull; Afiliado a <a href="https://kenpochile.cl" target="_blank" rel="noopener noreferrer">KenpoChile</a>.</p>
+        </div>
     </footer>
 
     <!-- SCRIPTS -->
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+        (function () {
+            'use strict';
 
-        menuToggle.addEventListener('click', () => {
-            const isActive = navLinks.classList.toggle('active');
-            menuToggle.setAttribute('aria-expanded', isActive);
-            const icon = menuToggle.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const $ = (sel, ctx = document) => ctx.querySelector(sel);
+            const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
+            /* ---------- AÑO DINÁMICO ---------- */
+            const yearEl = $('#year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            /* ---------- MENÚ MÓVIL ---------- */
+            const menuToggle = $('#menuToggle');
+            const navLinks = $('#navLinks');
+
+            function closeMenu() {
                 navLinks.classList.remove('active');
+                document.body.classList.remove('menu-open');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 const icon = menuToggle.querySelector('i');
                 icon.classList.add('fa-bars');
                 icon.classList.remove('fa-times');
-            });
-        });
+            }
 
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const isExpanded = item.classList.contains('active');
-                
-                document.querySelectorAll('.faq-item').forEach(faq => {
-                    faq.classList.remove('active');
-                    faq.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    const isActive = navLinks.classList.toggle('active');
+                    menuToggle.setAttribute('aria-expanded', String(isActive));
+                    document.body.classList.toggle('menu-open', isActive);
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.toggle('fa-bars');
+                    icon.classList.toggle('fa-times');
                 });
 
-                if (!isExpanded) {
-                    item.classList.add('active');
-                    question.setAttribute('aria-expanded', 'true');
-                }
-            });
-        });
+                $$('.nav-links a').forEach(link => {
+                    link.addEventListener('click', closeMenu);
+                });
 
-        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value.trim();
-            const consulta = document.getElementById('consulta').value.trim();
-            const feedback = document.getElementById('formFeedback');
-            const telefono = "56932291414"; 
-            
-            const texto = `Hola, mi nombre es *${nombre}*. ${consulta}`;
-            const mensajeUrl = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(texto)}`;
-            
-            feedback.classList.add('visible');
-            setTimeout(() => {
-                feedback.classList.remove('visible');
-            }, 4000);
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
+                });
 
-            window.open(mensajeUrl, '_blank', 'noopener,noreferrer');
-        });
-
-        const scrollProgress = document.getElementById('scrollProgress');
-        const mainHeader = document.getElementById('mainHeader');
-        const sections = document.querySelectorAll('section[id], div[id="horarios"]');
-        const navItems = document.querySelectorAll('.nav-links a');
-        const aboutParallaxImg = document.getElementById('aboutParallaxImg');
-
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercent = (scrollTop / docHeight) * 100;
-            scrollProgress.style.width = scrollPercent + '%';
-
-            if (scrollTop > 50) {
-                mainHeader.classList.add('scrolled');
-            } else {
-                mainHeader.classList.remove('scrolled');
+                window.addEventListener('resize', () => {
+                    if (window.innerWidth > 1080 && navLinks.classList.contains('active')) closeMenu();
+                });
             }
 
-            if (aboutParallaxImg && window.innerWidth > 768) {
-                const rect = aboutParallaxImg.parentElement.getBoundingClientRect();
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    const offset = (rect.top - window.innerHeight / 2) * 0.06;
-                    aboutParallaxImg.style.transform = `scale(1.08) translateY(${offset}px)`;
+            /* ---------- FAQ ACORDEÓN ---------- */
+            $$('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    const isExpanded = item.classList.contains('active');
+
+                    $$('.faq-item').forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    });
+
+                    if (!isExpanded) {
+                        item.classList.add('active');
+                        question.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            /* ---------- FORMULARIO WHATSAPP ---------- */
+            const whatsappForm = $('#whatsappForm');
+            if (whatsappForm) {
+                whatsappForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const nombre = $('#nombre').value.trim();
+                    const consulta = $('#consulta').value.trim();
+                    const feedback = $('#formFeedback');
+                    const telefono = '56932291414';
+
+                    const texto = `Hola, mi nombre es *${nombre}*. ${consulta}`;
+                    const mensajeUrl = `https://api.whatsapp.com/send?phone=${telefono}&text=${encodeURIComponent(texto)}`;
+
+                    feedback.classList.add('visible');
+                    setTimeout(() => feedback.classList.remove('visible'), 4000);
+
+                    window.open(mensajeUrl, '_blank', 'noopener,noreferrer');
+                });
+            }
+
+            /* ---------- SCROLL: PROGRESO, HEADER, NAV ACTIVO, PARALLAX ---------- */
+            const scrollProgress = $('#scrollProgress');
+            const mainHeader = $('#mainHeader');
+            const backTop = $('#backTop');
+            const sections = $$('main section[id]');
+            const navItems = $$('.nav-links a');
+            const aboutParallaxImg = $('#aboutParallaxImg');
+            let ticking = false;
+
+            function updateScroll() {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+                scrollProgress.style.width = percent + '%';
+                if (backTop) {
+                    backTop.classList.toggle('show', scrollTop > 700);
+                    backTop.style.setProperty('--p', percent.toFixed(1));
+                }
+
+                mainHeader.classList.toggle('scrolled', scrollTop > 50);
+
+                let currentSection = '';
+                sections.forEach(sec => {
+                    const rect = sec.getBoundingClientRect();
+                    if (rect.top <= 150) currentSection = sec.id;
+                });
+
+                navItems.forEach(link => {
+                    link.classList.toggle('active-link', link.getAttribute('href') === '#' + currentSection && !link.classList.contains('nav-cta'));
+                });
+
+                if (aboutParallaxImg && window.innerWidth > 900) {
+                    const rect = aboutParallaxImg.parentElement.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * -0.045;
+                        aboutParallaxImg.style.transform = `scale(1.12) translateY(${offset}px)`;
+                    }
+                } else if (aboutParallaxImg) {
+                    aboutParallaxImg.style.transform = '';
                 }
             }
 
-            let currentSection = '';
-            sections.forEach(sec => {
-                const sectionTop = sec.offsetTop - 160;
-                if (scrollTop >= sectionTop) {
-                    currentSection = sec.getAttribute('id');
-                }
-            });
-
-            navItems.forEach(link => {
-                link.classList.remove('active-link');
-                if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.classList.add('active-link');
-                }
-            });
-        }, { passive: true });
-
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.12,
-            rootMargin: '0px 0px -40px 0px'
-        });
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        const statsContainer = document.getElementById('instructorStats');
-        let statsAnimated = false;
-        if (statsContainer) {
-            const statsObserver = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting && !statsAnimated) {
-                    statsAnimated = true;
-                    document.querySelectorAll('.stat-number').forEach(counter => {
-                        const target = parseInt(counter.getAttribute('data-target'), 10);
-                        const prefix = counter.getAttribute('data-prefix') || '';
-                        const suffix = counter.getAttribute('data-suffix') || '';
-                        const start = target > 100 ? target - 15 : 0;
-                        const duration = 1400;
-                        const startTime = performance.now();
-
-                        function updateCount(currentTime) {
-                            const elapsed = currentTime - startTime;
-                            const progress = Math.min(elapsed / duration, 1);
-                            const easeOut = 1 - Math.pow(1 - progress, 3);
-                            const currentVal = Math.floor(start + (target - start) * easeOut);
-                            counter.textContent = `${prefix}${currentVal}${suffix}`;
-                            if (progress < 1) {
-                                requestAnimationFrame(updateCount);
-                            } else {
-                                counter.textContent = `${prefix}${target}${suffix}`;
-                            }
-                        }
-                        requestAnimationFrame(updateCount);
+            function requestScrollUpdate() {
+                if (!ticking) {
+                    ticking = true;
+                    requestAnimationFrame(() => {
+                        updateScroll();
+                        ticking = false;
                     });
                 }
-            }, { threshold: 0.4 });
-            statsObserver.observe(statsContainer);
-        }
-
-        document.querySelectorAll('.tilt-card').forEach(card => {
-            card.addEventListener('mousemove', (e) => {
-                if (window.innerWidth < 768) return;
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = ((y - centerY) / centerY) * -6;
-                const rotateY = ((x - centerX) / centerX) * 6;
-
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
-            });
-
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
-            });
-        });
-
-        document.querySelectorAll('.magnetic-btn').forEach(btn => {
-            btn.addEventListener('mousemove', (e) => {
-                if (window.innerWidth < 768) return;
-                const rect = btn.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                btn.style.transform = `translate(${x * 0.18}px, ${y * 0.25}px)`;
-            });
-
-            btn.addEventListener('mouseleave', () => {
-                btn.style.transform = 'translate(0, 0)';
-            });
-        });
-
-        const canvas = document.getElementById('heroParticles');
-        if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            const ctx = canvas.getContext('2d');
-            let width, height, particles = [];
-
-            function resizeCanvas() {
-                width = canvas.width = canvas.offsetWidth;
-                height = canvas.height = canvas.offsetHeight;
             }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
 
-            const particleCount = window.innerWidth < 768 ? 22 : 42;
-            const colors = ['rgba(255, 30, 38, ', 'rgba(197, 160, 89, '];
+            window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+            window.addEventListener('resize', requestScrollUpdate);
+            updateScroll();
 
-            for (let i = 0; i < particleCount; i++) {
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    radius: Math.random() * 2.2 + 0.8,
-                    speedY: -(Math.random() * 0.55 + 0.2),
-                    speedX: (Math.random() - 0.5) * 0.35,
-                    alpha: Math.random() * 0.6 + 0.2,
-                    color: colors[Math.floor(Math.random() * colors.length)]
+            if (backTop) {
+                backTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
                 });
             }
 
-            function animateParticles() {
-                ctx.clearRect(0, 0, width, height);
-                particles.forEach(p => {
-                    p.y += p.speedY;
-                    p.x += p.speedX;
-                    if (p.y < -10) {
-                        p.y = height + 10;
-                        p.x = Math.random() * width;
+            /* ---------- REVEAL ON SCROLL ---------- */
+            const revealElements = $$('.reveal');
+            if ('IntersectionObserver' in window) {
+                const revealObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+                revealElements.forEach(el => revealObserver.observe(el));
+            } else {
+                revealElements.forEach(el => el.classList.add('visible'));
+            }
+
+            /* ---------- CONTADORES ---------- */
+            const statsContainer = $('#instructorStats');
+            let statsAnimated = false;
+
+            if (statsContainer && 'IntersectionObserver' in window) {
+                const statsObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting && !statsAnimated) {
+                        statsAnimated = true;
+
+                        $$('.stat-number', statsContainer).forEach(counter => {
+                            const target = parseInt(counter.getAttribute('data-target'), 10);
+                            const prefix = counter.getAttribute('data-prefix') || '';
+                            const suffix = counter.getAttribute('data-suffix') || '';
+                            const start = target > 100 ? target - 15 : 0;
+                            const duration = 1500;
+                            const startTime = performance.now();
+
+                            function updateCount(currentTime) {
+                                const progress = Math.min((currentTime - startTime) / duration, 1);
+                                const easeOut = 1 - Math.pow(1 - progress, 3);
+                                const currentVal = Math.floor(start + (target - start) * easeOut);
+                                counter.textContent = `${prefix}${currentVal}${suffix}`;
+                                if (progress < 1) {
+                                    requestAnimationFrame(updateCount);
+                                } else {
+                                    counter.textContent = `${prefix}${target}${suffix}`;
+                                }
+                            }
+                            requestAnimationFrame(updateCount);
+                        });
+
+                        statsObserver.disconnect();
                     }
-                    if (p.x < -10) p.x = width + 10;
-                    if (p.x > width + 10) p.x = -10;
-
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = `${p.color}${p.alpha})`;
-                    ctx.fill();
-                });
-                requestAnimationFrame(animateParticles);
+                }, { threshold: 0.4 });
+                statsObserver.observe(statsContainer);
             }
-            animateParticles();
-        }
+
+            /* ---------- TILT 3D + SPOTLIGHT ---------- */
+            $$('.tilt-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    if (window.innerWidth < 768) return;
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = ((y - centerY) / centerY) * -5;
+                    const rotateY = ((x - centerX) / centerX) * 5;
+
+                    card.classList.add('tilting');
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+                    card.classList.remove('tilting');
+                });
+            });
+
+            /* ---------- BOTONES MAGNÉTICOS ---------- */
+            $$('.magnetic-btn').forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    if (window.innerWidth < 768) return;
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    btn.style.transform = `translate(${x * 0.16}px, ${y * 0.24}px)`;
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0, 0)';
+                });
+            });
+
+            /* ---------- PARTÍCULAS DEL HERO ---------- */
+            const canvas = $('#heroParticles');
+            if (canvas && !reduceMotion) {
+                const ctx = canvas.getContext('2d');
+                let width = 0;
+                let height = 0;
+                let particles = [];
+                let rafId = null;
+                let running = false;
+
+                const colors = ['255, 30, 38', '197, 160, 89'];
+
+                function buildParticles() {
+                    const count = window.innerWidth < 768 ? 20 : 42;
+                    particles = [];
+                    for (let i = 0; i < count; i++) {
+                        particles.push({
+                            x: Math.random() * width,
+                            y: Math.random() * height,
+                            radius: Math.random() * 2.1 + 0.7,
+                            speedY: -(Math.random() * 0.55 + 0.18),
+                            speedX: (Math.random() - 0.5) * 0.32,
+                            alpha: Math.random() * 0.55 + 0.18,
+                            color: colors[Math.floor(Math.random() * colors.length)]
+                        });
+                    }
+                }
+
+                function resizeCanvas() {
+                    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+                    width = canvas.offsetWidth;
+                    height = canvas.offsetHeight;
+                    canvas.width = Math.floor(width * dpr);
+                    canvas.height = Math.floor(height * dpr);
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+                    buildParticles();
+                }
+
+                function animateParticles() {
+                    ctx.clearRect(0, 0, width, height);
+                    particles.forEach(p => {
+                        p.y += p.speedY;
+                        p.x += p.speedX;
+                        if (p.y < -12) {
+                            p.y = height + 12;
+                            p.x = Math.random() * width;
+                        }
+                        if (p.x < -12) p.x = width + 12;
+                        if (p.x > width + 12) p.x = -12;
+
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = `rgba(${p.color}, ${p.alpha})`;
+                        ctx.shadowColor = `rgba(${p.color}, 0.7)`;
+                        ctx.shadowBlur = 7;
+                        ctx.fill();
+                        ctx.shadowBlur = 0;
+                    });
+                    rafId = requestAnimationFrame(animateParticles);
+                }
+
+                function startParticles() {
+                    if (running) return;
+                    running = true;
+                    rafId = requestAnimationFrame(animateParticles);
+                }
+
+                function stopParticles() {
+                    running = false;
+                    if (rafId) cancelAnimationFrame(rafId);
+                }
+
+                window.addEventListener('resize', resizeCanvas);
+                resizeCanvas();
+
+                if ('IntersectionObserver' in window) {
+                    new IntersectionObserver((entries) => {
+                        entries[0].isIntersecting ? startParticles() : stopParticles();
+                    }, { threshold: 0.02 }).observe(canvas);
+                } else {
+                    startParticles();
+                }
+            }
+
+            /* ---------- HALO DEL CURSOR ---------- */
+            const cursorGlow = $('#cursorGlow');
+            if (cursorGlow && !reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                let targetX = window.innerWidth / 2;
+                let targetY = window.innerHeight / 2;
+                let currentX = targetX;
+                let currentY = targetY;
+
+                window.addEventListener('mousemove', (e) => {
+                    targetX = e.clientX;
+                    targetY = e.clientY;
+                    cursorGlow.classList.add('on');
+                }, { passive: true });
+
+                (function renderGlow() {
+                    currentX += (targetX - currentX) * 0.11;
+                    currentY += (targetY - currentY) * 0.11;
+                    cursorGlow.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+                    requestAnimationFrame(renderGlow);
+                })();
+            }
+
+            /* ---------- PARALLAX SUAVE DEL CONTENIDO HERO ---------- */
+            const heroContent = $('#heroContent');
+            const hero = $('.hero');
+            if (heroContent && hero && !reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                hero.addEventListener('mousemove', (e) => {
+                    const rect = hero.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+                    heroContent.style.transform = `translate(${x * 12}px, ${y * 8}px)`;
+                });
+
+                hero.addEventListener('mouseleave', () => {
+                    heroContent.style.transform = 'translate(0, 0)';
+                });
+            }
+
+            /* ---------- CUENTA REGRESA A LA PRÓXIMA CLASE ---------- */
+            const CLASS_DAYS = [1, 3]; // Lunes y miércoles
+            const cdDay = $('#cdDay');
+            const cdNote = $('#cdNote');
+            const cdKicker = $('#cdKicker');
+            const cdCard = $('#cdCard');
+            const cdD = $('#cdD');
+            const cdH = $('#cdH');
+            const cdM = $('#cdM');
+            const cdS = $('#cdS');
+            const dayNames = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
+
+            function nextClassDate(now) {
+                for (let i = 0; i < 8; i++) {
+                    const d = new Date(now);
+                    d.setDate(d.getDate() + i);
+                    d.setHours(19, 30, 0, 0);
+                    if (CLASS_DAYS.includes(d.getDay()) && d > now) return d;
+                }
+                return null;
+            }
+
+            function tickCountdown() {
+                if (!cdDay || !cdCard) return;
+
+                const now = new Date();
+                const todayStart = new Date(now);
+                todayStart.setHours(19, 30, 0, 0);
+                const todayEnd = new Date(now);
+                todayEnd.setHours(21, 0, 0, 0);
+
+                let target;
+                let live = false;
+
+                if (CLASS_DAYS.includes(now.getDay()) && now >= todayStart && now < todayEnd) {
+                    target = todayEnd;
+                    live = true;
+                } else {
+                    target = nextClassDate(now);
+                }
+
+                if (!target) return;
+
+                cdCard.classList.toggle('is-live', live);
+
+                if (live) {
+                    cdKicker.textContent = 'Clase en curso';
+                    cdDay.textContent = 'Ahora · hasta las 21:00';
+                    cdNote.textContent = 'Estamos entrenando en el dojo';
+                } else {
+                    cdKicker.textContent = 'Próxima clase';
+                    cdDay.textContent = `${dayNames[target.getDay()]} · 19:30 hrs`;
+                    cdNote.textContent = 'Lunes y miércoles · excepto festivos';
+                }
+
+                const diff = Math.max(0, target - now);
+                cdD.textContent = Math.floor(diff / 86400000);
+                cdH.textContent = Math.floor((diff % 86400000) / 3600000);
+                cdM.textContent = Math.floor((diff % 3600000) / 60000);
+                cdS.textContent = Math.floor((diff % 60000) / 1000);
+            }
+
+            if (cdDay && cdCard) {
+                tickCountdown();
+                setInterval(tickCountdown, 1000);
+            }
+
+            /* ---------- COPIAR TELÉFONO ---------- */
+            const copyBtn = $('#copyPhone');
+            const toast = $('#toast');
+            let toastTimer = null;
+
+            function showToast(message) {
+                if (!toast) return;
+                toast.textContent = message;
+                toast.classList.add('show');
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+            }
+
+            if (copyBtn) {
+                copyBtn.addEventListener('click', async () => {
+                    const phone = '+56 9 3229 1414';
+                    try {
+                        await navigator.clipboard.writeText(phone);
+                        showToast('Número copiado: ' + phone);
+                    } catch (err) {
+                        const temp = document.createElement('textarea');
+                        temp.value = phone;
+                        temp.setAttribute('readonly', '');
+                        temp.style.position = 'fixed';
+                        temp.style.opacity = '0';
+                        document.body.appendChild(temp);
+                        temp.select();
+                        try {
+                            document.execCommand('copy');
+                            showToast('Número copiado: ' + phone);
+                        } catch (e) {
+                            showToast(phone);
+                        }
+                        temp.remove();
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 </html>
