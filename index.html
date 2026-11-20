@@ -100,6 +100,8 @@
     </script>
 
     <!-- Tipografías -->
+    <link rel="icon" href="Insignia.png" type="image/png">
+    <link rel="apple-touch-icon" href="Insignia.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Montserrat:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -146,6 +148,9 @@
             color: var(--light-color);
             line-height: 1.7;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         /* Grano sutil sobre toda la página */
@@ -157,6 +162,32 @@
             pointer-events: none;
             opacity: 0.045;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+        }
+
+        /* Fondo ambiental en movimiento detrás de todo el contenido */
+        .ambient {
+            position: fixed;
+            inset: -30%;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(42% 34% at 18% 24%, rgba(255, 30, 38, 0.14), transparent 68%),
+                radial-gradient(38% 32% at 84% 72%, rgba(197, 160, 89, 0.12), transparent 70%),
+                radial-gradient(30% 26% at 60% 6%, rgba(255, 30, 38, 0.07), transparent 72%);
+            animation: ambientDrift 34s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        @keyframes ambientDrift {
+            0% { transform: translate3d(-1.5%, -1%, 0) scale(1); }
+            50% { transform: translate3d(2%, 1.5%, 0) scale(1.07); }
+            100% { transform: translate3d(-1%, 2.5%, 0) scale(1.03); }
+        }
+
+        main,
+        footer {
+            position: relative;
+            z-index: 1;
         }
 
         ::selection {
@@ -349,6 +380,16 @@
             box-shadow: 0 10px 24px rgba(255, 30, 38, 0.5);
         }
 
+        @media (min-width: 1081px) and (max-width: 1300px) {
+            .nav-links {
+                gap: 13px;
+            }
+
+            .nav-links a {
+                font-size: 0.79rem;
+            }
+        }
+
         .menu-toggle {
             display: none;
             align-items: center;
@@ -389,9 +430,9 @@
             right: -22px;
             bottom: -22px;
             background: url('dojo.png') no-repeat center center/cover;
-            filter: blur(4px) brightness(0.42) saturate(0.9);
+            filter: blur(3px) brightness(0.62) saturate(1.08) contrast(1.04);
             z-index: 1;
-            animation: kenBurns 24s ease-in-out infinite alternate;
+            animation: kenBurns 26s ease-in-out infinite alternate;
             will-change: transform;
         }
 
@@ -400,8 +441,9 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 50% 10%, rgba(255, 30, 38, 0.16), transparent 55%),
-                linear-gradient(180deg, rgba(5, 5, 5, 0.55), rgba(5, 5, 5, 0.78));
+                radial-gradient(ellipse at 50% 8%, rgba(255, 30, 38, 0.22), transparent 58%),
+                radial-gradient(ellipse at 12% 92%, rgba(197, 160, 89, 0.14), transparent 55%),
+                linear-gradient(180deg, rgba(5, 5, 5, 0.42), rgba(5, 5, 5, 0.76));
         }
 
         @keyframes kenBurns {
@@ -446,6 +488,20 @@
             to { transform: translate(-46px, 34px) scale(1.18); }
         }
 
+        .hero-sheen {
+            position: absolute;
+            inset: -45%;
+            z-index: 2;
+            pointer-events: none;
+            background: conic-gradient(from 0deg at 50% 50%,
+                transparent 0deg,
+                rgba(255, 30, 38, 0.10) 55deg,
+                transparent 122deg,
+                rgba(197, 160, 89, 0.10) 218deg,
+                transparent 302deg);
+            animation: spin 60s linear infinite;
+        }
+
         .hero-kanji {
             position: absolute;
             top: 50%;
@@ -474,7 +530,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, transparent 22%, rgba(5, 5, 5, 0.86) 100%);
+            background: radial-gradient(circle at center, transparent 30%, rgba(5, 5, 5, 0.78) 100%);
             z-index: 3;
             pointer-events: none;
         }
@@ -613,7 +669,7 @@
             display: block;
             font-family: var(--font-brush);
             font-weight: 400;
-            font-size: clamp(2.4rem, 6.6vw, 4.8rem);
+            font-size: clamp(2.6rem, 7vw, 5.3rem);
             letter-spacing: 0.02em;
             padding: 0 0.08em 0.14em;
             background: linear-gradient(100deg, #f6e7c2 0%, #e2c183 22%, #fffaf0 42%, #c5a059 62%, #f0dcae 82%, #f6e7c2 100%);
@@ -635,10 +691,10 @@
             font-family: var(--font-display);
             font-weight: 900;
             text-transform: uppercase;
-            font-size: clamp(1.05rem, 2.9vw, 2.05rem);
-            letter-spacing: 0.24em;
+            font-size: clamp(1.15rem, 3.2vw, 2.35rem);
+            letter-spacing: 0.26em;
             color: #ffffff;
-            margin-top: 4px;
+            margin-top: 6px;
             text-shadow: 0 6px 30px rgba(0, 0, 0, 0.8);
         }
 
@@ -671,20 +727,33 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px 30px;
-            font-size: 0.82rem;
-            color: var(--text-gray);
+            gap: 10px 12px;
+            font-size: 0.79rem;
+            color: #c9cdd4;
         }
 
         .hero-meta li {
             display: inline-flex;
             align-items: center;
             gap: 9px;
+            padding: 9px 17px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.045);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: border-color 0.35s ease, background-color 0.35s ease, transform 0.35s var(--ease-out);
+        }
+
+        .hero-meta li:hover {
+            border-color: rgba(197, 160, 89, 0.45);
+            background-color: rgba(255, 255, 255, 0.07);
+            transform: translateY(-2px);
         }
 
         .hero-meta i {
             color: var(--primary-color);
-            font-size: 0.85rem;
+            font-size: 0.82rem;
         }
 
         /* --- BOTONES --- */
@@ -791,16 +860,43 @@
         .marquee-wrap {
             position: relative;
             z-index: 7;
-            margin-top: -42px;
+            margin-top: -46px;
+            overflow: hidden;
+            padding: 12px 0 8px;
         }
 
         .marquee {
-            transform: rotate(-1.4deg) scale(1.03);
-            background: linear-gradient(90deg, #ff1e26, #b30710 45%, #e0151c 100%);
-            border-top: 1px solid rgba(255, 255, 255, 0.18);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+            position: relative;
+            transform: rotate(-1.3deg) scale(1.06);
+            background:
+                repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 22px),
+                linear-gradient(90deg, #b00d15 0%, #ff1e26 26%, #e0111a 52%, #b30d15 74%, #ff1e26 100%);
             overflow: hidden;
-            box-shadow: 0 18px 50px rgba(255, 30, 38, 0.22);
+            box-shadow:
+                0 22px 55px rgba(255, 30, 38, 0.26),
+                0 2px 0 rgba(255, 255, 255, 0.06) inset;
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 3.5%, #000 96.5%, transparent 100%);
+        }
+
+        .marquee::before,
+        .marquee::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            z-index: 2;
+        }
+
+        .marquee::before {
+            top: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+        }
+
+        .marquee::after {
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.65), transparent);
         }
 
         .marquee-track {
@@ -808,57 +904,81 @@
             align-items: center;
             width: max-content;
             padding: 15px 0;
-            animation: marquee 34s linear infinite;
+            animation: marqueeScroll 32s linear infinite;
+            transform: translate3d(0, 0, 0);
+            will-change: transform;
         }
 
         .marquee:hover .marquee-track {
             animation-play-state: paused;
         }
 
-        .marquee-track span {
+        .marquee-group {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .marquee-group span {
             font-family: var(--font-display);
             font-weight: 800;
-            font-size: 0.9rem;
-            letter-spacing: 0.26em;
+            font-size: 0.86rem;
+            letter-spacing: 0.28em;
             text-transform: uppercase;
             color: #fff;
-            padding: 0 26px;
+            padding: 0 24px;
             white-space: nowrap;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
         }
 
-        .marquee-track span:nth-child(even) {
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.65);
+        .marquee-group span:nth-of-type(even) {
+            color: #ffe4b0;
+            text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35), 0 0 22px rgba(255, 228, 176, 0.25);
         }
 
-        .marquee-track i {
+        .marquee-group i {
             font-style: normal;
-            font-size: 0.6rem;
-            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.62rem;
+            line-height: 1;
+            color: #ffe9c4;
+            text-shadow: 0 0 12px rgba(255, 233, 196, 0.7);
+            flex-shrink: 0;
         }
 
-        @keyframes marquee {
-            to { transform: translateX(-50%); }
+        @keyframes marqueeScroll {
+            from { transform: translate3d(0, 0, 0); }
+            to { transform: translate3d(-50%, 0, 0); }
         }
 
         /* --- REVEAL AL SCROLL --- */
-        .reveal {
+        .js .reveal {
             opacity: 0;
             transform: translateY(32px);
             transition: opacity 0.85s var(--ease-out) var(--d, 0s), transform 0.85s var(--ease-out) var(--d, 0s);
         }
 
-        .reveal.reveal-left {
+        .js .reveal.reveal-left {
             transform: translateX(-42px);
         }
 
-        .reveal.reveal-right {
+        .js .reveal.reveal-right {
             transform: translateX(42px);
         }
 
-        .reveal.visible {
+        .reveal.visible,
+        .js .reveal.visible {
             opacity: 1;
             transform: translate(0, 0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .reveal {
+                transition-duration: 0.01ms !important;
+            }
         }
 
         /* --- SECCIONES --- */
@@ -2001,6 +2121,340 @@
             color: var(--accent-gold);
         }
 
+        /* --- CREDO / JURAMENTO --- */
+        .creed-section {
+            background:
+                radial-gradient(ellipse at 50% 0%, rgba(255, 30, 38, 0.09), transparent 55%),
+                radial-gradient(ellipse at 50% 100%, rgba(197, 160, 89, 0.08), transparent 60%),
+                linear-gradient(180deg, #070708, var(--surface-color) 46%, #08080a);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .creed-kanji {
+            position: absolute;
+            right: 1%;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: var(--font-brush);
+            font-size: clamp(10rem, 24vw, 21rem);
+            line-height: 1;
+            color: rgba(255, 255, 255, 0.022);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .creed-rings {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: min(880px, 94vw);
+            aspect-ratio: 1;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .creed-rings span {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 1px solid rgba(197, 160, 89, 0.07);
+        }
+
+        .creed-rings span:nth-child(2) {
+            inset: 10%;
+            border-style: dashed;
+            border-color: rgba(197, 160, 89, 0.12);
+            animation: creedSpin 80s linear infinite;
+        }
+
+        .creed-rings span:nth-child(2)::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            margin-left: -4px;
+            border-radius: 50%;
+            background: var(--accent-gold);
+            box-shadow: 0 0 18px rgba(197, 160, 89, 0.9);
+        }
+
+        .creed-rings span:nth-child(3) {
+            inset: 22%;
+            border-color: rgba(255, 30, 38, 0.08);
+        }
+
+        @keyframes creedSpin {
+            to { transform: rotate(360deg); }
+        }
+
+        .creed-card {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: clamp(34px, 5vw, 58px) clamp(22px, 5vw, 60px) clamp(26px, 4vw, 38px);
+            border-radius: 24px;
+            background: linear-gradient(170deg, rgba(26, 26, 30, 0.94), rgba(10, 10, 12, 0.96));
+            border: 1px solid rgba(197, 160, 89, 0.22);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+            overflow: hidden;
+            isolation: isolate;
+            cursor: default;
+        }
+
+        .creed-card::before,
+        .creed-card::after {
+            content: '';
+            position: absolute;
+            width: 78px;
+            height: 78px;
+            pointer-events: none;
+            border: 1px solid rgba(197, 160, 89, 0.45);
+        }
+
+        .creed-card::before {
+            top: 14px;
+            left: 14px;
+            border-right: 0;
+            border-bottom: 0;
+            border-radius: 14px 0 0 0;
+        }
+
+        .creed-card::after {
+            right: 14px;
+            bottom: 14px;
+            border-left: 0;
+            border-top: 0;
+            border-radius: 0 0 14px 0;
+        }
+
+        .creed-spotlight {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 30%), rgba(197, 160, 89, 0.16), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .creed-card:hover .creed-spotlight {
+            opacity: 1;
+        }
+
+        .creed-mark {
+            position: relative;
+            z-index: 1;
+            display: block;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: clamp(3rem, 6vw, 4.4rem);
+            line-height: 0.6;
+            color: rgba(197, 160, 89, 0.4);
+            margin-bottom: 6px;
+        }
+
+        .creed-quote {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            font-family: var(--font-display);
+            font-weight: 500;
+            font-size: clamp(1.02rem, 2vw, 1.4rem);
+            line-height: 2;
+            letter-spacing: 0.01em;
+            color: #cfcfd6;
+        }
+
+        .creed-line {
+            margin: 0;
+        }
+
+        .creed-keep {
+            white-space: nowrap;
+        }
+
+        .js .creed-line {
+            transition: opacity 0.8s var(--ease-out) var(--d, 0s), transform 0.8s var(--ease-out) var(--d, 0s), color 0.5s ease, text-shadow 0.5s ease;
+        }
+
+        .creed-line.lit {
+            color: #ffffff;
+            text-shadow: 0 0 28px rgba(236, 216, 173, 0.42), 0 0 58px rgba(197, 160, 89, 0.18);
+        }
+
+        .creed-line.lit .creed-word {
+            color: #ffe8b8;
+            text-shadow: 0 0 20px rgba(255, 232, 184, 0.6);
+            border-bottom-color: rgba(255, 232, 184, 0.95);
+        }
+
+        .creed-word {
+            appearance: none;
+            -webkit-appearance: none;
+            background: none;
+            border: 0;
+            border-bottom: 1px dashed rgba(197, 160, 89, 0.55);
+            padding: 0;
+            margin: 0;
+            font: inherit;
+            font-weight: 700;
+            color: var(--gold-light);
+            cursor: pointer;
+            transition: color 0.3s ease, text-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .creed-word:hover,
+        .creed-word:focus-visible {
+            outline: none;
+            color: #ffe8b8;
+            text-shadow: 0 0 20px rgba(255, 232, 184, 0.55);
+            border-bottom-color: #ffe8b8;
+        }
+
+        .creed-final {
+            margin-top: 12px;
+            font-size: clamp(1.25rem, 2.6vw, 1.8rem);
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+
+        .creed-final::before {
+            content: '';
+            display: block;
+            width: 64px;
+            height: 2px;
+            margin: 20px auto 16px;
+            background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+        }
+
+        .creed-final .creed-word {
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .creed-gloss {
+            position: relative;
+            z-index: 1;
+            min-height: 3.2em;
+            max-width: 620px;
+            margin: 26px auto 0;
+            padding: 14px 18px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-gray);
+            transition: color 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .creed-gloss i {
+            color: var(--accent-gold);
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+
+        .creed-gloss.is-active {
+            color: var(--gold-light);
+            border-color: rgba(197, 160, 89, 0.35);
+            background: rgba(197, 160, 89, 0.06);
+        }
+
+        .creed-sign {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 30px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-family: var(--font-display);
+            font-size: 0.66rem;
+            font-weight: 700;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: var(--text-gray);
+        }
+
+        .creed-seal {
+            display: grid;
+            place-items: center;
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 25%, #b31820, #6e0c11);
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            color: #ffe3c2;
+            font-size: 0.95rem;
+            box-shadow: 0 0 0 4px rgba(255, 30, 38, 0.08), 0 10px 22px rgba(0, 0, 0, 0.55);
+        }
+
+        .creed-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 38px;
+        }
+
+        .creed-hint {
+            margin-top: 18px;
+            font-size: 0.78rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(156, 163, 175, 0.75);
+        }
+
+        @media (max-width: 720px) {
+            .creed-card {
+                padding: 36px 20px 24px;
+                border-radius: 18px;
+            }
+
+            .creed-quote {
+                font-size: 1rem;
+                line-height: 1.85;
+            }
+
+            .creed-final {
+                font-size: 1.1rem;
+            }
+
+            .creed-card::before,
+            .creed-card::after {
+                width: 52px;
+                height: 52px;
+            }
+
+            .creed-kanji {
+                font-size: 9rem;
+            }
+
+            .creed-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .creed-actions .btn {
+                width: 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .creed-rings span:nth-child(2) {
+                animation: none;
+            }
+        }
+
         /* --- FEDERACIÓN --- */
         .ckf-section {
             background:
@@ -2403,7 +2857,7 @@
             position: absolute;
             inset: -24px;
             background: url('dojo.png') no-repeat center center/cover;
-            filter: blur(5px) brightness(0.34) saturate(0.85);
+            filter: blur(5px) brightness(0.46) saturate(0.95);
             animation: kenBurns 26s ease-in-out infinite alternate;
             z-index: 0;
         }
@@ -2413,8 +2867,8 @@
             position: absolute;
             inset: 0;
             background:
-                radial-gradient(ellipse at 50% 100%, rgba(255, 30, 38, 0.3), transparent 60%),
-                linear-gradient(180deg, rgba(5, 5, 5, 0.82), rgba(5, 5, 5, 0.9));
+                radial-gradient(ellipse at 50% 100%, rgba(255, 30, 38, 0.28), transparent 62%),
+                linear-gradient(180deg, rgba(5, 5, 5, 0.72), rgba(5, 5, 5, 0.86));
             z-index: 1;
         }
 
@@ -2731,6 +3185,110 @@
         }
 
         /* ============================================================
+           REFINAMIENTOS
+        ============================================================ */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 3px;
+            border-radius: 6px;
+        }
+
+        .contact-form input:focus-visible,
+        .contact-form textarea:focus-visible {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 2px;
+        }
+
+        .section-head {
+            margin-bottom: 64px;
+        }
+
+        .section-title::after {
+            height: 3px;
+            width: 54px;
+            box-shadow: 0 0 18px rgba(255, 30, 38, 0.35);
+        }
+
+        .section:not(.schedule-section)::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: min(1120px, 88%);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+            pointer-events: none;
+        }
+
+        .about-img {
+            transition: box-shadow 0.5s ease, border-color 0.5s ease;
+        }
+
+        .about-img:hover {
+            border-color: rgba(197, 160, 89, 0.45);
+            box-shadow: 0 28px 62px rgba(0, 0, 0, 0.66), 0 0 40px rgba(197, 160, 89, 0.12);
+        }
+
+        .program-card {
+            backdrop-filter: blur(2px);
+        }
+
+        .program-card:hover .card-num {
+            -webkit-text-stroke-color: rgba(197, 160, 89, 0.35);
+            transition: -webkit-text-stroke-color 0.4s ease;
+        }
+
+        .schedule-table tbody tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.014);
+        }
+
+        .schedule-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .faq-item.active {
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 30, 38, 0.12);
+        }
+
+        .badge-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .contact-info-card,
+        .contact-form {
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .contact-info-card:hover,
+        .contact-form:hover {
+            border-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 26px 60px rgba(0, 0, 0, 0.55);
+        }
+
+        footer {
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(1200px, 92%);
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197, 160, 89, 0.45), transparent);
+        }
+
+        @media (max-width: 720px) {
+            .section-head {
+                margin-bottom: 46px;
+            }
+        }
+
+        /* ============================================================
            RESPONSIVE
         ============================================================ */
         @media (max-width: 1080px) {
@@ -2792,6 +3350,7 @@
             .nav-links.active li:nth-child(7) { transition-delay: 0.29s; }
             .nav-links.active li:nth-child(8) { transition-delay: 0.33s; }
             .nav-links.active li:nth-child(9) { transition-delay: 0.37s; }
+            .nav-links.active li:nth-child(10) { transition-delay: 0.41s; }
 
             .nav-links a {
                 display: block;
@@ -2912,8 +3471,12 @@
             }
 
             .hero-meta {
-                gap: 10px 20px;
-                font-size: 0.76rem;
+                gap: 8px;
+                font-size: 0.73rem;
+            }
+
+            .hero-meta li {
+                padding: 8px 13px;
             }
 
             .hero-kanji {
@@ -2922,9 +3485,9 @@
                 opacity: 0.6;
             }
 
-            .marquee-track span {
-                font-size: 0.78rem;
-                padding: 0 18px;
+            .marquee-group span {
+                font-size: 0.76rem;
+                padding: 0 16px;
                 letter-spacing: 0.2em;
             }
 
@@ -3084,37 +3647,8 @@
             }
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-
-            .reveal,
-            .timeline .tl-item {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-
-            .timeline::before {
-                transform: scaleY(1) !important;
-            }
-
-            .marquee-track {
-                animation: none !important;
-            }
-
-            .cursor-glow,
-            #heroParticles {
-                display: none;
-            }
-        }
     </style>
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
@@ -3123,6 +3657,9 @@
 
     <!-- HALO QUE SIGUE AL CURSOR -->
     <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!-- FONDO AMBIENTAL ANIMADO -->
+    <div class="ambient" aria-hidden="true"></div>
 
     <!-- HEADER Y NAVEGACIÓN -->
     <header id="mainHeader">
@@ -3139,6 +3676,7 @@
                     <li><a href="#programas">Programas</a></li>
                     <li><a href="#horarios">Horarios</a></li>
                     <li><a href="#instructores">Instructor</a></li>
+                    <li><a href="#credo">Credo</a></li>
                     <li><a href="#faq">FAQ</a></li>
                     <li><a href="#federacion">Afiliaciones</a></li>
                     <li><a href="#contacto">Contacto</a></li>
@@ -3156,6 +3694,7 @@
         <!-- HERO -->
         <section id="inicio" class="hero">
             <div class="hero-bg" aria-hidden="true"></div>
+            <div class="hero-sheen" aria-hidden="true"></div>
             <div class="hero-orbs" aria-hidden="true">
                 <span class="orb orb-red"></span>
                 <span class="orb orb-gold"></span>
@@ -3200,18 +3739,22 @@
         <div class="marquee-wrap" aria-hidden="true">
             <div class="marquee">
                 <div class="marquee-track">
-                    <span>Disciplina</span><i>✦</i>
-                    <span>Humildad</span><i>✦</i>
-                    <span>Respeto</span><i>✦</i>
-                    <span>Técnica</span><i>✦</i>
-                    <span>Constancia</span><i>✦</i>
-                    <span>Honor</span><i>✦</i>
-                    <span>Disciplina</span><i>✦</i>
-                    <span>Humildad</span><i>✦</i>
-                    <span>Respeto</span><i>✦</i>
-                    <span>Técnica</span><i>✦</i>
-                    <span>Constancia</span><i>✦</i>
-                    <span>Honor</span><i>✦</i>
+                    <div class="marquee-group">
+                        <span>Disciplina</span><i>✦</i>
+                        <span>Humildad</span><i>✦</i>
+                        <span>Respeto</span><i>✦</i>
+                        <span>Técnica</span><i>✦</i>
+                        <span>Constancia</span><i>✦</i>
+                        <span>Honor</span><i>✦</i>
+                    </div>
+                    <div class="marquee-group">
+                        <span>Disciplina</span><i>✦</i>
+                        <span>Humildad</span><i>✦</i>
+                        <span>Respeto</span><i>✦</i>
+                        <span>Técnica</span><i>✦</i>
+                        <span>Constancia</span><i>✦</i>
+                        <span>Honor</span><i>✦</i>
+                    </div>
                 </div>
             </div>
         </div>
@@ -3468,10 +4011,61 @@
             </div>
         </section>
 
+        <!-- CREDO DEL KENPO -->
+        <section id="credo" class="section-full creed-section">
+            <div class="creed-kanji" aria-hidden="true">空手</div>
+            <div class="creed-rings" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="section-inner">
+                <div class="section-head reveal">
+                    <span class="eyebrow">05 · Nuestro Credo</span>
+                    <h2 class="section-title">El Juramento del Kenpo</h2>
+                    <p class="lead">El lema que cada practicante lleva en el espíritu: la fuerza nace en la técnica, la humildad y el honor.</p>
+                </div>
+
+                <figure class="creed-card" id="creedCard">
+                    <div class="creed-spotlight" aria-hidden="true"></div>
+                    <span class="creed-mark reveal" aria-hidden="true">&ldquo;</span>
+                    <blockquote class="creed-quote" id="creedQuote">
+                        <p class="creed-line reveal" style="--d: 0.05s;">Vengo hacia ti con <span class="creed-keep">las <button type="button" class="creed-word" data-gloss="El Kenpo nace sin armas: la verdadera fuerza está en la técnica, la disciplina y el espíritu.">manos vacías</button>.</span></p>
+                        <p class="creed-line reveal" style="--d: 0.15s;">No tengo armas, pero si soy obligado a defenderme,</p>
+                        <p class="creed-line reveal" style="--d: 0.25s;">a defender <button type="button" class="creed-word" data-gloss="Defendemos convicciones, nunca la violencia: el respeto es la primera técnica que se aprende.">mis principios</button> o <button type="button" class="creed-word" data-gloss="Honrar la palabra, el dojo y a los demás. El honor se entrena clase a clase.">mi honor</button>,</p>
+                        <p class="creed-line reveal" style="--d: 0.35s;">si es cuestión de <button type="button" class="creed-word" data-gloss="El arte se reserva para lo esencial: proteger la vida, nunca para presumir ni agredir.">vida o muerte</button>,</p>
+                        <p class="creed-line reveal" style="--d: 0.45s;">del <button type="button" class="creed-word" data-gloss="Luchar por lo justo con temple y sin abuso: la justicia guía al verdadero practicante.">derecho</button> o la <button type="button" class="creed-word" data-gloss="El Kenpo forma personas capaces de defender a quien no puede defenderse.">injusticia</button>,</p>
+                        <p class="creed-line reveal" style="--d: 0.55s;">entonces aquí están mis armas:</p>
+                        <p class="creed-line creed-final reveal" style="--d: 0.65s;"><button type="button" class="creed-word" data-gloss="Arte marcial de raíces chinas perfeccionado en Okinawa: defensa personal, disciplina y crecimiento interior.">el Karate</button>, las <button type="button" class="creed-word" data-gloss="Manos vacías, espíritu lleno: sin armas, con temple, técnica y honor.">manos vacías</button>.</p>
+                    </blockquote>
+
+                    <p class="creed-gloss reveal" id="creedGloss" aria-live="polite" style="--d: 0.75s;">
+                        <i class="fas fa-hand-pointer" aria-hidden="true"></i><span id="creedGlossText">Explora las palabras doradas: cada una guarda un principio del Kenpo.</span>
+                    </p>
+
+                    <figcaption class="creed-sign reveal" style="--d: 0.85s;">
+                        <span class="creed-seal"><i class="fas fa-fist-raised" aria-hidden="true"></i></span>
+                        <span>International Lagos Kenpo Karate Studio</span>
+                    </figcaption>
+                </figure>
+
+                <div class="creed-actions reveal">
+                    <button type="button" class="btn" id="creedRecite">
+                        <i class="fas fa-hand-sparkles" aria-hidden="true"></i> Recitar el credo
+                    </button>
+                    <a href="#contacto" class="btn btn-outline-gold">
+                        Vive el lema · Reserva tu clase <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <p class="creed-hint reveal">Toca «Recitar el credo» y observa cómo se enciende cada palabra.</p>
+            </div>
+        </section>
+
         <!-- FAQ -->
         <section id="faq" class="section">
             <div class="section-head reveal">
-                <span class="eyebrow">05 · Preguntas Frecuentes</span>
+                <span class="eyebrow">06 · Preguntas Frecuentes</span>
                 <h2 class="section-title">Preguntas Frecuentes</h2>
             </div>
 
@@ -3527,6 +4121,19 @@
                         <p>Escríbenos por WhatsApp al +56 9 3229 1414 o completa el formulario de la sección de contacto. Te confirmaremos el horario disponible.</p>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span class="faq-q-left">
+                            <span class="faq-num">05</span>
+                            <span>¿Por qué estudiar y entrenar Kenpo Karate?</span>
+                        </span>
+                        <i class="fas fa-plus" aria-hidden="true"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Porque el Kenpo Karate fortalece tu cuerpo, tu mente y tu seguridad: aprenderás a defenderte, a mantener la calma bajo presión y a convertir la disciplina en un hábito que mejora todas las áreas de tu vida. En cada clase descubrirás que avanzar no depende de la edad ni del punto de partida, sino de las ganas de intentarlo. Aquí encontrarás un equipo que te apoya, te motiva y celebra cada logro contigo. Da el primer paso hoy: reserva tu clase de prueba y descubre de lo que eres capaz.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -3534,7 +4141,7 @@
         <section id="federacion" class="section-full ckf-section">
             <div class="ckf-kanji" aria-hidden="true">武</div>
             <div class="section-inner reveal">
-                <span class="eyebrow">06 · Respaldo Oficial</span>
+                <span class="eyebrow">07 · Respaldo Oficial</span>
                 <h2>Avalado por la Chinese Karate Federation (CKF)</h2>
                 <p>Pertenecer a la CKF nos otorga el respaldo de una organización sólida, fomentando la hermandad entre dojos, seminarios oficiales y un riguroso programa de grados internacionales.</p>
 
@@ -3566,7 +4173,7 @@
         <!-- CONTACTO -->
         <section id="contacto" class="section">
             <div class="section-head reveal">
-                <span class="eyebrow">07 · Contacto</span>
+                <span class="eyebrow">08 · Contacto</span>
                 <h2 class="section-title">Contáctanos</h2>
                 <p class="lead">¿Listo para dar el primer paso? Escríbenos y coordinemos tu clase de prueba.</p>
             </div>
@@ -3704,6 +4311,7 @@
                     <li><a href="#programas">Programas</a></li>
                     <li><a href="#horarios">Horarios</a></li>
                     <li><a href="#instructores">Instructor</a></li>
+                    <li><a href="#credo">Credo</a></li>
                     <li><a href="#faq">Preguntas frecuentes</a></li>
                     <li><a href="#federacion">Afiliaciones</a></li>
                 </ul>
@@ -3725,10 +4333,14 @@
 
     <!-- SCRIPTS -->
     <script>
-        (function () {f
+        window.addEventListener('error', function () {
+            document.documentElement.classList.remove('js');
+        });
+    </script>
+    <script>
+        (function () {
             'use strict';
 
-            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             const $ = (sel, ctx = document) => ctx.querySelector(sel);
             const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 
@@ -3789,6 +4401,80 @@
                     }
                 });
             });
+
+            /* ---------- CREDO INTERACTIVO ---------- */
+            const creedCard = $('#creedCard');
+            const creedQuote = $('#creedQuote');
+            const creedRecite = $('#creedRecite');
+            const creedGloss = $('#creedGloss');
+            const creedGlossText = $('#creedGlossText');
+
+            if (creedCard && creedQuote && creedRecite) {
+                const creedLines = $$('.creed-line', creedQuote);
+                const glossDefault = creedGlossText ? creedGlossText.textContent : '';
+                const creedTimers = [];
+                let creedPlayed = false;
+                let creedAutoTimer = null;
+
+                const playCreed = () => {
+                    creedTimers.forEach(timer => clearTimeout(timer));
+                    creedTimers.length = 0;
+                    creedLines.forEach(line => line.classList.remove('lit'));
+                    creedLines.forEach((line, index) => {
+                        creedTimers.push(setTimeout(() => line.classList.add('lit'), 450 + index * 950));
+                    });
+                };
+
+                creedRecite.addEventListener('click', () => {
+                    if (creedAutoTimer) {
+                        clearTimeout(creedAutoTimer);
+                        creedAutoTimer = null;
+                    }
+                    playCreed();
+                });
+
+                if ('IntersectionObserver' in window) {
+                    const creedObserver = new IntersectionObserver((entries) => {
+                        if (entries[0].isIntersecting && !creedPlayed) {
+                            creedPlayed = true;
+                            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                                creedAutoTimer = setTimeout(() => {
+                                    creedAutoTimer = null;
+                                    playCreed();
+                                }, 1100);
+                            }
+                            creedObserver.disconnect();
+                        }
+                    }, { threshold: 0.35 });
+                    creedObserver.observe(creedCard);
+                }
+
+                creedCard.addEventListener('pointermove', (e) => {
+                    const rect = creedCard.getBoundingClientRect();
+                    creedCard.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+                    creedCard.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+                });
+
+                if (creedGloss && creedGlossText) {
+                    $$('.creed-word', creedCard).forEach(word => {
+                        const showGloss = () => {
+                            creedGlossText.textContent = word.dataset.gloss || glossDefault;
+                            creedGloss.classList.add('is-active');
+                        };
+                        const hideGloss = () => {
+                            creedGlossText.textContent = glossDefault;
+                            creedGloss.classList.remove('is-active');
+                        };
+                        word.addEventListener('pointerenter', showGloss);
+                        word.addEventListener('focus', showGloss);
+                        word.addEventListener('click', showGloss);
+                        word.addEventListener('pointerleave', (e) => {
+                            if (e.pointerType === 'mouse') hideGloss();
+                        });
+                        word.addEventListener('blur', hideGloss);
+                    });
+                }
+            }
 
             /* ---------- FORMULARIO WHATSAPP ---------- */
             const whatsappForm = $('#whatsappForm');
@@ -3869,7 +4555,7 @@
 
             if (backTop) {
                 backTop.addEventListener('click', () => {
-                    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
 
@@ -3970,7 +4656,7 @@
 
             /* ---------- PARTÍCULAS DEL HERO ---------- */
             const canvas = $('#heroParticles');
-            if (canvas && !reduceMotion) {
+            if (canvas) {
                 const ctx = canvas.getContext('2d');
                 let width = 0;
                 let height = 0;
@@ -4054,7 +4740,7 @@
 
             /* ---------- HALO DEL CURSOR ---------- */
             const cursorGlow = $('#cursorGlow');
-            if (cursorGlow && !reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            if (cursorGlow && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
                 let targetX = window.innerWidth / 2;
                 let targetY = window.innerHeight / 2;
                 let currentX = targetX;
@@ -4077,7 +4763,7 @@
             /* ---------- PARALLAX SUAVE DEL CONTENIDO HERO ---------- */
             const heroContent = $('#heroContent');
             const hero = $('.hero');
-            if (heroContent && hero && !reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            if (heroContent && hero && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
                 hero.addEventListener('mousemove', (e) => {
                     const rect = hero.getBoundingClientRect();
                     const x = (e.clientX - rect.left) / rect.width - 0.5;
