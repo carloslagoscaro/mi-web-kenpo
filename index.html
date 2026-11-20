@@ -2860,6 +2860,25 @@
             opacity: 1;
         }
 
+        .form-privacy {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 0.74rem;
+            line-height: 1.55;
+            color: var(--text-gray);
+        }
+
+        .form-privacy i {
+            color: var(--whatsapp-color);
+            font-size: 0.86rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
         /* --- CTA FINAL --- */
         .cta-band {
             position: relative;
@@ -4281,11 +4300,11 @@
                     <div class="form-inputs-group">
                         <div class="form-field">
                             <label for="nombre">Nombre Completo</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" autocomplete="name" required>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" autocomplete="name" maxlength="80" required>
                         </div>
                         <div class="form-field">
                             <label for="consulta">Mensaje o Consulta</label>
-                            <textarea id="consulta" name="consulta" placeholder="Hola, me gustaría agendar una clase de prueba para..." required></textarea>
+                            <textarea id="consulta" name="consulta" placeholder="Hola, me gustaría agendar una clase de prueba para..." maxlength="600" required></textarea>
                         </div>
                     </div>
 
@@ -4294,6 +4313,10 @@
                             <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar Mensaje a WhatsApp
                         </button>
                         <div class="form-feedback" id="formFeedback" aria-live="polite">Abriendo WhatsApp con tu consulta...</div>
+                        <p class="form-privacy">
+                            <i class="fas fa-shield-halved" aria-hidden="true"></i>
+                            Al enviar, tu nombre y mensaje se abrirán en WhatsApp para que nos escribas directamente. Este sitio no almacena tus datos y solo los usamos para responder tu consulta.
+                        </p>
                     </div>
                 </form>
             </div>
