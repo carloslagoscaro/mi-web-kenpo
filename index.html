@@ -965,6 +965,13 @@
             transform: translateX(42px);
         }
 
+        @media (max-width: 900px) {
+            .js .reveal.reveal-left,
+            .js .reveal.reveal-right {
+                transform: translateY(28px);
+            }
+        }
+
         .reveal.visible,
         .js .reveal.visible {
             opacity: 1;
@@ -1480,6 +1487,10 @@
             grid-template-columns: 0.92fr 1.08fr;
             gap: 26px;
             align-items: stretch;
+        }
+
+        .schedule-grid > * {
+            min-width: 0;
         }
 
         .next-class {
@@ -2601,6 +2612,10 @@
             align-items: stretch;
         }
 
+        .contact-grid > * {
+            min-width: 0;
+        }
+
         .contact-info-card,
         .contact-form {
             background: linear-gradient(170deg, #1a1a1e, #111113);
@@ -2610,6 +2625,7 @@
             box-shadow: 0 20px 46px rgba(0, 0, 0, 0.4);
             display: flex;
             flex-direction: column;
+            min-width: 0;
         }
 
         .contact-info-card {
@@ -2625,6 +2641,7 @@
 
         .contact-info-item > div {
             width: 100%;
+            min-width: 0;
         }
 
         .ci-icon {
@@ -2771,6 +2788,7 @@
             font-family: var(--font-body);
             font-size: 0.94rem;
             width: 100%;
+            min-width: 0;
             transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
         }
 
@@ -3527,10 +3545,35 @@
                 padding: 22px 18px;
             }
 
+            .schedule-table {
+                table-layout: fixed;
+            }
+
             .schedule-table th,
             .schedule-table td {
-                padding: 15px 13px;
-                font-size: 0.82rem;
+                padding: 13px 10px;
+                font-size: 0.8rem;
+            }
+
+            .schedule-table th {
+                font-size: 0.66rem;
+                letter-spacing: 0.8px;
+            }
+
+            .schedule-table th:nth-child(1) { width: 43%; }
+            .schedule-table th:nth-child(2) { width: 25%; }
+            .schedule-table th:nth-child(3) { width: 32%; }
+
+            .schedule-table td strong {
+                font-size: 0.84rem;
+            }
+
+            .schedule-table td:last-child {
+                white-space: normal;
+            }
+
+            .schedule-foot {
+                flex-wrap: wrap;
             }
 
             .instructor-card {
@@ -3585,6 +3628,15 @@
             .contact-info-card,
             .contact-form {
                 padding: 24px 20px;
+            }
+
+            .contact-info-card .btn {
+                white-space: normal;
+                text-align: center;
+                line-height: 1.45;
+                padding: 12px 14px;
+                font-size: 0.76rem;
+                letter-spacing: 0.5px;
             }
 
             .contact-info-item {
